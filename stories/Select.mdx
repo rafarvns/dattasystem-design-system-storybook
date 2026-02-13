@@ -1,0 +1,82 @@
+import { Meta, Primary, Controls, Story, Canvas } from '@storybook/blocks';
+import * as SelectStories from './Select.stories';
+
+<Meta of={SelectStories} />
+
+# Select
+
+O componente **Select** permite que o usuário escolha uma única opção de uma lista predefinida em um menu suspenso. No Datta System, utilizamos o elemento `<select>` nativo para garantir a melhor acessibilidade e performance, especialmente em dispositivos de baixa especificação.
+
+## Quando usar
+- Quando houver muitas opções (mais de 4 ou 5) que tornariam o uso de Radio Buttons inviável.
+- Quando o espaço na tela for limitado.
+- Para seleções padrão como Estados, Cidades, Categorias, etc.
+
+## Quando não usar
+- Quando houver apenas 2 ou 3 opções (prefira **Radio Buttons** para maior visibilidade).
+- Se a lista de opções for muito longa e exigir busca (considere um componente de Select com busca ou Autocomplete no futuro).
+
+## Variantes
+
+### Padrão
+O estado básico do componente com label e opções.
+
+<Canvas of={SelectStories.Default} />
+
+### Com Texto Auxiliar
+Utilizado para fornecer contexto adicional ou instruções sobre o que selecionar.
+
+<Canvas of={SelectStories.WithHelper} />
+
+### Estado de Erro
+Utilizado quando a validação falha. A mensagem de erro substitui o texto auxiliar e é exibida em vermelho com um ícone de alerta.
+
+<Canvas of={SelectStories.Error} />
+
+### Campo Obrigatório
+Exibe um asterisco (*) vermelho ao lado da label para indicar que o preenchimento é mandatório.
+
+<Canvas of={SelectStories.Required} />
+
+### Desabilitado
+Utilizado quando o campo não está disponível para interação no momento.
+
+<Canvas of={SelectStories.Disabled} />
+
+### Com Agrupamento
+As opções podem ser agrupadas usando `<optgroup>` para melhor organização hierárquica.
+
+<Canvas of={SelectStories.WithGroups} />
+
+## Tamanhos
+
+O Select suporta três tamanhos: `sm` (32px), `md` (40px - padrão) e `lg` (48px).
+
+### Pequeno (sm)
+<Canvas of={SelectStories.Small} />
+
+### Médio (md)
+<Canvas of={SelectStories.Default} />
+
+### Grande (lg)
+<Canvas of={SelectStories.Large} />
+
+## Acessibilidade
+
+O componente Select foi projetado seguindo as diretrizes WCAG 2.1 AA:
+- **Nativo:** Utiliza o elemento `<select>` HTML5, garantindo suporte nativo a leitores de tela e navegação por teclado.
+- **Rótulos:** A `<label>` está corretamente associada ao campo via atributo `for`/`id`.
+- **Estados:** Atributos `aria-invalid`, `aria-required` e `aria-describedby` são gerenciados dinamicamente.
+- **Navegação:** Suporte total a `Tab` para foco, `Enter`/`Space` para abrir e setas do teclado para navegar entre opções.
+
+## Propriedades
+<Controls />
+
+## Anatomia
+O Select é composto por uma label superior, um wrapper que contém o elemento `<select>` nativo e um ícone de chevron customizado à direita, e uma área inferior para mensagens de ajuda ou erro.
+
+## Tokens Utilizados
+- **Cores:** `--color-gray-300` (borda), `--color-blue-500` (foco/ícone), `--color-red-500` (erro), `--color-white` (fundo).
+- **Tipografia:** `--font-family-primary`, `--font-size-sm` (label), `--font-size-base` (select).
+- **Forma:** `--radius-md`.
+- **Espaçamento:** `--spacing-1`, `--spacing-3`, `--spacing-8` (reserva para seta).

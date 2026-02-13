@@ -1,0 +1,76 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/blocks';
+import * as CheckboxStories from './Checkbox.stories';
+
+<Meta of={CheckboxStories} />
+
+# Checkbox
+
+O componente Checkbox é utilizado para permitir que os usuários selecionem uma ou mais opções de uma lista, ou para alternar uma configuração individual (sim/não).
+
+## Quando usar
+- Para múltiplas opções onde o usuário pode selecionar qualquer número de escolhas.
+- Para uma única opção de aceite (ex: "Aceito os termos").
+- Para cenários onde o estado "Indeterminado" é necessário (ex: seleção parcial de subitens).
+
+## Estados
+
+O Checkbox possui estados visuais claros para indicar sua condição atual.
+
+### Padrão
+O estado inicial, não selecionado.
+
+<Canvas of={CheckboxStories.Default} />
+
+### Selecionado
+Indica que a opção foi escolhida.
+
+<Canvas of={CheckboxStories.Checked} />
+
+### Indeterminado
+Utilizado em listas hierárquicas para indicar que apenas alguns dos subitens estão selecionados.
+
+<Canvas of={CheckboxStories.Indeterminate} />
+
+### Desabilitado
+Indica que a opção existe mas não pode ser interagida no momento.
+
+<Canvas of={CheckboxStories.Disabled} />
+<Canvas of={CheckboxStories.DisabledChecked} />
+
+## Grupos de Checkbox
+
+Sempre que houver mais de um checkbox relacionado, eles devem ser agrupados utilizando um `Checkbox Group`. Isso garante a semântica correta com `fieldset` e `legend`.
+
+### Vertical (Padrão)
+Recomendado para a maioria dos formulários, facilitando a leitura e o escaneamento.
+
+<Canvas of={CheckboxStories.Group} />
+
+### Horizontal
+Utilizado quando há pouco espaço vertical ou quando as opções são muito curtas (ex: dias da semana).
+
+<Canvas of={CheckboxStories.HorizontalGroup} />
+
+### Com Erro
+Utilizado para validação de formulários (ex: "Selecione pelo menos uma opção").
+
+<Canvas of={CheckboxStories.GroupWithError} />
+
+## Propriedades
+<Controls />
+
+## Anatomia
+O Checkbox individual é composto por um input nativo (oculto), um box customizado (quadrado) e uma label de texto. O Checkbox Group utiliza um `<fieldset>` e `<legend>` para agrupar múltiplas opções de forma semântica.
+
+## Tokens Utilizados
+- **Cores:** `--color-blue-500` (checked/foco), `--color-gray-400` (borda default), `--color-red-500` (erro), `--color-white` (fundo).
+- **Tipografia:** `--font-family-primary`, `--font-size-base`.
+- **Forma:** `--radius-sm`.
+- **Espaçamento:** `--spacing-2` (entre box e texto), `--spacing-3` (vertical entre itens).
+
+## Acessibilidade
+
+- **Semântica:** Utiliza o elemento `<input type="checkbox">` nativo, garantindo suporte a tecnologias assistivas.
+- **Teclado:** Focável via `Tab` e ativável via `Space`.
+- **Labels:** Todo checkbox possui um `<label>` associado via `id` e `for`.
+- **Atributos ARIA:** Utiliza `aria-invalid`, `aria-required` e `aria-describedby` para comunicar estados complexos.

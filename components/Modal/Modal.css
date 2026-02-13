@@ -1,0 +1,143 @@
+.ds-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal, 200ms ease), visibility var(--transition-normal, 200ms ease);
+}
+
+.ds-modal-overlay--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ds-modal {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg, 8px);
+  box-shadow: var(--shadow-lg, 0 10px 15px rgba(0, 0, 0, 0.1));
+  width: 100%;
+  max-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  transform: scale(0.95) translateY(8px);
+  transition: transform var(--transition-normal, 200ms ease), opacity var(--transition-normal, 200ms ease);
+  opacity: 0;
+  outline: none;
+}
+
+.ds-modal-overlay--open .ds-modal {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Tamanhos */
+.ds-modal--sm {
+  max-width: 400px;
+}
+
+.ds-modal--md {
+  max-width: 560px;
+}
+
+.ds-modal--lg {
+  max-width: 720px;
+}
+
+.ds-modal--fullscreen {
+  max-width: calc(100vw - 64px);
+  height: calc(100vh - 64px);
+}
+
+/* Header */
+.ds-modal__header {
+  padding: var(--spacing-4) var(--spacing-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.ds-modal__title {
+  margin: 0;
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+  line-height: var(--line-height-tight);
+}
+
+.ds-modal__close {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--color-gray-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.ds-modal__close:hover {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-900);
+}
+
+.ds-modal__close:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* Body */
+.ds-modal__body {
+  padding: var(--spacing-6);
+  overflow-y: auto;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  color: var(--color-gray-700);
+  line-height: var(--line-height-normal);
+}
+
+/* Estilização da barra de scroll */
+.ds-modal__body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ds-modal__body::-webkit-scrollbar-track {
+  background: var(--color-gray-50);
+}
+
+.ds-modal__body::-webkit-scrollbar-thumb {
+  background: var(--color-gray-300);
+  border-radius: var(--radius-full);
+}
+
+.ds-modal__body::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-400);
+}
+
+/* Footer */
+.ds-modal__footer {
+  padding: var(--spacing-4) var(--spacing-6);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-3);
+  border-top: 1px solid var(--color-gray-100);
+}
+
+/* Impede o scroll do body quando o modal está aberto */
+body.ds-modal-open {
+  overflow: hidden;
+}

@@ -1,0 +1,56 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
+import * as NavbarStories from './Navbar.stories';
+
+<Meta of={NavbarStories} />
+
+# Navbar (Navegação Principal)
+
+A Navbar é o componente estrutural mais importante da interface — está presente em todas as páginas e é o ponto de partida para a orientação do usuário.
+
+## Diretrizes de Uso
+
+- **Fixa no topo:** A Navbar deve permanecer visível durante a rolagem para garantir acesso rápido à navegação.
+- **Hierarquia:** Use o menu principal para as áreas de topo do sistema e submenus para categorias relacionadas.
+- **Identidade:** O nome do sistema ou do órgão deve estar sempre visível à esquerda.
+- **Ações Rápidas:** Use a área da direita para busca, notificações e menu de usuário.
+
+## Variantes
+
+### Padrão (Completa)
+Inclui logo, menu, busca, notificações e usuário. Recomendada para a aplicação principal.
+
+<Canvas of={NavbarStories.Default} />
+
+### Simples
+Logo, menu e usuário. Ideal para fluxos secundários ou telas focadas.
+
+<Canvas of={NavbarStories.Simple} />
+
+### Institucional
+Foco na marca do órgão governamental com menu simplificado.
+
+<Canvas of={NavbarStories.Institutional} />
+
+## Comportamento e Interação
+
+- **Submenus:** Abrem ao clicar no item pai para garantir acessibilidade e evitar aberturas acidentais por hover em dispositivos touch.
+- **Responsividade:** O componente é otimizado para a resolução 1366x768, mantendo uma altura compacta de 56px.
+- **Navegação por Teclado:** Suporta navegação via `Tab`, `Space`, `Enter` e fechamento de menus com `Esc`.
+
+## Acessibilidade
+
+- Utiliza a tag semântica `<nav>` com `aria-label="Navegação principal"`.
+- Implementa `role="menubar"` e `role="menuitem"` para correta interpretação por leitores de tela.
+- Gerenciamento de estados `aria-expanded` e `aria-haspopup`.
+- Inclui **Skip Link** ("Pular para conteúdo") para facilitar a navegação por teclado.
+
+## Propriedades (Controls)
+
+<Controls />
+
+## Tokens Utilizados
+
+- **Cores:** `--color-blue-900` (fundo), `--color-white` (texto/ícones), `--color-blue-700` (avatar), `--color-danger` (badge).
+- **Tipografia:** `--font-family-primary`, `--font-family-secondary` (logo), `--font-size-sm` (links).
+- **Forma:** `--shadow-md`, `--shadow-lg` (menus), `--radius-md` (menus), `--transition-fast`.
+- **Espaçamento:** `--spacing-2`, `--spacing-4`, `--spacing-6`, `--header-height` (56px).

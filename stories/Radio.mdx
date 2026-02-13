@@ -1,0 +1,52 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
+import * as RadioStories from './Radio.stories';
+
+<Meta of={RadioStories} />
+
+# Radio Button
+
+O componente Radio permite que o usuário selecione uma única opção de um conjunto de alternativas mutuamente exclusivas.
+
+## Quando usar
+- Quando há uma lista de opções e apenas uma pode ser selecionada.
+- Quando todas as opções precisam estar visíveis simultaneamente.
+- Para seleções binárias onde o estado "desmarcado" não é claro o suficiente (use Checkbox para toggles individuais).
+
+## Quando não usar
+- Quando o usuário puder selecionar múltiplas opções (use Checkbox).
+- Quando houver muitas opções (mais de 5 ou 6), considere usar o componente `Select` para economizar espaço.
+
+## Estados Visuais
+
+### Horizontal
+Útil para formulários compactos ou escolhas rápidas (ex: "Sim / Não").
+
+<Canvas of={RadioStories.Horizontal} />
+
+### Com Erro
+O estado de erro aplica a cor vermelha à borda dos círculos e à mensagem auxiliar, facilitando a identificação de pendências.
+
+<Canvas of={RadioStories.Error} />
+
+### Desabilitado
+As opções podem ser desabilitadas individualmente, impedindo a interação mas mantendo a visibilidade.
+
+<Canvas of={RadioStories.DisabledOption} />
+
+## Acessibilidade
+- O componente utiliza o elemento `<input type="radio">` nativo.
+- Navegação por teclado: use `Tab` para entrar no grupo e `Setas` para navegar entre as opções (Roving Tabindex).
+- Grupos são estruturados com `<fieldset>` e `<legend>` para fornecer contexto semântico correto.
+- Atributos ARIA como `aria-invalid`, `aria-describedby` e `aria-required` são gerenciados automaticamente.
+
+## Propriedades (Controls)
+<Controls />
+
+## Anatomia
+O Radio individual é composto por um input nativo (oculto), um circle customizado (círculo com dot central) e uma label de texto. O Radio Group utiliza um `<fieldset>` e `<legend>` para agrupar as opções.
+
+## Tokens Utilizados
+- **Cores:** `--color-blue-500` (checked/foco), `--color-gray-400` (borda default), `--color-red-500` (erro), `--color-white` (fundo).
+- **Tipografia:** `--font-family-primary`, `--font-size-base`.
+- **Forma:** `50% border-radius`.
+- **Espaçamento:** `--spacing-2` (entre circle e texto), `--spacing-3` (vertical entre itens).

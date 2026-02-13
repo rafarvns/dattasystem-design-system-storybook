@@ -1,0 +1,69 @@
+import { Meta, Primary, Controls, Story, Canvas } from '@storybook/blocks';
+import * as TextareaStories from './Textarea.stories';
+
+<Meta of={TextareaStories} />
+
+# Textarea
+
+O componente **Textarea** é um campo de texto multilinha utilizado para entradas longas, como observações, justificativas, descrições ou qualquer conteúdo que exija mais espaço do que um campo de texto simples.
+
+## Quando usar
+- Para descrições longas ou comentários.
+- Para justificativas de ações ou requerimentos.
+- Quando a entrada de dados pode conter quebras de linha.
+
+## Diretrizes de Uso
+
+### Label
+Assim como no `Input`, a label deve estar sempre visível acima do campo. Nunca use apenas o placeholder para identificar o propósito do campo.
+
+### Redimensionamento
+Por padrão, o redimensionamento é apenas **vertical** para evitar quebras no layout horizontal da página. Em casos específicos, pode-se usar o modo `auto` (crescimento automático) ou `none` (tamanho fixo).
+
+### Contador de Caracteres
+Sempre que houver um limite máximo de caracteres (`maxlength`), habilite o contador visual para orientar o usuário. O contador muda de cor para vermelho ao atingir 90% da capacidade.
+
+---
+
+## Variantes e Estados
+
+### Exemplo Padrão
+<Canvas of={TextareaStories.Default} />
+
+### Tamanhos
+Disponível em três tamanhos para manter a consistência com o sistema de formulários: `sm`, `md` (padrão) e `lg`.
+
+<Canvas of={TextareaStories.Small} />
+<Canvas of={TextareaStories.Large} />
+
+### Estados de Erro e Auxílio
+O campo de erro substitui o texto auxiliar e exibe um ícone de alerta para chamar a atenção do usuário.
+
+<Canvas of={TextareaStories.WithError} />
+
+### Estados Interativos
+Demonstração dos estados `disabled` (desabilitado) e `readOnly` (somente leitura).
+
+<Canvas of={TextareaStories.Disabled} />
+<Canvas of={TextareaStories.ReadOnly} />
+
+---
+
+## Acessibilidade
+
+- **Label:** Conectada via atributo `id` e `for`.
+- **Navegação:** Focável via `Tab`, permite quebras de linha com `Enter`.
+- **Feedback:** Atributos `aria-invalid`, `aria-required` e `aria-describedby` são gerenciados automaticamente.
+- **Contador:** O contador possui `aria-live="polite"` para informar usuários de leitores de tela sobre o preenchimento.
+
+## Propriedades (Props)
+<Controls />
+
+## Anatomia
+O Textarea é composto por uma label superior, o elemento `<textarea>` nativo com redimensionamento vertical, e um rodapé que pode conter mensagens de ajuda/erro e um contador de caracteres.
+
+## Tokens Utilizados
+- **Cores:** `--color-gray-400` (borda), `--color-blue-500` (foco), `--color-red-500` (erro), `--color-white` (fundo).
+- **Tipografia:** `--font-family-primary`, `--font-size-sm` (label), `--font-size-base` (textarea).
+- **Forma:** `--radius-md`.
+- **Espaçamento:** `--spacing-1`, `--spacing-2`.

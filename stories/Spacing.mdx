@@ -1,0 +1,103 @@
+import { Meta, Canvas } from '@storybook/blocks';
+
+<Meta title="tokens/Espaçamento e Grid" />
+
+# Espaçamento e Grid
+
+O sistema de espaçamento do **Datta System** é baseado em uma escala de múltiplos de **4px**. Essa abordagem garante ritmo vertical e horizontal consistente em todas as interfaces, facilitando a tomada de decisão no design e no desenvolvimento.
+
+---
+
+## Escala de Espaçamento
+
+A escala abaixo é utilizada para `margin`, `padding` e `gap`.
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '24px' }}>
+  {[0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16].map((step) => (
+    <div key={step} style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+      <div style={{ width: '120px', fontSize: '14px', fontWeight: 'bold' }}>
+        <code>--spacing-{step}</code>
+      </div>
+      <div style={{ width: '60px', fontSize: '14px' }}>
+        {step * 4}px
+      </div>
+      <div style={{ 
+        backgroundColor: 'var(--color-primary, #0052cc)', 
+        height: '16px', 
+        width: `var(--spacing-${step})`,
+        minWidth: step === 0 ? '1px' : 'auto',
+        borderRadius: '2px'
+      }}></div>
+    </div>
+  ))}
+</div>
+
+---
+
+## Sistema de Grid
+
+Configurado para a resolução-alvo de **1366×768**, garantindo uma área de conteúdo equilibrada e legível.
+
+| Token | Valor | Descrição |
+|-------|-------|-----------|
+| `--grid-columns` | `12` | Número de colunas do grid. |
+| `--grid-gutter` | `24px` | Espaço entre colunas. |
+| `--grid-margin` | `32px` | Margem lateral da página. |
+| `--grid-max-width` | `1302px` | Largura máxima da área de conteúdo útil. |
+
+### Visualização do Grid (Simulação)
+
+Abaixo, uma representação proporcional das 12 colunas em um container de 1302px.
+
+<div style={{ 
+  display: 'grid', 
+  gridTemplateColumns: 'repeat(12, 1fr)', 
+  gap: 'var(--grid-gutter)', 
+  maxWidth: 'var(--grid-max-width)', 
+  margin: '0 auto',
+  padding: '16px',
+  background: '#f4f4f4',
+  border: '1px solid #ddd'
+}}>
+  {[...Array(12)].map((_, i) => (
+    <div key={i} style={{ 
+      background: 'rgba(0, 82, 204, 0.15)', 
+      height: '100px', 
+      display: 'flex', 
+      alignItems: 'center', 
+      justifyContent: 'center',
+      fontSize: '12px',
+      color: '#0052cc',
+      fontWeight: 'bold',
+      border: '1px dashed #0052cc'
+    }}>
+      {i + 1}
+    </div>
+  ))}
+</div>
+
+---
+
+## Breakpoints
+
+Responsividade focada no contexto governamental, priorizando telas de desktop intermediárias.
+
+| Token | Valor | Descrição |
+|-------|-------|-----------|
+| `--breakpoint-sm` | `640px` | Dispositivos pequenos. |
+| `--breakpoint-md` | `768px` | Tablets. |
+| `--breakpoint-lg` | `1024px` | Telas intermediárias. |
+| `--breakpoint-xl` | `1366px` | **Resolução-alvo** (Monitores padrão). |
+| `--breakpoint-2xl` | `1536px` | Telas grandes. |
+
+---
+
+## Layout e Dimensões Base
+
+Tokens para elementos estruturais recorrentes.
+
+| Token | Valor | Uso |
+|-------|-------|-----|
+| `--sidebar-width` | `256px` | Largura da navegação lateral. |
+| `--header-height` | `56px` | Altura do cabeçalho principal. |
+| `--form-max-width` | `640px` | Largura máxima recomendada para formulários (legibilidade). |

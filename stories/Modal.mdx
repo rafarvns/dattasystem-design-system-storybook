@@ -1,0 +1,65 @@
+import { Meta, Canvas, Controls, Story } from '@storybook/blocks';
+import * as ModalStories from './Modal.stories';
+
+<Meta of={ModalStories} />
+
+# Modal
+
+O componente **Modal** (ou Dialog) é uma janela sobreposta que exige a atenção e a ação do usuário antes de retornar ao conteúdo principal. No Datta System, ele é utilizado para confirmações, formulários rápidos e alertas críticos.
+
+## Quando usar
+- Para interromper o fluxo do usuário e exigir uma decisão ou entrada de dados.
+- Para exibir detalhes contextuais sem perder o estado da página atual.
+- Para confirmações de ações irreversíveis (ex: excluir um registro).
+
+## Anatomia
+1. **Overlay:** Fundo semi-transparente que isola o conteúdo da página.
+2. **Header:** Contém o título do modal e o botão de fechar (X).
+3. **Body:** Área principal para o conteúdo (texto, formulários, etc.).
+4. **Footer:** Área para botões de ação (Confirmar, Cancelar).
+
+## Tamanhos
+O Modal suporta quatro tamanhos para se adaptar ao volume de conteúdo:
+- **sm (Small):** 400px - Ideal para alertas simples e confirmações curtas.
+- **md (Medium):** 560px - **Padrão** para a maioria dos formulários e interações.
+- **lg (Large):** 720px - Para conteúdos extensos ou visualizações de dados complexas.
+- **fullscreen:** Ocupa quase toda a área útil da tela, para fluxos de edição completos.
+
+## Variantes e Exemplos
+
+### Padrão / Informativo
+Utilizado para mensagens de feedback ou informações importantes.
+
+<Canvas of={ModalStories.Default} />
+
+### Confirmação
+Ideal para garantir que o usuário deseja realizar uma ação importante.
+
+<Canvas of={ModalStories.Confirmation} />
+
+### Destrutiva (Crítica)
+Utilizada para ações de exclusão ou cancelamento definitivo. O botão de confirmação usa a variante `destructive`.
+
+<Canvas of={ModalStories.Destructive} />
+
+### Formulário
+O Modal pode conter elementos de formulário para cadastros rápidos.
+
+<Canvas of={ModalStories.Form} />
+
+## Acessibilidade
+O Modal segue rigorosamente os padrões WAI-ARIA para diálogos:
+- **Focus Trap:** O foco é mantido dentro do modal enquanto ele estiver aberto, impedindo a navegação para elementos atrás do overlay.
+- **Gerenciamento de Foco:** Ao abrir, o foco é movido para o primeiro elemento interativo. Ao fechar, o foco retorna ao elemento que disparou o modal.
+- **Navegação por Teclado:** Suporta `Tab` para ciclar o foco, `Shift+Tab` para voltar e `Esc` para fechar.
+- **Papéis Semânticos:** Utiliza `role="dialog"` e `aria-modal="true"`, associando o título via `aria-labelledby`.
+
+## Propriedades (Controls)
+<Controls />
+
+## Tokens Utilizados
+- **Cores:** `rgba(0, 0, 0, 0.5)` (overlay), `--color-white` (fundo), `--color-gray-100` (divisores), `--color-gray-900` (título).
+- **Tipografia:** `--font-family-secondary` (título), `--font-size-lg` (título), `--font-family-primary` (corpo).
+- **Forma:** `--radius-lg` (8px), `--shadow-lg`.
+- **Espaçamento:** `--spacing-4` (padding vertical), `--spacing-6` (padding horizontal/body).
+- **Z-index:** `1000` (overlay e modal).

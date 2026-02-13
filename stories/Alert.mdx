@@ -1,0 +1,77 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
+import * as AlertStories from './Alert.stories';
+
+<Meta of={AlertStories} />
+
+# Alert (Alertas e Feedback)
+
+O componente **Alert** fornece feedback visual sobre o estado do sistema ou o resultado de uma ação do usuário. Ele é essencial para comunicar mensagens importantes de forma clara e acessível.
+
+## Quando usar
+- Para confirmar o sucesso de uma operação (ex: "Cadastro salvo").
+- Para avisar sobre possíveis problemas (ex: "Sessão expirando").
+- Para comunicar erros impeditivos (ex: "Falha na conexão").
+- Para fornecer informações contextuais relevantes (ex: "Manutenção programada").
+
+## Variantes Semânticas
+
+### Informação (Info)
+Usado para mensagens neutras e avisos gerais.
+
+<Canvas of={AlertStories.Info} />
+
+### Sucesso (Success)
+Usado para confirmar que uma ação foi concluída sem erros.
+
+<Canvas of={AlertStories.Success} />
+
+### Atenção (Warning)
+Usado para alertas que requerem a atenção do usuário, mas não bloqueiam o fluxo.
+
+<Canvas of={AlertStories.Warning} />
+
+### Erro (Error)
+Usado para falhas críticas, erros de validação ou ações bloqueadas.
+
+<Canvas of={AlertStories.Error} />
+
+---
+
+## Variantes de Layout
+
+### Compacto
+Utilizado para feedbacks curtos onde o título não é necessário.
+
+<Canvas of={AlertStories.Compact} />
+
+### Banner (Full Width)
+Ocupa toda a largura do container e geralmente é fixo no topo da página para avisos globais do sistema.
+
+<Canvas of={AlertStories.Banner} />
+
+### Com Ação
+Permite incluir botões ou links para que o usuário tome uma ação imediata a partir do alerta.
+
+<Canvas of={AlertStories.WithAction} />
+
+### Empilhamento (Stacked)
+Utilize a função `showAlert()` para disparar notificações que se empilham no canto da tela.
+
+<Canvas of={AlertStories.Stacked} />
+
+---
+
+## Acessibilidade
+- **Roles:** Utiliza `role="alert"` para erros e avisos, e `role="status"` para sucessos e informações.
+- **Live Regions:** Configurado com `aria-live="assertive"` para erros e `aria-live="polite"` para os demais.
+- **Teclado:** O botão de fechar é focável e pode ser ativado via `Enter` ou `Space`. O alerta também responde à tecla `Esc` quando focado.
+- **Contraste:** Todas as variantes foram validadas para atender ao padrão WCAG AA.
+
+## Propriedades (Controls)
+<Controls />
+
+## Tokens Utilizados
+- **Cores:** `--color-blue-50/600`, `--color-green-50/600`, `--color-orange-50/700`, `--color-red-50/600`.
+- **Tipografia:** `--font-family-primary`, `--font-size-sm`, `--font-weight-semibold` (título).
+- **Forma:** `--radius-md`, `--shadow-md` (quando empilhado).
+- **Espaçamento:** `--spacing-1`, `--spacing-2`, `--spacing-3`, `--spacing-4`.

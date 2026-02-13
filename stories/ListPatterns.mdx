@@ -1,0 +1,46 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks';
+import * as ListPageStories from './ListPage.stories';
+
+<Meta of={ListPageStories} />
+
+# List Patterns
+
+Os **Padrões de Listagem** do Datta System definem como organizar grandes volumes de dados, fornecendo ferramentas para busca, filtragem e ações em massa, mantendo a clareza em resoluções de **1366×768**.
+
+## Diretrizes de Design
+
+- **Filtros Visíveis:** Utilize a seção de filtros no topo para permitir que o usuário refine os dados rapidamente. Filtros devem ser agrupados logicamente.
+- **Ações em Lote (Batch Actions):** Quando um ou mais itens da tabela são selecionados, uma barra de ações flutuante ou contextual deve aparecer para permitir operações em massa (ex: excluir selecionados, exportar).
+- **Densidade de Informação:** Tabelas em páginas de listagem devem utilizar a densidade `default` ou `compact` para maximizar a visibilidade dos dados.
+- **Paginação:** Sempre inclua o componente de paginação ao final da lista para gerenciar a performance e a carga cognitiva.
+
+## Estrutura do Padrão
+
+1. **Filtros de Busca:** Card contendo inputs, selects e botões de ação (Aplicar/Limpar).
+2. **Barra de Ações em Lote:** Aparece dinamicamente acima da tabela quando há seleção.
+3. **Tabela de Dados:** O coração da listagem, com suporte a ordenação e seleção.
+4. **Paginação:** Alinhada ao final, informando o total de registros.
+
+## Exemplos
+
+### Listagem Completa
+Exemplo de uma tela de gerenciamento de processos com filtros, tabela selecionável e paginação.
+
+<Canvas of={ListPageStories.ProcessosListagem} />
+
+### Seleção e Ações em Lote
+Demonstração da barra de ferramentas que surge ao selecionar itens na lista.
+
+<Canvas of={ListPageStories.ComSelecao} />
+
+## Acessibilidade
+
+- **Labels de Filtro:** Todos os campos de busca devem ter labels claros vinculados.
+- **Feedback de Seleção:** O número de itens selecionados deve ser anunciado para tecnologias assistivas.
+- **Navegação:** A estrutura segue a ordem lógica: Filtros → Ações → Tabela → Paginação.
+
+## Tokens Utilizados
+
+- **Fundo dos Filtros:** `--color-white`.
+- **Destaque de Seleção:** `--color-blue-50` (fundo da barra de ações).
+- **Espaçamento entre Blocos:** `--spacing-6`.

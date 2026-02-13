@@ -1,0 +1,140 @@
+.select-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  width: 100%;
+  font-family: var(--font-family-primary);
+}
+
+.select-field__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-700);
+  line-height: 1.25;
+}
+
+.select-field__required {
+  color: var(--color-red-500);
+  margin-left: var(--spacing-1);
+}
+
+.select-field__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 1000; /* Aumentado para garantir que a seta e o select fiquem visíveis */
+}
+
+.select-field__select {
+  width: 100%;
+  border: 1px solid var(--color-gray-400);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  color: var(--color-gray-800);
+  font-family: inherit;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+  appearance: none; /* Remove seta nativa */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Padding direito extra para a seta */
+.select-field--sm .select-field__select {
+  height: 32px;
+  padding: var(--spacing-1) var(--spacing-8) var(--spacing-1) var(--spacing-3);
+  font-size: var(--font-size-sm);
+}
+
+.select-field--md .select-field__select {
+  height: 40px;
+  padding: var(--spacing-2) var(--spacing-8) var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-base);
+}
+
+.select-field--lg .select-field__select {
+  height: 48px;
+  padding: var(--spacing-3) var(--spacing-8) var(--spacing-3) var(--spacing-4);
+  font-size: var(--font-size-md);
+}
+
+/* Seta (chevron) customizada */
+.select-field__arrow {
+  position: absolute;
+  right: var(--spacing-3);
+  color: var(--color-gray-500);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-fast);
+}
+
+/* Estados */
+.select-field__select:hover:not(:disabled) {
+  border-color: var(--color-gray-600);
+}
+
+.select-field__select:focus:not(:disabled) {
+  border-color: var(--color-blue-500);
+  box-shadow: 0 0 0 1px var(--color-blue-500);
+}
+
+/* Estado de Placeholder (quando a opção selecionada é a primeira e está desabilitada) */
+.select-field__select:invalid,
+.select-field__select option[value=""][disabled] {
+  color: var(--color-gray-400);
+}
+
+/* Estilo para quando o valor não é vazio (contornando limitação do select nativo para placeholder color) */
+.select-field__select:not([value=""]) {
+  color: var(--color-gray-800);
+}
+
+/* Estado de Erro */
+.select-field--error .select-field__select {
+  border-color: var(--color-red-500);
+}
+
+.select-field--error .select-field__select:focus {
+  box-shadow: 0 0 0 1px var(--color-red-500);
+}
+
+/* Disabled */
+.select-field__select:disabled {
+  background-color: var(--color-gray-100);
+  border-color: var(--color-gray-200);
+  color: var(--color-gray-400);
+  cursor: not-allowed;
+}
+
+.select-field--disabled .select-field__label {
+  color: var(--color-gray-400);
+}
+
+.select-field--disabled .select-field__arrow {
+  color: var(--color-gray-300);
+}
+
+/* Helper e Error Text */
+.select-field__helper,
+.select-field__error {
+  font-size: var(--font-size-xs);
+  margin-top: var(--spacing-1);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.select-field__helper {
+  color: var(--color-gray-500);
+}
+
+.select-field__error {
+  color: var(--color-red-500);
+  font-weight: var(--font-weight-medium);
+}

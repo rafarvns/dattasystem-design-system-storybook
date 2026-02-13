@@ -1,0 +1,183 @@
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  width: 100%;
+  font-family: var(--font-family-primary);
+}
+
+.input-field__label {
+  display: flex; /* Adicionado para permitir esconder visualmente mas manter no DOM */
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-700);
+  line-height: 1.25;
+}
+
+.input-field--no-label .input-field__label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.input-field__required {
+  color: var(--color-red-500);
+  margin-left: var(--spacing-1);
+}
+
+.input-field__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-field__input {
+  width: 100%;
+  border: 1px solid var(--color-gray-400); /* Aumentada a visibilidade da borda padrão */
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  color: var(--color-gray-800);
+  font-family: inherit;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), border-width var(--transition-fast);
+  outline: none;
+  box-sizing: border-box; /* Garante que a borda de 2px não mude o tamanho externo */
+}
+
+.input-field__input::placeholder {
+  color: var(--color-gray-400);
+}
+
+/* Tamanhos */
+.input-field--sm .input-field__input {
+  height: 32px;
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-sm);
+}
+
+.input-field--md .input-field__input {
+  height: 40px;
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-base);
+}
+
+.input-field--lg .input-field__input {
+  height: 48px;
+  padding: var(--spacing-3) var(--spacing-4);
+  font-size: var(--font-size-md);
+}
+
+/* Estados */
+.input-field__input:hover:not(:disabled):not([readonly]) {
+  border-color: var(--color-gray-600); /* Maior contraste no hover */
+}
+
+.input-field__input:focus:not(:disabled):not([readonly]) {
+  border-color: var(--color-blue-500);
+  border-width: 1px; /* Mantido 1px para evitar saltos de layout */
+  box-shadow: 0 0 0 1px var(--color-blue-500); /* Ring sutil e estável */
+}
+
+/* Estado de Erro */
+.input-field--error .input-field__input {
+  border-color: var(--color-red-500);
+}
+
+.input-field--error .input-field__input:focus {
+  box-shadow: 0 0 0 1px var(--color-red-500);
+}
+
+/* Disabled */
+.input-field__input:disabled {
+  background-color: var(--color-gray-100);
+  border-color: var(--color-gray-200);
+  color: var(--color-gray-400);
+  cursor: not-allowed;
+}
+
+.input-field--disabled .input-field__label {
+  color: var(--color-gray-400);
+}
+
+/* Read-only */
+.input-field__input[readonly] {
+  background-color: var(--color-gray-50);
+  border-color: var(--color-gray-200);
+}
+
+/* Ícones */
+.input-field__icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-500);
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+}
+
+.input-field--with-icon-left .input-field__input {
+  padding-left: calc(var(--spacing-3) + 24px);
+}
+
+.input-field--with-icon-right .input-field__input {
+  padding-right: calc(var(--spacing-3) + 24px);
+}
+
+.input-field__icon--left {
+  left: var(--spacing-3);
+}
+
+.input-field__icon--right {
+  right: var(--spacing-3);
+}
+
+/* Password Toggle */
+.input-field__password-toggle {
+  position: absolute;
+  right: var(--spacing-2);
+  background: transparent;
+  border: none;
+  padding: var(--spacing-1);
+  cursor: pointer;
+  color: var(--color-gray-500);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast);
+  pointer-events: auto;
+}
+
+.input-field__password-toggle:hover {
+  background-color: var(--color-gray-100);
+}
+
+.input-field__password-toggle:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* Helper e Error Text */
+.input-field__helper,
+.input-field__error {
+  font-size: var(--font-size-xs);
+  margin-top: var(--spacing-1);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.input-field__helper {
+  color: var(--color-gray-500);
+}
+
+.input-field__error {
+  color: var(--color-red-500);
+  font-weight: var(--font-weight-medium);
+}

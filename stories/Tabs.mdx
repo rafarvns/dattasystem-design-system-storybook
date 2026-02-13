@@ -1,0 +1,59 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
+import * as TabsStories from './Tabs.stories';
+
+<Meta of={TabsStories} />
+
+# Tabs (Abas)
+
+O componente **Tabs** organiza o conteúdo em seções alternáveis dentro de uma mesma página, permitindo agrupar informações relacionadas sem a necessidade de navegação para outra URL.
+
+## Quando usar
+- Para organizar grandes volumes de informação em categorias lógicas.
+- Para alternar entre diferentes visualizações de um mesmo contexto (ex: Dados Gerais vs. Documentos).
+- Para otimizar o espaço vertical em telas de 1366x768.
+
+## Variantes
+
+### Padrão (Underline)
+Estilo mais comum, utiliza uma borda inferior azul para indicar a aba ativa.
+
+<Canvas of={TabsStories.Default} />
+
+### Contained (Boxed)
+Ideal para seções que precisam de maior destaque visual ou quando as abas estão dentro de um container tipo Card.
+
+<Canvas of={TabsStories.Contained} />
+
+## Recursos Adicionais
+
+### Com Ícones
+Ícones podem ser adicionados à esquerda do texto para facilitar a identificação visual rápida.
+
+<Canvas of={TabsStories.WithIcons} />
+
+### Com Badges
+Útil para indicar a quantidade de itens presentes em cada seção (ex: número de documentos anexados).
+
+<Canvas of={TabsStories.WithBadges} />
+
+## Acessibilidade
+
+O componente segue rigorosamente o padrão **WAI-ARIA Tabs Pattern**:
+- **Semântica:** Utiliza `role="tablist"`, `role="tab"` e `role="tabpanel"`.
+- **Associação:** Conecta abas e painéis via `aria-controls` e `aria-labelledby`.
+- **Teclado:** 
+  - `Tab` entra no grupo de abas.
+  - `Setas (Esquerda/Direita)` navegam entre os títulos das abas sem ativá-las (foco).
+  - `Enter` ou `Espaço` ativa a aba focada.
+  - `Home` e `End` movem para a primeira e última aba disponível.
+- **Estados:** Gerencia `aria-selected`, `aria-disabled` e `tabindex` dinamicamente.
+
+## Propriedades (Controls)
+
+<Controls />
+
+## Tokens Utilizados
+- **Cores:** `--color-blue-500` (indicador ativo), `--color-gray-200` (borda), `--color-gray-600` (texto inativo), `--color-blue-600` (texto ativo).
+- **Tipografia:** `--font-family-primary`, `--font-size-sm`, `--font-weight-medium` (inativo), `--font-weight-semibold` (ativo).
+- **Espaçamento:** `--spacing-3`, `--spacing-4` (padding tab), `--spacing-6` (padding painel).
+- **Transição:** `--transition-fast` (150ms).

@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Datta System - Design Tokens: Cores
+   ========================================================================== */
+
+:root {
+  /* 1. Paleta Primária - Azul (Confiança e Institucionalidade) */
+  --color-blue-900: #002B5C; /* Textos de destaque em headers */
+  --color-blue-700: #004587; /* Navegação principal, cabeçalhos */
+  --color-blue-600: #0052A3; /* Hover do botão primário */
+  --color-blue-500: #005EB8; /* Azul médio (primário) - Botões, links, ícones ativos */
+  --color-blue-300: #4D8ED4; /* Estados de hover, badges */
+  --color-blue-100: #B3CEEA; /* Fundos de alertas informativos */
+  --color-blue-50: #E6EFF8;  /* Azul quase branco - Fundos sutis */
+
+  /* 2. Paleta de Ação - Vermelho (Ação e Atenção) */
+  --color-red-700: #B00020; /* Hover em botões destrutivos */
+  --color-red-600: #C62828; /* Hover do botão destrutivo */
+  --color-red-500: #D32F2F; /* Vermelho vivo - Botões de ação destrutiva, alertas de erro */
+  --color-red-300: #E57373; /* Vermelho suave - Fundos de mensagens de erro */
+  --color-red-100: #FFCDD2; /* Vermelho muito claro - Fundos sutis de validação */
+  --color-red-50: #FFEBEE;  /* Vermelho quase branco - Fundo de campos com erro */
+
+  /* 3. Paleta Neutra - Branco e Cinzas (Respiro e Legibilidade) */
+  --color-white: #FFFFFF;    /* Branco puro */
+  --color-gray-50: #FAFAFA;  /* Fundo de página */
+  --color-gray-100: #F5F5F5; /* Fundos de cards, áreas secundárias */
+  --color-gray-200: #EEEEEE; /* Separadores, bordas leves */
+  --color-gray-400: #BDBDBD; /* Placeholders, textos desabilitados */
+  --color-gray-600: #757575; /* Textos secundários, ícones */
+  --color-gray-800: #424242; /* Texto principal do corpo */
+  --color-gray-900: #212121; /* Títulos, textos de máximo destaque */
+
+  /* 4. Cores Semânticas Adicionais (Sucesso e Alerta) */
+  --color-green-700: #1B5E20;
+  --color-green-500: #2E7D32; /* Sucesso */
+  --color-green-100: #C8E6C9; /* Sucesso claro */
+  
+  --color-orange-700: #E65100;
+  --color-orange-500: #EF6C00; /* Alerta / Aviso */
+  --color-orange-100: #FFE0B2; /* Alerta claro */
+
+  /* 5. Aliases Semânticos */
+  /* Ação Primária */
+  --color-primary: var(--color-blue-500);
+  --color-primary-hover: var(--color-blue-700);
+  --color-primary-light: var(--color-blue-100);
+
+  /* Perigo / Erro */
+  --color-danger: var(--color-red-500);
+  --color-danger-hover: var(--color-red-700);
+  --color-danger-light: var(--color-red-100);
+
+  /* Sucesso */
+  --color-success: var(--color-green-500);
+  --color-success-light: var(--color-green-100);
+
+  /* Alerta / Aviso */
+  --color-warning: var(--color-orange-500);
+  --color-warning-light: var(--color-orange-100);
+
+  /* Texto */
+  --color-text-primary: var(--color-gray-800);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-placeholder: var(--color-gray-400);
+  --color-text-inverse: var(--color-white);
+
+  /* Fundos */
+  --color-bg-primary: var(--color-white);
+  --color-bg-secondary: var(--color-gray-50);
+  --color-bg-card: var(--color-white);
+
+  /* Bordas */
+  --color-border-default: var(--color-gray-200);
+  --color-border-focus: var(--color-blue-500);
+  --color-border-error: var(--color-red-500);
+}

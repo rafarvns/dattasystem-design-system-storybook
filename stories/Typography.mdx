@@ -1,0 +1,95 @@
+import { Meta, Typeset } from '@storybook/blocks';
+
+<Meta title="tokens/Tipografia" />
+
+# Tipografia
+
+A tipografia do Datta System foi projetada para equilibrar modernidade e legibilidade funcional, especialmente em resoluções de tela comuns em ambientes governamentais (como 1366×768).
+
+## Famílias Tipográficas
+
+| Token | Família | Uso |
+| :--- | :--- | :--- |
+| `--font-family-primary` | Inter, Source Sans Pro | Interface do usuário, corpo de texto, formulários e botões. |
+| `--font-family-secondary` | Manrope, IBM Plex Sans | Títulos de página e elementos de destaque. |
+| `--font-family-mono` | IBM Plex Mono | Dados técnicos, códigos e protocolos. |
+
+## Escala de Tamanhos
+
+A escala utiliza `rem` (base de 16px) para garantir acessibilidade e escalabilidade.
+
+<Typeset
+  fontSizes={[
+    '12px',
+    '14px',
+    '16px',
+    '18px',
+    '20px',
+    '24px',
+    '30px',
+    '36px',
+  ]}
+  fontWeight={400}
+  sampleText="Simplicidade que serve. Tecnologia que respeita."
+  fontFamily="Inter"
+/>
+
+## Pesos e Estilos
+
+| Token | Valor | Uso |
+| :--- | :--- | :--- |
+| `--font-weight-regular` | 400 | Texto padrão do corpo. |
+| `--font-weight-medium` | 500 | Labels e ênfase leve. |
+| `--font-weight-semibold` | 600 | Subtítulos e botões. |
+| `--font-weight-bold` | 700 | Títulos principais. |
+
+## Presets Tipográficos (Classes)
+
+Estes presets combinam família, tamanho, peso e altura de linha para garantir consistência visual.
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', marginTop: '2rem' }}>
+  <div>
+    <span className="text-label" style={{ color: '#666', display: 'block', marginBottom: '0.5rem' }}>.text-heading-1</span>
+    <h1 className="text-heading-1">Título Principal (H1)</h1>
+  </div>
+
+  <div>
+    <span className="text-label" style={{ color: '#666', display: 'block', marginBottom: '0.5rem' }}>.text-heading-2</span>
+    <h2 className="text-heading-2">Título de Página (H2)</h2>
+  </div>
+
+  <div>
+    <span className="text-label" style={{ color: '#666', display: 'block', marginBottom: '0.5rem' }}>.text-heading-3</span>
+    <h3 className="text-heading-3">Título de Seção (H3)</h3>
+  </div>
+
+  <div>
+    <span className="text-label" style={{ color: '#666', display: 'block', marginBottom: '0.5rem' }}>.text-subtitle</span>
+    <p className="text-subtitle">Subtítulo de destaque para introduzir conteúdos.</p>
+  </div>
+
+  <div>
+    <span className="text-label" style={{ color: '#666', display: 'block', marginBottom: '0.5rem' }}>.text-body</span>
+    <p className="text-body">Texto de corpo padrão. Este é o tamanho principal para leitura de parágrafos longos e informações gerais na interface do Datta System.</p>
+  </div>
+
+  <div>
+    <span className="text-label" style={{ color: '#666', display: 'block', marginBottom: '0.5rem' }}>.text-body-sm</span>
+    <p className="text-body-sm">Texto de corpo pequeno para tabelas, descrições secundárias e formulários.</p>
+  </div>
+
+  <div>
+    <span className="text-label" style={{ color: '#666', display: 'block', marginBottom: '0.5rem' }}>.text-label</span>
+    <span className="text-label">Rótulo de Formulário (Label)</span>
+  </div>
+
+  <div>
+    <span className="text-label" style={{ color: '#666', display: 'block', marginBottom: '0.5rem' }}>.text-button</span>
+    <span className="text-button">TEXTO DE BOTÃO</span>
+  </div>
+
+  <div>
+    <span className="text-label" style={{ color: '#666', display: 'block', marginBottom: '0.5rem' }}>.text-caption</span>
+    <p className="text-caption">Legendas e textos auxiliares de menor hierarquia.</p>
+  </div>
+</div>

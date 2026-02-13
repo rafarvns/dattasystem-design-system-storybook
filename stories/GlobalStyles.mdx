@@ -1,0 +1,66 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="estilos/Estilos Globais" />
+
+# Estilos Globais Base
+
+Este documento demonstra a aplicação dos estilos globais do Datta System aos elementos HTML padrão. Estes estilos são carregados automaticamente por todos os componentes do sistema.
+
+## Tipografia Base
+
+A tipografia base utiliza a fonte **Inter** para o corpo do texto e **Manrope** para títulos, configuradas no `global.css`.
+
+<h1>Título H1 - Manrope Bold 30px</h1>
+<h2>Título H2 - Manrope Bold 24px</h2>
+<h3>Título H3 - Manrope SemiBold 20px</h3>
+<h4>Título H4 - Inter SemiBold 18px</h4>
+
+<p>
+  Este é um parágrafo padrão (`p`). O corpo do texto utiliza a fonte **Inter** com tamanho de 16px (`1rem`). 
+  A cor padrão é o cinza escuro definido pelo token `--color-text-primary`. 
+  As alturas de linha seguem as diretrizes de legibilidade do Datta System.
+</p>
+
+<p>
+  <small>Este é um texto pequeno (`small`) com 12px de tamanho.</small>
+</p>
+
+## Links
+
+Os links são estilizados com a cor primária (Azul) e possuem uma transição suave no hover.
+
+<a href="#">Exemplo de link padrão</a>
+
+## Foco de Acessibilidade (Acessibilidade)
+
+Todos os elementos interativos recebem um anel de foco personalizado quando navegados via teclado (`:focus-visible`).
+
+<button style={{ 
+  padding: '8px 16px', 
+  backgroundColor: 'var(--color-primary)', 
+  color: 'white', 
+  border: 'none', 
+  borderRadius: 'var(--radius-md)',
+  cursor: 'pointer'
+}}>
+  Clique para testar o foco (Tab)
+</button>
+
+## Utilitários
+
+### Screen Reader Only (.sr-only)
+
+A classe `.sr-only` é utilizada para esconder conteúdo visualmente, mantendo-o acessível para leitores de tela.
+
+<div style={{ padding: '16px', border: '1px solid var(--color-border-default)', borderRadius: 'var(--radius-md)' }}>
+  O texto abaixo está presente no HTML, mas é invisível:
+  <span className="sr-only">Este texto é lido apenas por leitores de tela.</span>
+</div>
+
+## Aplicação Global
+
+Os estilos globais garantem que:
+- O `box-sizing` seja sempre `border-box`.
+- Margens e paddings padrão de navegadores sejam resetados.
+- A suavização de fonte esteja ativa para melhor legibilidade em telas.
+- A cor de fundo da página seja o cinza muito claro (`--color-bg-secondary`).

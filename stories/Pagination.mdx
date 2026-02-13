@@ -1,0 +1,71 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
+import * as PaginationStories from './Pagination.stories';
+
+<Meta of={PaginationStories} />
+
+# Pagination
+
+O componente **Pagination** permite ao usuário navegar entre grandes conjuntos de dados divididos em páginas. É essencial para tabelas e listagens, garantindo que o usuário possa localizar registros sem sobrecarga cognitiva ou de performance.
+
+## Quando usar
+- Em tabelas com muitos registros (ex: processos, listagem de servidores).
+- Em resultados de busca.
+- Sempre que o volume de dados puder degradar o tempo de carregamento da página se exibido de uma só vez.
+
+## Anatomia
+O componente é composto por:
+1. **Informação de resultados:** Exibe o intervalo atual e o total de itens.
+2. **Controles de navegação:** Botões Anterior e Próximo.
+3. **Botões numéricos:** Atalhos para acesso direto às páginas, com truncamento inteligente ("...") para lidar com grandes quantidades.
+4. **Itens por página (opcional):** Seletor para alterar a densidade de registros.
+
+## Variantes
+
+### Padrão
+Exibe todas as informações e controles numéricos.
+
+<Canvas of={PaginationStories.Default} />
+
+### Truncamento Inteligente
+O componente exibe no máximo 7 botões numéricos, garantindo um tamanho compacto em resoluções como **1366x768**.
+
+#### Próximo ao início
+<Canvas of={PaginationStories.NearBeginning} />
+
+#### No meio
+<Canvas of={PaginationStories.Middle} />
+
+#### Próximo ao fim
+<Canvas of={PaginationStories.NearEnd} />
+
+### Simples
+Utilizado em fluxos sequenciais (wizards) ou onde o número total de páginas é desconhecido.
+
+<Canvas of={PaginationStories.Simple} />
+
+### Compacta
+Ideal para espaços reduzidos ou sidebars.
+
+<Canvas of={PaginationStories.Compact} />
+
+### Com Itens por Página
+Integra-se ao componente `Select` para permitir que o usuário escolha quantos itens deseja ver por vez.
+
+<Canvas of={PaginationStories.WithItemsPerPage} />
+
+## Acessibilidade
+- Estruturado com `<nav>` e `aria-label="Paginação de resultados"`.
+- Utiliza `<ul>` e `<li>` para listar os itens de navegação.
+- A página atual é marcada com `aria-current="page"`.
+- Botões desabilitados (ex: Anterior na primeira página) utilizam o atributo `disabled`.
+- O ellipsis ("...") é ocultado de tecnologias assistivas via `aria-hidden="true"`.
+- Navegação completa via teclado utilizando a tecla `Tab`.
+
+## Propriedades (Controls)
+<Controls />
+
+## Tokens Utilizados
+- **Cores:** `--color-blue-500` (ativo), `--color-gray-200` (borda), `--color-gray-700` (texto), `--color-white` (fundo).
+- **Tipografia:** `--font-family-primary`, `--font-size-sm`.
+- **Forma:** `--radius-md`.
+- **Espaçamento:** `--spacing-1` (entre botões), `--spacing-4` (entre seções).

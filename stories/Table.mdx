@@ -1,0 +1,65 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
+import * as TableStories from './Table.stories';
+
+<Meta of={TableStories} />
+
+# Table (Tabela de Dados)
+
+O componente Table é utilizado para organizar e exibir dados de forma tabular, permitindo que o usuário visualize, compare e interaja com grandes volumes de informação.
+
+## Quando usar
+- Para exibir listas de registros (processos, usuários, logs).
+- Quando a comparação entre diferentes atributos de um item é necessária.
+- Em relatórios e dashboards.
+
+## Anatomia
+A tabela é composta por um wrapper (para scroll horizontal), caption descritivo, cabeçalho fixo ou estático, corpo com zebra striping e coluna opcional de ações.
+
+## Estados e Variantes
+
+### Ordenação
+Colunas marcadas como `sortable` exibem botões de ordenação que alternam entre ascendente, descendente e nenhum.
+
+<Canvas of={TableStories.Sortable} />
+
+### Seleção
+Permite selecionar uma ou mais linhas para ações em lote.
+
+<Canvas of={TableStories.Selectable} />
+
+### Ações
+Coluna dedicada para botões de interação rápida por linha.
+
+<Canvas of={TableStories.WithActions} />
+
+### Densidade
+Suporta três níveis de densidade: `compact` (para muitos dados), `default` e `comfortable` (para leitura facilitada).
+
+<Canvas of={TableStories.Compact} />
+<Canvas of={TableStories.Comfortable} />
+
+### Cabeçalho Fixo (Sticky)
+O cabeçalho permanece visível enquanto o usuário navega pelas linhas.
+
+<Canvas of={TableStories.StickyHeader} />
+
+### Estado Vazio
+Exibido quando não há dados a serem mostrados.
+
+<Canvas of={TableStories.Empty} />
+
+## Acessibilidade
+- Utiliza tags semânticas nativas (`<table>`, `<thead>`, `<tbody>`, `<th>`, `<td>`).
+- `<caption>` obrigatório para descrição da tabela.
+- `scope="col"` aplicado em todos os cabeçalhos.
+- Gerenciamento dinâmico de `aria-sort`.
+- Navegação por teclado via `Tab` entre elementos interativos.
+
+## Propriedades (Controls)
+<Controls />
+
+## Tokens Utilizados
+- **Cores:** `--color-gray-100` (fundo head), `--color-gray-200` (bordas), `--color-blue-50` (hover), `--color-blue-500` (sort/seleção).
+- **Tipografia:** `--font-family-primary`, `--font-size-sm`.
+- **Forma:** `--radius-md`, `--shadow-sm`.
+- **Espaçamento:** `--spacing-1`, `--spacing-3`, `--spacing-4`.

@@ -1,0 +1,73 @@
+import { Meta, Primary, Controls, Story, Canvas } from '@storybook/blocks';
+import * as InputStories from './Input.stories';
+
+<Meta of={InputStories} />
+
+# Input
+
+O componente **Input** permite que os usuários insiram e editem texto. É um dos elementos fundamentais para a construção de formulários no Datta System.
+
+## Diretrizes de Uso
+
+- **Label:** Sempre use um rótulo (label) claro e descritivo acima do campo. Nunca use apenas o placeholder para identificar o campo.
+- **Helper Text:** Use para fornecer dicas contextuais ou instruções sobre o formato esperado (ex: "Mínimo 8 caracteres").
+- **Estados de Erro:** Forneça mensagens de erro claras e educativas que ajudem o usuário a corrigir o problema.
+- **Campos Obrigatórios:** Indique campos obrigatórios visualmente com um asterisco (*) e tecnicamente com `aria-required`.
+
+## Variantes e Estados
+
+### Padrão
+O estado inicial do campo com label e placeholder.
+
+<Canvas of={InputStories.Default} />
+
+### Tamanhos
+Disponível em três tamanhos para se adequar a diferentes contextos de densidade de interface.
+
+- **sm (32px):** Para interfaces densas ou áreas reduzidas.
+- **md (40px):** Tamanho padrão, recomendado para a maioria dos casos.
+- **lg (48px):** Para áreas de destaque ou formulários simplificados.
+
+<Canvas of={InputStories.Small} />
+<Canvas of={InputStories.Default} />
+<Canvas of={InputStories.Large} />
+
+### Senha (Password)
+Inclui um botão funcional para alternar a visibilidade do texto digitado.
+
+<Canvas of={InputStories.Password} />
+
+### Com Erro
+Destaca o campo em vermelho e exibe uma mensagem de erro com ícone, substituindo o helper text.
+
+<Canvas of={InputStories.Error} />
+
+### Desabilitado e Somente Leitura
+- **Disabled:** O campo fica acinzentado e não recebe foco nem interação.
+- **Read-only:** O valor pode ser selecionado e copiado, mas não editado. O fundo é levemente acinzentado para diferenciar do campo ativo.
+
+<Canvas of={InputStories.Disabled} />
+<Canvas of={InputStories.ReadOnly} />
+
+### Com Ícones
+Suporte a ícones decorativos à esquerda para reforçar o contexto do campo (ex: busca, usuário).
+
+<Canvas of={InputStories.Search} />
+
+## Acessibilidade
+
+- **Conectividade:** O `<label>` é automaticamente conectado ao `<input>` via atributo `for`.
+- **Navegação:** Totalmente navegável por teclado via `Tab`.
+- **Leitores de Tela:** Utiliza atributos ARIA (`aria-invalid`, `aria-describedby`, `aria-required`) para comunicar estados e relações aos usuários de tecnologias assistivas.
+
+## Propriedades (Args)
+<Controls />
+
+## Anatomia
+O Input é composto por uma label superior, um wrapper de campo que pode conter ícones e o elemento `<input>` nativo, e uma área inferior para mensagens de ajuda ou erro.
+
+## Tokens Utilizados
+- **Cores:** `--color-gray-400` (borda), `--color-blue-500` (foco), `--color-red-500` (erro), `--color-white` (fundo).
+- **Tipografia:** `--font-family-primary`, `--font-size-sm` (label), `--font-size-base` (input).
+- **Forma:** `--radius-md`.
+- **Espaçamento:** `--spacing-1`, `--spacing-2`, `--spacing-3`.

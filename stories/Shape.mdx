@@ -1,0 +1,121 @@
+import { Meta, Canvas } from '@storybook/blocks';
+
+<Meta title="tokens/Shape" />
+
+# Shape (Forma)
+
+Os tokens de forma definem a personalidade tátil do Datta System, controlando arredondamento, elevação (sombras) e limites visuais.
+
+## Border Radius (Cantos)
+
+Utilizados para suavizar os cantos de componentes. O padrão para a maioria dos elementos (botões, inputs, cards) é `--radius-md` (6px).
+
+<div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', marginTop: '24px' }}>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <div style={{ width: '100px', height: '100px', backgroundColor: 'var(--color-blue-500)', borderRadius: 'var(--radius-none)', border: '1px solid var(--color-gray-200)' }}></div>
+    <code style={{ fontSize: '12px' }}>--radius-none (0px)</code>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <div style={{ width: '100px', height: '100px', backgroundColor: 'var(--color-blue-500)', borderRadius: 'var(--radius-sm)' }}></div>
+    <code style={{ fontSize: '12px' }}>--radius-sm (4px)</code>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <div style={{ width: '100px', height: '100px', backgroundColor: 'var(--color-blue-500)', borderRadius: 'var(--radius-md)' }}></div>
+    <code style={{ fontSize: '12px' }}>--radius-md (6px)</code>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <div style={{ width: '100px', height: '100px', backgroundColor: 'var(--color-blue-500)', borderRadius: 'var(--radius-lg)' }}></div>
+    <code style={{ fontSize: '12px' }}>--radius-lg (8px)</code>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <div style={{ width: '100px', height: '100px', backgroundColor: 'var(--color-blue-500)', borderRadius: 'var(--radius-xl)' }}></div>
+    <code style={{ fontSize: '12px' }}>--radius-xl (12px)</code>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <div style={{ width: '100px', height: '100px', backgroundColor: 'var(--color-blue-500)', borderRadius: 'var(--radius-full)' }}></div>
+    <code style={{ fontSize: '12px' }}>--radius-full (9999px)</code>
+  </div>
+</div>
+
+## Sombras (Box Shadow)
+
+As sombras no Datta System são sutis e indicam elevação funcional. O foco é manter a interface limpa e profissional.
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginTop: '24px' }}>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '24px', padding: '16px', backgroundColor: 'var(--color-gray-50)', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-xs)' }}>
+    <div style={{ width: '60px', height: '60px', backgroundColor: 'white', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-xs)' }}></div>
+    <div>
+      <strong>--shadow-xs</strong><br/>
+      <code>0 1px 2px rgba(0, 0, 0, 0.05)</code><br/>
+      <small>Uso: Botões em repouso, elementos com elevação mínima.</small>
+    </div>
+  </div>
+
+  <div style={{ display: 'flex', alignItems: 'center', gap: '24px', padding: '16px', backgroundColor: 'var(--color-gray-50)', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
+    <div style={{ width: '60px', height: '60px', backgroundColor: 'white', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-sm)' }}></div>
+    <div>
+      <strong>--shadow-sm</strong><br/>
+      <code>0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04)</code><br/>
+      <small>Uso: Cards padrão, elevação sutil.</small>
+    </div>
+  </div>
+
+  <div style={{ display: 'flex', alignItems: 'center', gap: '24px', padding: '16px', backgroundColor: 'var(--color-gray-50)', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-md)' }}>
+    <div style={{ width: '60px', height: '60px', backgroundColor: 'white', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-md)' }}></div>
+    <div>
+      <strong>--shadow-md</strong><br/>
+      <code>0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.04)</code><br/>
+      <small>Uso: Dropdowns, popovers, estados de hover em cards.</small>
+    </div>
+  </div>
+
+  <div style={{ display: 'flex', alignItems: 'center', gap: '24px', padding: '16px', backgroundColor: 'var(--color-gray-50)', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-lg)' }}>
+    <div style={{ width: '60px', height: '60px', backgroundColor: 'white', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-lg)' }}></div>
+    <div>
+      <strong>--shadow-lg</strong><br/>
+      <code>0 10px 15px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.04)</code><br/>
+      <small>Uso: Modais, painéis flutuantes.</small>
+    </div>
+  </div>
+</div>
+
+### Anéis de Foco (Focus Rings)
+
+Tokens específicos para indicação de foco e estados de erro em componentes interativos.
+
+<div style={{ display: 'flex', gap: '32px', marginTop: '24px' }}>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+    <button style={{ padding: '8px 16px', border: '1px solid var(--color-blue-500)', borderRadius: 'var(--radius-md)', backgroundColor: 'white', boxShadow: 'var(--shadow-focus)', cursor: 'default' }}>Botão com Foco</button>
+    <code>--shadow-focus</code>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+    <button style={{ padding: '8px 16px', border: '1px solid var(--color-red-500)', borderRadius: 'var(--radius-md)', backgroundColor: 'white', boxShadow: 'var(--shadow-error)', cursor: 'default' }}>Campo com Erro</button>
+    <code>--shadow-error</code>
+  </div>
+</div>
+
+## Bordas (Borders)
+
+| Token | Valor | Uso |
+|-------|-------|-----|
+| `--border-width-thin` | 1px | Padrão para cards, inputs e separadores. |
+| `--border-width-medium` | 2px | Borda de destaque para foco ou abas ativas. |
+| `--border-width-thick` | 3px | Indicadores de seleção lateral. |
+
+## Transições (Transitions)
+
+Animações sutis garantem uma experiência fluida sem distrair o usuário.
+
+| Token | Valor | Uso |
+|-------|-------|-----|
+| `--transition-fast` | 150ms ease | Mudanças de cor em hover e foco. |
+| `--transition-normal` | 250ms ease | Abertura de dropdowns e expansões simples. |
+| `--transition-slow` | 350ms ease | Entrada e saída de modais ou transições de página. |
+
+## Opacidade (Opacity)
+
+| Token | Valor | Uso |
+|-------|-------|-----|
+| `--opacity-disabled` | 0.5 | Elementos que não estão disponíveis para interação. |
+| `--opacity-hover` | 0.8 | Overlays leves. |
+| `--opacity-overlay` | 0.5 | Fundo escurecido atrás de modais (Backdrop). |

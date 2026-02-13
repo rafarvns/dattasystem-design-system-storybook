@@ -1,0 +1,233 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+<Meta title="Validação/Sprint 1 - Quality Gate" />
+
+# Validação Sprint 1 — Quality Gate (1366×768)
+
+Esta página consolida todos os Design Tokens do **Datta System** para validação visual na resolução-alvo de **1366×768**.
+
+---
+
+## 1. Cores e Contraste
+
+### 1.1 Paleta Base e Aliases Semânticos
+Abaixo estão as cores principais e seus aliases. A validação de acessibilidade (WCAG AA) é baseada nessas definições.
+
+<ColorPalette>
+  <ColorItem
+    title="Primária (Azul)"
+    subtitle="Confiança e Institucionalidade"
+    colors={{
+      'Blue 900': 'var(--color-blue-900)',
+      'Blue 700': 'var(--color-blue-700)',
+      'Blue 500 (Primary)': 'var(--color-blue-500)',
+      'Blue 300': 'var(--color-blue-300)',
+      'Blue 100': 'var(--color-blue-100)',
+      'Blue 50': 'var(--color-blue-50)',
+    }}
+  />
+  <ColorItem
+    title="Ação (Vermelho)"
+    subtitle="Atenção e Crítico"
+    colors={{
+      'Red 700': 'var(--color-red-700)',
+      'Red 500 (Danger)': 'var(--color-red-500)',
+      'Red 300': 'var(--color-red-300)',
+      'Red 100': 'var(--color-red-100)',
+      'Red 50': 'var(--color-red-50)',
+    }}
+  />
+  <ColorItem
+    title="Neutros"
+    subtitle="Estrutura e Legibilidade"
+    colors={{
+      'Gray 900': 'var(--color-gray-900)',
+      'Gray 800 (Text)': 'var(--color-gray-800)',
+      'Gray 600': 'var(--color-gray-600)',
+      'Gray 400': 'var(--color-gray-400)',
+      'Gray 200': 'var(--color-gray-200)',
+      'Gray 100': 'var(--color-gray-100)',
+      'Gray 50 (BG)': 'var(--color-gray-50)',
+      'White': 'var(--color-white)',
+    }}
+  />
+</ColorPalette>
+
+---
+
+## 2. Tipografia
+
+Verificação da escala tipográfica e carregamento das fontes **Inter** (corpo) e **Manrope** (títulos).
+
+<div className="validation-section">
+  <div className="text-heading-1">Heading 1 - O serviço público é para todos (30px)</div>
+  <code className="text-caption">.text-heading-1 | Manrope | Bold</code>
+  
+  <div className="text-heading-2" style={{ marginTop: 'var(--spacing-4)' }}>Heading 2 - O serviço público é para todos (24px)</div>
+  <code className="text-caption">.text-heading-2 | Manrope | Bold</code>
+
+  <div className="text-heading-3" style={{ marginTop: 'var(--spacing-4)' }}>Heading 3 - O serviço público é para todos (20px)</div>
+  <code className="text-caption">.text-heading-3 | Manrope | Semibold</code>
+
+  <div className="text-subtitle" style={{ marginTop: 'var(--spacing-4)' }}>Subtitle - O serviço público é para todos (18px)</div>
+  <code className="text-caption">.text-subtitle | Inter | Semibold</code>
+
+  <p className="text-body" style={{ marginTop: 'var(--spacing-4)' }}>
+    Body - O serviço público é para todos. Este é o texto padrão utilizado para parágrafos e descrições longas, garantindo legibilidade e conforto visual em longas jornadas de trabalho. (16px)
+  </p>
+  <code className="text-caption">.text-body | Inter | Regular</code>
+
+  <div className="text-label" style={{ marginTop: 'var(--spacing-4)' }}>Label - Nome Completo (14px)</div>
+  <code className="text-caption">.text-label | Inter | Medium</code>
+
+  <div className="text-button" style={{ marginTop: 'var(--spacing-4)', display: 'inline-block', padding: 'var(--spacing-2) var(--spacing-4)', background: 'var(--color-primary)', color: 'var(--color-white)', borderRadius: 'var(--radius-md)' }}>
+    Botão Exemplo (14px)
+  </div>
+  <code className="text-caption" style={{ display: 'block' }}>.text-button | Inter | Semibold</code>
+</div>
+
+---
+
+## 3. Espaçamento e Layout
+
+### 3.1 Escala de Espaçamento
+Visualização da escala base 4px.
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-2)' }}>
+  {[1, 2, 3, 4, 5, 6, 8, 10, 12, 16].map(s => (
+    <div key={s} style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-4)' }}>
+      <div style={{ width: `var(--spacing-${s})`, height: '20px', background: 'var(--color-blue-300)', borderRadius: '2px' }}></div>
+      <span className="text-caption">--spacing-{s} ({s * 4}px)</span>
+    </div>
+  ))}
+</div>
+
+### 3.2 Grid System (12 Colunas)
+Simulação do grid em uma área de 1302px (largura útil para 1366px).
+
+<div style={{ 
+  maxWidth: 'var(--grid-max-width)', 
+  margin: '0 auto', 
+  background: 'var(--color-gray-100)', 
+  padding: 'var(--spacing-4)',
+  border: '1px dashed var(--color-gray-400)'
+}}>
+  <div style={{ 
+    display: 'grid', 
+    gridTemplateColumns: `repeat(var(--grid-columns), 1fr)`, 
+    gap: 'var(--grid-gutter)',
+    height: '100px'
+  }}>
+    {Array.from({ length: 12 }).map((_, i) => (
+      <div key={i} style={{ 
+        background: 'rgba(0, 82, 204, 0.1)', 
+        border: '1px solid var(--color-blue-300)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: '10px',
+        color: 'var(--color-blue-700)'
+      }}>
+        {i + 1}
+      </div>
+    ))}
+  </div>
+  <p className="text-caption" style={{ textAlign: 'center', marginTop: 'var(--spacing-2)' }}>
+    Largura Máxima: 1302px | Gutter: 24px | 12 Colunas
+  </p>
+</div>
+
+---
+
+## 4. Forma e Elevação
+
+<div style={{ display: 'flex', gap: 'var(--spacing-8)', flexWrap: 'wrap' }}>
+  <div>
+    <h4 className="text-heading-3">Border Radius</h4>
+    <div style={{ display: 'flex', gap: 'var(--spacing-4)', marginTop: 'var(--spacing-4)' }}>
+      <div style={{ width: '60px', height: '60px', background: 'var(--color-white)', border: '1px solid var(--color-gray-200)', borderRadius: 'var(--radius-sm)' }}></div>
+      <div style={{ width: '60px', height: '60px', background: 'var(--color-white)', border: '1px solid var(--color-gray-200)', borderRadius: 'var(--radius-md)' }}></div>
+      <div style={{ width: '60px', height: '60px', background: 'var(--color-white)', border: '1px solid var(--color-gray-200)', borderRadius: 'var(--radius-lg)' }}></div>
+    </div>
+    <span className="text-caption">sm (4px), md (6px), lg (8px)</span>
+  </div>
+
+  <div>
+    <h4 className="text-heading-3">Sombras (Elevação)</h4>
+    <div style={{ display: 'flex', gap: 'var(--spacing-6)', marginTop: 'var(--spacing-4)' }}>
+      <div style={{ width: '100px', height: '60px', background: 'var(--color-white)', boxShadow: 'var(--shadow-sm)', borderRadius: 'var(--radius-md)', padding: 'var(--spacing-2)' }}>
+        <span className="text-caption">Card (sm)</span>
+      </div>
+      <div style={{ width: '100px', height: '60px', background: 'var(--color-white)', boxShadow: 'var(--shadow-md)', borderRadius: 'var(--radius-md)', padding: 'var(--spacing-2)' }}>
+        <span className="text-caption">Menu (md)</span>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <h4 className="text-heading-3">Acessibilidade: Foco</h4>
+    <div style={{ marginTop: 'var(--spacing-4)' }}>
+      <button style={{ 
+        padding: 'var(--spacing-2) var(--spacing-4)', 
+        borderRadius: 'var(--radius-md)', 
+        border: '1px solid var(--color-gray-300)',
+        background: 'var(--color-white)',
+        cursor: 'pointer'
+      }} className="focus-demo">
+        Clique para ver o foco
+      </button>
+      <style>{`
+        .focus-demo:focus {
+          outline: none;
+          box-shadow: var(--shadow-focus);
+        }
+      `}</style>
+    </div>
+  </div>
+</div>
+
+---
+
+## 5. Exemplo de Composição (Conceito Card)
+Validação do princípio: "Em 1366×768, dois cards lado a lado cabem confortavelmente".
+
+<div style={{ 
+  display: 'flex', 
+  gap: 'var(--spacing-6)', 
+  maxWidth: 'var(--grid-max-width)', 
+  margin: 'var(--spacing-8) auto' 
+}}>
+  <div style={{ 
+    flex: 1, 
+    background: 'var(--color-white)', 
+    borderRadius: 'var(--radius-md)', 
+    boxShadow: 'var(--shadow-sm)', 
+    border: '1px solid var(--color-gray-100)',
+    padding: 'var(--spacing-6)'
+  }}>
+    <h4 className="text-heading-3">Protocolo Digital</h4>
+    <p className="text-body-sm" style={{ color: 'var(--color-text-secondary)', marginTop: 'var(--spacing-2)' }}>
+      Acompanhe o status do seu requerimento administrativo em tempo real.
+    </p>
+    <div style={{ marginTop: 'var(--spacing-4)', display: 'flex', justifyContent: 'flex-end' }}>
+      <span className="text-button" style={{ color: 'var(--color-primary)' }}>Ver detalhes</span>
+    </div>
+  </div>
+
+  <div style={{ 
+    flex: 1, 
+    background: 'var(--color-white)', 
+    borderRadius: 'var(--radius-md)', 
+    boxShadow: 'var(--shadow-sm)', 
+    border: '1px solid var(--color-gray-100)',
+    padding: 'var(--spacing-6)'
+  }}>
+    <h4 className="text-heading-3">Servidor Exemplar</h4>
+    <p className="text-body-sm" style={{ color: 'var(--color-text-secondary)', marginTop: 'var(--spacing-2)' }}>
+      Acesse o portal de capacitação e manuais do sistema Datta.
+    </p>
+    <div style={{ marginTop: 'var(--spacing-4)', display: 'flex', justifyContent: 'flex-end' }}>
+      <span className="text-button" style={{ color: 'var(--color-primary)' }}>Acessar agora</span>
+    </div>
+  </div>
+</div>

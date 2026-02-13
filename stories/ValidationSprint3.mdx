@@ -1,0 +1,70 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Validação/Sprint 3 - Quality Gate" />
+
+# Validação Sprint 3 — Quality Gate (1366×768)
+
+Esta página consolida a validação dos componentes compostos da **Sprint 3**, simulando fluxos e resoluções reais de sistemas governamentais.
+
+---
+
+## 1. Critérios de Acessibilidade (WCAG 2.1 AA)
+
+| Componente | Role/Atributo | Status |
+|------------|---------------|--------|
+| **Navbar** | `role="navigation"`, `role="menubar"`, `aria-expanded` | ✅ |
+| **Modal** | `role="dialog"`, `aria-modal="true"`, Focus Trap | ✅ |
+| **Table** | `scope="col"`, `aria-sort` | ✅ |
+| **Alert** | `role="alert"`, `aria-live` | ✅ |
+| **Tooltip** | `role="tooltip"`, `aria-describedby` | ✅ |
+| **Breadcrumb** | `role="navigation"`, `aria-current="page"` | ✅ |
+| **Tabs** | `role="tablist"`, `aria-selected`, `aria-controls` | ✅ |
+| **Pagination** | `role="navigation"`, `aria-current="page"` | ✅ |
+
+---
+
+## 2. Validação Visual em 1366×768
+
+### 2.1 Layout Shell e Navbar
+A Navbar deve manter-se em 56px de altura, com todos os itens visíveis e sem overflow horizontal.
+
+<div style={{ height: '80px', border: '1px solid var(--color-gray-200)', overflow: 'hidden', position: 'relative' }}>
+  <iframe src="iframe.html?id=componentes-compostos-navbar--default&viewMode=story" style={{ width: '100%', height: '56px', border: 'none' }}></iframe>
+</div>
+
+### 2.2 Tabela e Paginação (Densidade)
+Validando a harmonia entre a listagem de dados e os controles de navegação.
+
+<div style={{ padding: 'var(--spacing-4)', background: 'var(--color-bg-secondary)', borderRadius: 'var(--radius-md)' }}>
+  <iframe src="iframe.html?id=componentes-compostos-table--com-ordenacao&viewMode=story" style={{ width: '100%', height: '300px', border: 'none' }}></iframe>
+  <div style={{ marginTop: 'var(--spacing-4)' }}>
+    <iframe src="iframe.html?id=componentes-compostos-pagination--default&viewMode=story" style={{ width: '100%', height: '80px', border: 'none' }}></iframe>
+  </div>
+</div>
+
+### 2.3 Feedback e Tooltips
+Verificando a clareza das mensagens de alerta e a utilidade dos tooltips contextuais.
+
+<div style={{ display: 'flex', gap: 'var(--spacing-4)', flexWrap: 'wrap', padding: 'var(--spacing-4)' }}>
+  <div style={{ flex: 1, minWidth: '300px' }}>
+    <iframe src="iframe.html?id=componentes-compostos-alert--success&viewMode=story" style={{ width: '100%', height: '100px', border: 'none' }}></iframe>
+  </div>
+  <div style={{ flex: 1, minWidth: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <iframe src="iframe.html?id=componentes-compostos-tooltip--top&viewMode=story" style={{ width: '100%', height: '100px', border: 'none' }}></iframe>
+  </div>
+</div>
+
+---
+
+## 3. Checklist Final de Entrega
+
+- [ ] Todos os 8 componentes possuem stories e documentação MDX.
+- [ ] O Focus Trap do Modal foi testado e está funcional.
+- [ ] A navegação por teclado (setas) nas Tabs funciona conforme o padrão W3C.
+- [ ] O truncamento da paginação e do breadcrumb protege o layout em 1366px.
+- [ ] Nenhum componente possui valores de estilo "hardcoded" (100% Tokens).
+- [ ] O build de produção do Storybook (`npm run build-storybook`) executa sem erros.
+
+---
+
+*Assinado: Junie - Autonomous AI Agent*

@@ -1,0 +1,16 @@
+/* Arquivo principal de estilos do Datta System */
+
+/* 1. Design Tokens */
+@import '../tokens/colors.css';
+@import '../tokens/typography.css';
+@import '../tokens/spacing.css';
+@import '../tokens/shape.css';
+
+/* 2. Fontes */
+@import './fonts.css';
+
+/* 3. Reset */
+@import './reset.css';
+
+/* 4. Estilos Globais */
+@import './global.css';

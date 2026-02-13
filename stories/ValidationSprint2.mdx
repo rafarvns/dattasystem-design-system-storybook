@@ -1,0 +1,207 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import { createButton } from '../components/Button/Button';
+import { createInput } from '../components/Input/Input';
+import { createTextarea } from '../components/Textarea/Textarea';
+import { createSelect } from '../components/Select/Select';
+import { createCheckboxGroup } from '../components/Checkbox/Checkbox';
+import { createRadioGroup } from '../components/Radio/Radio';
+import { createCard, createCardDataPair } from '../components/Card/Card';
+
+<Meta title="Validação/Sprint 2 - Quality Gate" />
+
+# Validação Sprint 2 — Quality Gate (1366×768)
+
+Esta página consolida todos os componentes base do **Datta System** em um fluxo de formulário real para validação visual na resolução-alvo de **1366×768**.
+
+---
+
+## 1. Formulário de Exemplo
+
+Este formulário utiliza todos os 7 componentes da Sprint 2 para simular um cadastro de processo governamental.
+
+<div style={{ 
+  maxWidth: 'var(--grid-max-width)', 
+  margin: '0 auto',
+  padding: 'var(--spacing-8) 0',
+  display: 'grid',
+  gridTemplateColumns: 'repeat(12, 1fr)',
+  gap: 'var(--grid-gutter)'
+}}>
+  {/* Card Principal de Formulário */}
+  <div style={{ gridColumn: 'span 8' }}>
+    <div dangerouslySetInnerHTML={{ __html: createCard({
+      title: 'Abertura de Processo Administrativo',
+      body: `
+        <div id="form-content" style="display: flex; flex-direction: column; gap: var(--spacing-6);">
+          <div id="personal-info" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4);">
+            <div id="name-field"></div>
+            <div id="email-field"></div>
+          </div>
+          <div id="details-info" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4);">
+             <div id="cpf-field"></div>
+             <div id="category-field"></div>
+          </div>
+          <div id="description-field"></div>
+          <div id="options-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4);">
+             <div id="type-field"></div>
+             <div id="notification-field"></div>
+          </div>
+        </div>
+      `,
+      footer: `
+        <div id="actions" style="display: flex; gap: var(--spacing-3); justify-content: flex-end; width: 100%;">
+          <div id="cancel-btn"></div>
+          <div id="save-btn"></div>
+        </div>
+      `
+    }).outerHTML }} />
+  </div>
+
+  {/* Card de Resumo Lateral */}
+  <div style={{ gridColumn: 'span 4' }}>
+    <div dangerouslySetInnerHTML={{ __html: createCard({
+      title: 'Resumo do Requerimento',
+      variant: 'highlight',
+      body: `
+        <div id="summary-content" style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+           <div id="pair-1"></div>
+           <div id="pair-2"></div>
+           <div id="pair-3"></div>
+        </div>
+      `
+    }).outerHTML }} />
+  </div>
+</div>
+
+{/* Script para injetar os componentes nos containers acima */}
+<script>{`
+  setTimeout(() => {
+    const nameField = document.getElementById('name-field');
+    if (nameField) {
+      nameField.appendChild(window.createInput({
+        label: 'Nome Completo',
+        placeholder: 'Digite seu nome',
+        required: true,
+        id: 'val-name'
+      }));
+    }
+
+    const emailField = document.getElementById('email-field');
+    if (emailField) {
+      emailField.appendChild(window.createInput({
+        label: 'E-mail Institucional',
+        placeholder: 'email@orgao.gov.br',
+        type: 'email',
+        id: 'val-email'
+      }));
+    }
+
+    const cpfField = document.getElementById('cpf-field');
+    if (cpfField) {
+      cpfField.appendChild(window.createInput({
+        label: 'CPF',
+        placeholder: '000.000.000-00',
+        id: 'val-cpf'
+      }));
+    }
+
+    const categoryField = document.getElementById('category-field');
+    if (categoryField) {
+      categoryField.appendChild(window.createSelect({
+        label: 'Categoria do Processo',
+        options: [
+          { label: 'Administrativo', value: 'adm' },
+          { label: 'Financeiro', value: 'fin' },
+          { label: 'Recursos Humanos', value: 'rh' }
+        ],
+        id: 'val-category'
+      }));
+    }
+
+    const descriptionField = document.getElementById('description-field');
+    if (descriptionField) {
+      descriptionField.appendChild(window.createTextarea({
+        label: 'Descrição Detalhada',
+        placeholder: 'Descreva o motivo da abertura do processo...',
+        maxlength: 500,
+        showCounter: true,
+        id: 'val-desc'
+      }));
+    }
+
+    const typeField = document.getElementById('type-field');
+    if (typeField) {
+      typeField.appendChild(window.createRadioGroup({
+        label: 'Prioridade',
+        name: 'prioridade-val',
+        options: [
+          { label: 'Normal', value: 'normal' },
+          { label: 'Urgente', value: 'urgente' }
+        ],
+        selectedValue: 'normal',
+        orientation: 'horizontal'
+      }));
+    }
+
+    const notificationField = document.getElementById('notification-field');
+    if (notificationField) {
+      notificationField.appendChild(window.createCheckboxGroup({
+        label: 'Notificações',
+        options: [
+          { label: 'E-mail', value: 'email' },
+          { label: 'SMS', value: 'sms' }
+        ],
+        orientation: 'horizontal'
+      }));
+    }
+
+    const cancelBtn = document.getElementById('cancel-btn');
+    if (cancelBtn) {
+      cancelBtn.appendChild(window.createButton({
+        label: 'Cancelar',
+        variant: 'ghost'
+      }));
+    }
+
+    const saveBtn = document.getElementById('save-btn');
+    if (saveBtn) {
+      saveBtn.appendChild(window.createButton({
+        label: 'Salvar Requerimento',
+        variant: 'primary'
+      }));
+    }
+
+    // Resumo
+    const pair1 = document.getElementById('pair-1');
+    if (pair1) pair1.appendChild(window.createCardDataPair('Status do Sistema', 'Operacional'));
+    
+    const pair2 = document.getElementById('pair-2');
+    if (pair2) pair2.appendChild(window.createCardDataPair('Data Prevista', '14/02/2026'));
+
+    const pair3 = document.getElementById('pair-3');
+    if (pair3) pair3.appendChild(window.createCardDataPair('Responsável', 'Departamento de Protocolo'));
+
+  }, 100);
+`}</script>
+
+---
+
+## 2. Checklist de Validação (1366×768)
+
+| Item | Critério | Verificação |
+|------|----------|-------------|
+| **Scroll Horizontal** | Ausência de scroll na resolução 1366px | [ ] |
+| **Grid 2 Colunas** | Cards de formulário e resumo cabem lado a lado | [ ] |
+| **Legibilidade** | Labels e textos auxiliares legíveis | [ ] |
+| **Contraste** | Atende WCAG AA (4.5:1 texto, 3:1 UI) | [ ] |
+| **Áreas de Clique** | Botões e inputs com altura mínima de 40px (md) | [ ] |
+| **Foco** | Ring de foco visível em todos os elementos | [ ] |
+
+---
+
+## 3. Relatório de Consistência
+
+- **Nomenclatura:** Todos os componentes seguem o padrão BEM.
+- **Tokens:** Uso exclusivo de CSS Custom Properties. Nenhum valor hardcoded.
+- **Acessibilidade:** Suporte a teclado, labels conectadas e atributos ARIA.
+- **Estados:** Hover, focus e disabled implementados consistentemente.

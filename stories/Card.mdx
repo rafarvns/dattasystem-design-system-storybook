@@ -1,0 +1,66 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
+import * as CardStories from './Card.stories';
+
+<Meta of={CardStories} />
+
+# Card
+
+O Card é um container flexível utilizado para agrupar informações relacionadas, como dados de processos, resumos de cadastro ou painéis informativos.
+
+## Quando usar
+- Para organizar conteúdos em blocos lógicos e independentes.
+- Em listagens de itens que requerem uma visualização resumida antes de detalhes profundos.
+- Para destacar informações importantes (usando as variantes de destaque).
+
+## Anatomia
+O card é composto por três áreas principais, todas opcionais:
+1. **Header:** Contém título, ícone, badges de status e ações rápidas.
+2. **Body:** Conteúdo livre. Comumente usa o padrão "Rótulo: Valor".
+3. **Footer:** Área para ações principais (botões e links).
+
+## Exemplos
+
+### Padrão
+O uso mais comum com ícone, título e dados formatados.
+
+<Canvas of={CardStories.Default} />
+
+### Com Rodapé
+Ideal quando o card precisa de ações explícitas.
+
+<Canvas of={CardStories.WithFooter} />
+
+### Destaque Informativo
+Usa uma borda lateral azul para indicar que o conteúdo é informativo ou institucional.
+
+<Canvas of={CardStories.FeaturedInfo} />
+
+### Destaque Crítico
+Usa uma borda lateral vermelha para alertar sobre erros ou ações urgentes.
+
+<Canvas of={CardStories.FeaturedDanger} />
+
+### Compacto
+Reduz os espaçamentos internos para visualizações em listas densas.
+
+<Canvas of={CardStories.Compact} />
+
+### Clicável
+O card inteiro se comporta como um link ou botão. Possui feedback visual de hover e active.
+
+<Canvas of={CardStories.Clickable} />
+
+## Acessibilidade
+- O componente utiliza a tag semântica `<article>`.
+- Quando clicável, utiliza a tag `<a>` com `aria-label` apropriado.
+- Títulos são renderizados como `<h3>`, respeitando a hierarquia de cabeçalhos.
+- Contraste de cores validado segundo WCAG AA.
+
+## Propriedades (Controls)
+<Controls />
+
+## Tokens Utilizados
+- **Cores:** `--color-gray-200` (borda), `--color-white` (fundo), `--color-blue-500` (ícone/destaque), `--color-red-500` (destaque crítico).
+- **Tipografia:** `--font-family-primary`, `--font-family-secondary` (títulos), `--font-size-md` (título), `--font-size-base` (corpo).
+- **Forma:** `--radius-md`, `--shadow-sm`, `--shadow-md` (hover clicável).
+- **Espaçamento:** `--spacing-3`, `--spacing-4`, `--spacing-6`.

@@ -1,0 +1,161 @@
+.ds-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-gray-200);
+  background-color: var(--color-white);
+  position: relative;
+}
+
+/* Indicador de scroll horizontal */
+.ds-table-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 32px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.9), transparent);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.ds-table-wrapper--has-scroll::after {
+  opacity: 1;
+}
+
+.ds-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-700);
+  text-align: left;
+}
+
+.ds-table__caption {
+  padding: var(--spacing-4);
+  background-color: var(--color-white);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-800);
+  text-align: left;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.ds-table__head {
+  background-color: var(--color-gray-100);
+}
+
+.ds-table__th {
+  padding: var(--spacing-3) var(--spacing-4);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-800);
+  white-space: nowrap;
+  border-bottom: 1px solid var(--color-gray-200);
+  background-color: var(--color-gray-100);
+}
+
+/* Sticky Header */
+.ds-table-wrapper--sticky .ds-table__th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.ds-table__td {
+  padding: var(--spacing-3) var(--spacing-4);
+  border-bottom: 1px solid var(--color-gray-200);
+  transition: background-color var(--transition-fast);
+}
+
+/* Zebra Striping */
+.ds-table__row:nth-child(even) {
+  background-color: var(--color-gray-50);
+}
+
+.ds-table__row:nth-child(odd) {
+  background-color: var(--color-white);
+}
+
+/* Hover effect */
+.ds-table__row:hover .ds-table__td {
+  background-color: var(--color-blue-50) !important;
+}
+
+/* Selected row */
+.ds-table__row--selected .ds-table__td {
+  background-color: var(--color-blue-100) !important;
+}
+
+.ds-table__row--selected .ds-table__td:first-child {
+  box-shadow: inset 4px 0 0 var(--color-blue-500);
+}
+
+/* Sort Button */
+.ds-table__sort-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.ds-table__th--sortable[aria-sort="ascending"] .ds-table__sort-btn,
+.ds-table__th--sortable[aria-sort="descending"] .ds-table__sort-btn {
+  color: var(--color-blue-500);
+}
+
+.ds-table__sort-icon {
+  color: var(--color-gray-400);
+}
+
+.ds-table__th--sortable[aria-sort="ascending"] .ds-table__sort-icon,
+.ds-table__th--sortable[aria-sort="descending"] .ds-table__sort-icon {
+  color: var(--color-blue-500);
+}
+
+/* Density Variants */
+.ds-table--compact .ds-table__th,
+.ds-table--compact .ds-table__td {
+  padding: var(--spacing-1) var(--spacing-4);
+}
+
+.ds-table--comfortable .ds-table__th,
+.ds-table--comfortable .ds-table__td {
+  padding: var(--spacing-4);
+}
+
+/* Actions Column */
+.ds-table__th--actions,
+.ds-table__td--actions {
+  text-align: right;
+  width: 1%;
+  white-space: nowrap;
+}
+
+.ds-table__td--actions .btn {
+  margin-left: var(--spacing-1);
+}
+
+/* Empty State */
+.ds-table__empty {
+  padding: var(--spacing-12);
+  text-align: center;
+  color: var(--color-gray-600);
+}
+
+/* Responsive fixes */
+@media (max-width: 1366px) {
+  .ds-table__th, .ds-table__td {
+    /* Manter densidade md como padrão equilibrado */
+  }
+}

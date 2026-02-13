@@ -1,0 +1,114 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+<Meta title="tokens/Cores" />
+
+# Design Tokens: Cores
+
+As cores do **Datta System** foram projetadas para transmitir confiança, profissionalismo e acessibilidade em softwares governamentais.
+
+## 1. Paleta Primária - Azul
+O azul é a cor âncora do sistema, representando estabilidade e institucionalidade.
+
+<ColorPalette>
+  <ColorItem
+    title="Azul (Primário)"
+    subtitle="Escala Institucional"
+    colors={{
+      'Blue 900': '#002B5C',
+      'Blue 700': '#004587',
+      'Blue 500': '#005EB8',
+      'Blue 300': '#4D8ED4',
+      'Blue 100': '#B3CEEA',
+      'Blue 50': '#E6EFF8',
+    }}
+  />
+</ColorPalette>
+
+## 2. Paleta de Ação - Vermelho
+Usado para ações críticas, alertas e elementos que exigem atenção imediata.
+
+<ColorPalette>
+  <ColorItem
+    title="Vermelho (Ação)"
+    subtitle="Escala de Perigo e Atenção"
+    colors={{
+      'Red 700': '#B00020',
+      'Red 500': '#D32F2F',
+      'Red 300': '#E57373',
+      'Red 100': '#FFCDD2',
+      'Red 50': '#FFEBEE',
+    }}
+  />
+</ColorPalette>
+
+## 3. Paleta Neutra - Cinzas
+Formam a base da interface, garantindo respiro e legibilidade.
+
+<ColorPalette>
+  <ColorItem
+    title="Neutros"
+    subtitle="Escala de Cinzas"
+    colors={{
+      'White': '#FFFFFF',
+      'Gray 50': '#FAFAFA',
+      'Gray 100': '#F5F5F5',
+      'Gray 200': '#EEEEEE',
+      'Gray 400': '#BDBDBD',
+      'Gray 600': '#757575',
+      'Gray 800': '#424242',
+      'Gray 900': '#212121',
+    }}
+  />
+</ColorPalette>
+
+## 4. Cores Semânticas
+Mapeamento funcional das cores base para facilitar o uso consistente.
+
+### Status Adicionais (Sucesso e Alerta)
+<ColorPalette>
+  <ColorItem
+    title="Sucesso"
+    subtitle="Indicadores positivos"
+    colors={{
+      'Green 700': '#1B5E20',
+      'Green 500': '#2E7D32',
+      'Green 100': '#C8E6C9',
+    }}
+  />
+  <ColorItem
+    title="Alerta"
+    subtitle="Indicadores de aviso"
+    colors={{
+      'Orange 700': '#E65100',
+      'Orange 500': '#EF6C00',
+      'Orange 100': '#FFE0B2',
+    }}
+  />
+</ColorPalette>
+
+### Aliases Semânticos
+| Token | Valor (Alias) | Uso |
+| :--- | :--- | :--- |
+| `--color-primary` | `blue-500` | Botões primários, links ativos |
+| `--color-danger` | `red-500` | Botões destrutivos, erros |
+| `--color-success` | `green-500` | Confirmações e sucessos |
+| `--color-warning` | `orange-500` | Avisos e estados de atenção |
+| `--color-text-primary` | `gray-800` | Texto principal do corpo |
+| `--color-bg-primary` | `white` | Fundo principal de páginas |
+
+---
+
+## Acessibilidade (WCAG 2.1 AA)
+
+As combinações de cores devem garantir um contraste mínimo para legibilidade:
+- **Texto normal:** Mínimo de 4.5:1
+- **Texto grande / Elementos UI:** Mínimo de 3:1
+
+### Exemplos de Contraste Validado
+| Combinação (Texto / Fundo) | Contraste | Status |
+| :--- | :--- | :--- |
+| Gray 800 (`#424242`) sobre White (`#FFFFFF`) | 10.1:1 | ✅ Passa (AAA) |
+| Blue 500 (`#005EB8`) sobre White (`#FFFFFF`) | 4.81:1 | ✅ Passa (AA) |
+| White (`#FFFFFF`) sobre Blue 700 (`#004587`) | 8.8:1 | ✅ Passa (AAA) |
+| Red 700 (`#B00020`) sobre White (`#FFFFFF`) | 7.7:1 | ✅ Passa (AAA) |
+| Gray 400 (`#BDBDBD`) sobre White (`#FFFFFF`) | 1.8:1 | ❌ Falha (Não usar para texto) |

@@ -1,0 +1,74 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/blocks';
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+O botăo é o elemento interativo mais fundamental da interface. Ele permite que os usuários realizem açőes com um único toque ou clique.
+
+## Diretrizes de Uso
+
+- **Primary:** Use para a açăo principal de uma página ou fluxo. Deve haver apenas um botăo primário por contexto visual.
+- **Secondary:** Use para açőes secundárias ou complementares à primária.
+- **Destructive:** Use para açőes que resultem em perda de dados ou consequências críticas (ex: excluir, cancelar requerimento).
+- **Ghost:** Use para açőes terciárias ou quando o botăo deve ter menor peso visual.
+
+## Variantes
+
+<Canvas of={ButtonStories.Primary} />
+<Canvas of={ButtonStories.Secondary} />
+<Canvas of={ButtonStories.Destructive} />
+<Canvas of={ButtonStories.Ghost} />
+
+## Tamanhos
+
+O botăo suporta três tamanhos para se adaptar a diferentes contextos de densidade.
+
+- **sm (Small):** 32px - Para interfaces compactas ou barras de ferramentas.
+- **md (Medium):** 40px - **Padrão** para a maioria dos fluxos, especialmente em 1366x768.
+- **lg (Large):** 48px - Para chamadas de destaque ou formulários simples.
+
+<Canvas of={ButtonStories.Small} />
+<Canvas of={ButtonStories.Medium} />
+<Canvas of={ButtonStories.Large} />
+
+## Estados
+
+O botăo possui feedbacks visuais para diferentes estados de interaçăo.
+
+### Desabilitado
+Usado quando a açăo năo está disponível no momento.
+
+<Canvas of={ButtonStories.Disabled} />
+
+### Carregando (Loading)
+Usado para indicar que uma açăo está sendo processada. O botăo torna-se năo interativo automaticamente.
+
+<Canvas of={ButtonStories.Loading} />
+
+## Ícones
+
+Botőes podem conter ícones para reforçar o significado da açăo.
+
+<Canvas of={ButtonStories.WithIconLeft} />
+<Canvas of={ButtonStories.WithIconRight} />
+<Canvas of={ButtonStories.IconOnly} />
+
+## Acessibilidade
+
+- Todos os botőes săo navegáveis via teclado (`Tab`, `Enter`, `Space`).
+- Botőes `icon-only` devem possuir um `aria-label` descritivo.
+- O contraste atende ao requisito WCAG AA (mínimo 4.5:1).
+
+## Propriedades
+<Controls />
+
+## Anatomia
+O botão é composto por um container (`<button>` ou `<a>`), um rótulo de texto opcional e ícones opcionais à esquerda ou direita.
+
+## Tokens Utilizados
+- **Cores:** `--color-blue-500`, `--color-blue-600`, `--color-blue-700`, `--color-red-500`, `--color-red-600`, `--color-red-700`, `--color-white`.
+- **Tipografia:** `--font-family-primary`, `--font-size-base`, `--font-weight-semibold`.
+- **Forma:** `--radius-md`, `--transition-fast`.
+- **Espaçamento:** `--spacing-2`, `--spacing-3`, `--spacing-4`.

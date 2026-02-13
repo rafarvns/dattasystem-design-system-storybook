@@ -1,0 +1,58 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks';
+import * as BreadcrumbStories from './Breadcrumb.stories';
+
+<Meta of={BreadcrumbStories} />
+
+# Breadcrumb
+
+O componente Breadcrumb indica a localização atual do usuário em uma estrutura hierárquica e permite a navegação rápida para níveis superiores.
+
+## Quando usar
+- Em sistemas com múltiplos níveis de profundidade hierárquica.
+- Quando o usuário precisa saber onde está e como voltar para uma seção pai.
+- Para reforçar a estrutura da aplicação.
+
+## Variantes
+
+### Padrão
+Trilha de navegação simples usando o separador `/`.
+
+<Canvas of={BreadcrumbStories.Default} />
+
+### Com Ícone Home
+O primeiro item pode conter um ícone representativo da página inicial.
+
+<Canvas of={BreadcrumbStories.WithHomeIcon} />
+
+### Separador Chevron
+Uso do caractere `›` para um visual mais moderno e direcional.
+
+<Canvas of={BreadcrumbStories.ChevronSeparator} />
+
+### Truncado
+Quando o caminho excede 4 níveis, o componente colapsa automaticamente os itens intermediários em um botão "...". Ao clicar, a trilha completa é exibida.
+
+<Canvas of={BreadcrumbStories.Truncated} />
+
+## Acessibilidade
+- O componente usa a tag semântica `<nav>` com `aria-label="Navegação estrutural"`.
+- A hierarquia é representada por uma lista ordenada (`<ol>`).
+- O item atual possui `aria-current="page"` e não é clicável.
+- Separadores e ícones decorativos possuem `aria-hidden="true"`.
+- O botão de expansão possui `aria-label="Mostrar níveis ocultos"`.
+
+## Propriedades
+<Controls />
+
+## Anatomia
+1. **Nav Container:** Elemento semântico de navegação.
+2. **Lista Ordenada:** Representa a sequência de níveis.
+3. **Links:** Níveis anteriores clicáveis.
+4. **Separador:** Divisor visual entre os itens.
+5. **Item Atual:** Texto simples representando a página ativa.
+
+## Tokens Utilizados
+- **Cores:** `--color-blue-500` (links), `--color-gray-700` (item atual), `--color-gray-400` (separador).
+- **Tipografia:** `--font-family-primary`, `--font-size-sm`.
+- **Espaçamento:** `--spacing-1` (ícone), `--spacing-2` (separador).
+- **Transição:** `--transition-fast` (hover).

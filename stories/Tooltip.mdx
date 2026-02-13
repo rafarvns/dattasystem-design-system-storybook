@@ -1,0 +1,66 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks';
+import * as TooltipStories from './Tooltip.stories';
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+O componente **Tooltip** é um pequeno balão informativo que aparece quando o usuário passa o mouse ou foca em um elemento. Ele é utilizado para fornecer informações contextuais rápidas sem poluir a interface.
+
+## Quando usar
+- Para rotular ícones que não possuem texto visível.
+- Para explicar abreviações ou termos técnicos.
+- Para fornecer dicas rápidas sobre o funcionamento de um campo.
+
+## Quando NÃO usar
+- Para conteúdos longos ou complexos (use **Popover** ou **Modal**).
+- Para informações essenciais à tarefa que devem estar sempre visíveis.
+- Em dispositivos onde o hover não é a interação principal (embora o tooltip do Datta System suporte foco por teclado).
+
+## Anatomia
+O Tooltip é composto por:
+1. **Trigger:** O elemento que ativa o tooltip (botão, ícone, texto).
+2. **Container:** O balão com fundo escuro.
+3. **Texto:** A mensagem curta e direta.
+4. **Arrow:** Pequena seta apontando para o trigger.
+
+---
+
+## Exemplos
+
+### Padrão
+O uso mais comum para ícones e ações rápidas.
+
+<Canvas of={TooltipStories.Default} />
+
+### Com Atalho de Teclado
+Útil para instruir o usuário sobre atalhos de produtividade.
+
+<Canvas of={TooltipStories.WithShortcut} />
+
+### Posições
+O Tooltip pode ser posicionado em 4 direções em relação ao trigger.
+
+<Canvas of={TooltipStories.Positions} />
+
+### Detecção de Colisão (Flip)
+Se não houver espaço suficiente na direção configurada, o Tooltip inverte sua posição automaticamente para permanecer visível na tela.
+
+<Canvas of={TooltipStories.Collision} />
+
+---
+
+## Propriedades
+<Controls />
+
+## Acessibilidade
+- **Role:** Utiliza `role="tooltip"`.
+- **Associação:** O trigger é associado ao tooltip via `aria-describedby`.
+- **Teclado:** Ativa ao receber foco via `Tab`. Pode ser fechado pressionando `Esc`.
+- **Motion:** Respeita a preferência do sistema por movimento reduzido (`prefers-reduced-motion`).
+
+## Tokens Utilizados
+- **Cores:** `--color-gray-900` (fundo), `--color-white` (texto), `--color-gray-400` (atalho).
+- **Tipografia:** `--font-size-xs`, `--font-weight-regular`, `--font-family-mono` (kbd).
+- **Espaçamento:** `--spacing-1`, `--spacing-2`.
+- **Forma:** `--radius-sm`, `--shadow-sm`, `--transition-fast`.
