@@ -1,7 +1,7 @@
 import { createErrorPage } from '../components/ErrorPage/ErrorPage';
 
 export default {
-    title: '📐 Padrões de Página (Sprint 4) / Estados de Página / Páginas de Erro',
+    title: 'Padrões de Página/Estados de Página/Páginas de Erro',
     parameters: {
         layout: 'fullscreen',
     },

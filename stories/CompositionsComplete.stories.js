@@ -4,7 +4,7 @@ import { createTabs } from '../components/Tabs/Tabs';
 import { createTable } from '../components/Table/Table';
 
 export default {
-  title: 'Padrões / Composições',
+  title: 'Padrões de Página/Exemplos Completos',
 };
 
 export const NavegacaoCompleta = {

@@ -1,7 +1,7 @@
 import { createSidebar } from '../components/Compostos/Sidebar/Sidebar';
 
 export default {
-    title: 'Compostos/Sidebar',
+    title: 'Componentes Compostos/Sidebar',
     parameters: {
         layout: 'fullscreen',
     },

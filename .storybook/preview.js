@@ -5,13 +5,13 @@ const preview = {
   parameters: {
     options: {
       storySort: {
-        order: ['Introdução', 'tokens', 'componentes base', 'componentes compostos', 'padrões', 'estilos', 'validação'],
+        order: ['Introdução', 'Fundação', 'Guias', 'Componentes Base', 'Componentes Compostos', 'Padrões de Página'],
       },
     },
     controls: {
       matchers: {
-       color: /(background|color)$/i,
-       date: /Date$/i,
+        color: /(background|color)$/i,
+        date: /Date$/i,
       },
     },
 

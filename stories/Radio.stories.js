@@ -2,7 +2,7 @@ import { fn } from '@storybook/test';
 import { createRadioGroup } from '../components/Radio/Radio';
 
 export default {
-  title: 'componentes base/Radio',
+  title: 'Componentes Base/Radio',
   render: (args) => {
     return createRadioGroup(args);
   },

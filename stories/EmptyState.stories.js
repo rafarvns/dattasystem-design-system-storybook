@@ -2,7 +2,7 @@ import { createEmptyState } from '../components/EmptyState/EmptyState';
 import { createLayoutShell } from '../components/Padroes/LayoutShell/LayoutShell';
 
 export default {
-    title: '📐 Padrões de Página (Sprint 4) / Estados de Página / Empty States',
+    title: 'Padrões de Página/Estados de Página/Empty States',
     parameters: {
         layout: 'fullscreen',
     },

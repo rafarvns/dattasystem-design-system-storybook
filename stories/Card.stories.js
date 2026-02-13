@@ -2,7 +2,7 @@ import { createCard, createCardDataPair } from '../components/Card/Card';
 import { createButton } from '../components/Button/Button';
 
 export default {
-  title: 'componentes base/Card',
+  title: 'Componentes Base/Card',
   render: (args) => {
     // If body is an array of pairs, create them
     if (Array.isArray(args.body)) {

@@ -1,7 +1,7 @@
 import { createSelect } from '../components/Select/Select';
 
 export default {
-  title: 'componentes base/Select',
+  title: 'Componentes Base/Select',
   render: (args) => {
     return createSelect(args);
   },

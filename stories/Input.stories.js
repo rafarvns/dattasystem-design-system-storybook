@@ -1,7 +1,7 @@
 import { createInput } from '../components/Input/Input';
 
 export default {
-  title: '🧱 Componentes Base (Sprint 2) / Input',
+  title: 'Componentes Base/Input',
   render: (args) => createInput(args),
   argTypes: {
     label: { control: 'text', description: 'Rótulo do campo' },

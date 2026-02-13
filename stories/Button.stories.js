@@ -1,7 +1,7 @@
 import { createButton } from '../components/Button/Button';
 
 export default {
-  title: '🧱 Componentes Base (Sprint 2) / Button',
+  title: 'Componentes Base/Button',
   render: ({ label, ...args }) => {
     return createButton({ label, ...args });
   },

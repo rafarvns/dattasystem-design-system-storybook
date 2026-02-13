@@ -2,14 +2,14 @@ import { createTooltip } from '../components/Tooltip/Tooltip';
 import { createButton } from '../components/Button/Button';
 
 export default {
-  title: 'componentes compostos/Tooltip',
+  title: 'Componentes Compostos/Tooltip',
   render: (args) => {
     // Create a button as trigger
     const btn = createButton({
       label: args.triggerLabel || 'Hover me',
       variant: 'secondary'
     });
-    
+
     return createTooltip({
       ...args,
       trigger: btn
@@ -84,7 +84,7 @@ export const Collision = {
       position: 'top',
       trigger: btn
     });
-    
+
     container.appendChild(tooltip);
     return container;
   }

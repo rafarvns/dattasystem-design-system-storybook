@@ -1,7 +1,7 @@
 import { createPagination } from '../components/Pagination/Pagination';
 
 export default {
-  title: 'componentes compostos/Pagination',
+  title: 'Componentes Compostos/Pagination',
   render: (args) => {
     return createPagination(args);
   },

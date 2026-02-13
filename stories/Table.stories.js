@@ -1,7 +1,7 @@
 import { createTable } from '../components/Table/Table';
 
 export default {
-  title: '🏛️ Componentes Compostos (Sprint 3) / Table',
+  title: 'Componentes Compostos/Table',
   render: (args) => {
     return createTable(args);
   },

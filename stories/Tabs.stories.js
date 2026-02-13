@@ -2,7 +2,7 @@ import { fn } from '@storybook/test';
 import { createTabs } from '../components/Tabs/Tabs';
 
 export default {
-  title: 'componentes compostos/Tabs',
+  title: 'Componentes Compostos/Tabs',
   render: (args) => {
     return createTabs(args);
   },

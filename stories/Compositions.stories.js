@@ -10,7 +10,7 @@ import { createButton } from '../components/Button/Button';
 import { showAlert } from '../components/Alert/Alert';
 
 export default {
-  title: 'Padrões / Composições',
+  title: 'Padrões de Página/Composições',
   decorators: [
     (Story) => {
       const container = document.createElement('div');

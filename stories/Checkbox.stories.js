@@ -1,7 +1,7 @@
 import { createCheckbox, createCheckboxGroup } from '../components/Checkbox/Checkbox';
 
 export default {
-  title: 'componentes base/Checkbox',
+  title: 'Componentes Base/Checkbox',
   argTypes: {
     label: { control: 'text' },
     checked: { control: 'boolean' },

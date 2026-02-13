@@ -7,7 +7,7 @@ import { createInput } from '../components/Input/Input';
 import { createSelect } from '../components/Select/Select';
 
 export default {
-  title: '📐 Padrões de Página (Sprint 4) / Página de Listagem',
+  title: 'Padrões de Página/Página de Listagem',
 };
 
 const createListContainer = () => {

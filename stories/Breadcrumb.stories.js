@@ -1,7 +1,7 @@
 import { createBreadcrumb } from '../components/Breadcrumb/Breadcrumb';
 
 export default {
-  title: 'componentes compostos/Breadcrumb',
+  title: 'Componentes Compostos/Breadcrumb',
   render: (args) => {
     return createBreadcrumb(args);
   },

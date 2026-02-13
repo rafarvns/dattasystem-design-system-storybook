@@ -3,7 +3,7 @@ import { createButton } from '../components/Button/Button';
 import { createLayoutShell } from '../components/Padroes/LayoutShell/LayoutShell';
 
 export default {
-  title: '📐 Padrões de Página (Sprint 4) / Tematização',
+  title: 'Padrões de Página/Tematização',
   parameters: {
     layout: 'fullscreen',
   },

@@ -3,7 +3,7 @@ import { createButton } from '../components/Button/Button';
 import { createInput } from '../components/Input/Input';
 
 export default {
-  title: '🏛️ Componentes Compostos (Sprint 3) / Modal',
+  title: 'Componentes Compostos/Modal',
   render: (args) => {
     // Para o Storybook, criamos um botão que dispara o modal
     const container = document.createElement('div');

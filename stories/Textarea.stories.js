@@ -1,7 +1,7 @@
 import { createTextarea } from '../components/Textarea/Textarea';
 
 export default {
-  title: 'componentes base/Textarea',
+  title: 'Componentes Base/Textarea',
   render: (args) => {
     return createTextarea(args);
   },

@@ -10,7 +10,7 @@ import {
 import { createLayoutShell } from '../components/Padroes/LayoutShell/LayoutShell';
 
 export default {
-    title: '📐 Padrões de Página (Sprint 4) / Estados de Página / Loading e Skeletons',
+    title: 'Padrões de Página/Estados de Página/Loading e Skeletons',
     parameters: {
         layout: 'fullscreen',
     },
