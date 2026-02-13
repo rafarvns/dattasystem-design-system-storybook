@@ -1,0 +1,54 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as FormStories from './Form.stories';
+
+<Meta of={FormStories} />
+
+# Padrão de Formulário
+
+O **Padrão de Formulário** do Datta System é uma composição real dos componentes de entrada da Sprint 2, organizados de forma lógica e acessível. Ele garante consistência na coleta de dados e fornece um fluxo claro de validação e feedback.
+
+## Diretrizes de Design
+
+- **Organização por Seções:** Utilize `fieldsets` com `legends` claros para agrupar informações relacionadas (ex: Dados Pessoais, Endereço).
+- **Hierarquia Visual:** O título da seção deve ser proeminente, seguido por uma descrição opcional.
+- **Fluxo de Leitura (F-Pattern):** Labels sempre acima dei campos e botões de ação alinhados à esquerda.
+- **Feedback Educativo:** Mensagens de erro devem ser claras e indicar exatamente o que precisa ser corrigido, sem culpar o usuário.
+- **Campos Obrigatórios:** Devem ser marcados visualmente com um asterisco (`*`) e tecnicamente com `aria-required`.
+
+## Estrutura do Padrão
+
+1.  **Cabeçalho da Seção:** Título e descrição do grupo de campos.
+2.  **Grid de Campos:** Organização em colunas (full, half ou third) para otimizar o espaço em 1366×768.
+3.  **Mensagens de Erro Inline:** Aparecem imediatamente abaixo do campo após a perda de foco (blur).
+4.  **Resumo de Erros:** Exibido no topo do formulário após tentativa de submissão inválida, com links de ancoragem.
+5.  **Barra de Ações:** Botão primário (Salvar) seguido pelo secundário (Cancelar).
+
+## Exemplos
+
+### Cadastro Completo
+Demonstração de um formulário complexo com múltiplas seções, validações personalizadas e termos de aceite.
+
+<Canvas of={FormStories.CadastroCompleto} />
+
+### Login
+Variante simplificada para fluxos de autenticação, focada em rapidez e clareza.
+
+<Canvas of={FormStories.Login} />
+
+### Filtros de Busca
+Utilizado geralmente acima de tabelas para refinar listagens de dados.
+
+<Canvas of={FormStories.BuscaFiltro} />
+
+## Acessibilidade
+
+-   **Gerenciamento de Foco:** Ao encontrar erros, o foco é movido para o resumo de erros ou para o primeiro campo inválido.
+-   **Leitores de Tela:** Uso de `aria-live="polite"` para feedbacks e `aria-describedby` para conectar labels, helpers e erros.
+-   **Teclado:** Navegação completa via `Tab`, submissão via `Enter` e seleção via `Space/Arrows`.
+
+## Tokens Utilizados
+
+-   **Espaçamento entre seções:** `--ds-spacing-32`.
+-   **Espaçamento entre campos:** `--ds-spacing-16` / `--ds-spacing-24`.
+-   **Raio da seção:** `--ds-shape-radius-md`.
+-   **Cor de erro:** `--ds-color-danger-500`.

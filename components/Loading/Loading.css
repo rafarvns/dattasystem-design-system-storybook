@@ -1,0 +1,201 @@
+/* Skeleton Shimmer Animation */
+@keyframes ds-shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.ds-skeleton {
+    background: linear-gradient(90deg,
+            var(--ds-color-neutral-100, #F5F5F5) 25%,
+            var(--ds-color-neutral-200, #EEEEEE) 37%,
+            var(--ds-color-neutral-100, #F5F5F5) 63%);
+    background-size: 200% 100%;
+    animation: ds-shimmer 1.5s infinite linear;
+    border-radius: var(--ds-radius-sm, 4px);
+    width: 100%;
+}
+
+/* Skeleton Lines */
+.ds-skeleton--line {
+    height: 16px;
+    margin-bottom: var(--ds-spacing-12, 12px);
+}
+
+.ds-skeleton--title {
+    height: 24px;
+    width: 60%;
+    margin-bottom: var(--ds-spacing-16, 16px);
+}
+
+.ds-skeleton--label {
+    height: 14px;
+    width: 30%;
+    margin-bottom: var(--ds-spacing-8, 8px);
+}
+
+.ds-skeleton--input {
+    height: 40px;
+    margin-bottom: var(--ds-spacing-16, 16px);
+}
+
+.ds-skeleton--avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--ds-radius-full, 9999px);
+}
+
+/* Skeleton Containers */
+.ds-skeleton-card {
+    padding: var(--ds-spacing-24, 24px);
+    border: 1px solid var(--ds-color-neutral-200, #E0E0E0);
+    border-radius: var(--ds-shape-radius-md, 8px);
+    background: var(--ds-color-neutral-white, #FFFFFF);
+}
+
+.ds-skeleton-table {
+    width: 100%;
+    border: 1px solid var(--ds-color-neutral-200, #E0E0E0);
+    border-radius: var(--ds-shape-radius-md, 8px);
+    overflow: hidden;
+}
+
+.ds-skeleton-table__header {
+    height: 48px;
+    background-color: var(--ds-color-neutral-50, #FAFAFA);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--ds-spacing-16, 16px);
+    gap: var(--ds-spacing-16, 16px);
+}
+
+.ds-skeleton-table__row {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--ds-spacing-16, 16px);
+    gap: var(--ds-spacing-16, 16px);
+    border-top: 1px solid var(--ds-color-neutral-100, #F5F5F5);
+}
+
+.ds-skeleton-table__cell {
+    height: 14px;
+    flex: 1;
+}
+
+/* Spinner */
+@keyframes ds-spinner-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.ds-spinner {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--ds-spacing-8, 8px);
+}
+
+.ds-spinner__icon {
+    animation: ds-spinner-rotate 1s linear infinite;
+    width: var(--ds-spinner-size, 24px);
+    height: var(--ds-spinner-size, 24px);
+}
+
+.ds-spinner--sm {
+    --ds-spinner-size: 16px;
+}
+
+.ds-spinner--md {
+    --ds-spinner-size: 24px;
+}
+
+.ds-spinner--lg {
+    --ds-spinner-size: 48px;
+}
+
+.ds-spinner__track {
+    fill: none;
+    stroke: var(--ds-color-neutral-200, #E0E0E0);
+    stroke-width: 3;
+}
+
+.ds-spinner__indicator {
+    fill: none;
+    stroke: var(--ds-color-primary-500, #2196F3);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+}
+
+.ds-spinner__text {
+    font-size: var(--ds-font-size-sm, 14px);
+    color: var(--ds-color-neutral-500, #757575);
+}
+
+/* Loading Overlay */
+.ds-loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+}
+
+.ds-loading-overlay__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--ds-spacing-16, 16px);
+}
+
+/* Progress Bar */
+.ds-progress {
+    width: 100%;
+}
+
+.ds-progress__track {
+    height: 8px;
+    background-color: var(--ds-color-neutral-200, #E0E0E0);
+    border-radius: var(--ds-radius-full, 999px);
+    overflow: hidden;
+}
+
+.ds-progress__fill {
+    height: 100%;
+    background-color: var(--ds-color-primary-500, #2196F3);
+    transition: width 0.3s ease;
+}
+
+.ds-progress__label {
+    display: block;
+    font-size: var(--ds-font-size-xs, 12px);
+    color: var(--ds-color-neutral-500, #757575);
+    margin-top: var(--ds-spacing-4, 4px);
+    text-align: right;
+}
+
+/* Screen Readers Only */
+.ds-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}

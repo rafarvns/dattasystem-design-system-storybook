@@ -29,23 +29,24 @@ export const createButton = ({
   ariaLabel,
   onClick,
   block = false,
+  type = 'button',
 }) => {
   const btn = document.createElement('button');
-  btn.type = 'button';
-  
+  btn.type = type;
+
   // Classes base e modificadores
   const classes = ['btn', `btn--${variant}`, `btn--${size}`];
   if (loading) classes.push('btn--loading');
   if (iconOnly) classes.push('btn--icon-only');
   if (block) classes.push('btn--block');
-  
+
   btn.className = classes.join(' ');
 
   // Acessibilidade
   if (disabled) {
     btn.disabled = true;
   }
-  
+
   if (loading) {
     btn.setAttribute('aria-busy', 'true');
   }

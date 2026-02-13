@@ -11,6 +11,20 @@ import { showAlert } from '../components/Alert/Alert';
 
 export default {
   title: 'Padrões / Composições',
+  decorators: [
+    (Story) => {
+      const container = document.createElement('div');
+      container.style.maxWidth = '1200px';
+      container.style.margin = '0 auto';
+      const storyResult = Story();
+      if (storyResult instanceof HTMLElement) {
+        container.appendChild(storyResult);
+      } else {
+        container.innerHTML = storyResult;
+      }
+      return container;
+    },
+  ],
 };
 
 export const LayoutListagem = {
@@ -109,8 +123,8 @@ export const ModalCadastro = {
 
         form.appendChild(createInput({ label: 'Nome Completo', placeholder: 'Ex: João da Silva', required: true }));
         form.appendChild(createInput({ label: 'E-mail', type: 'email', placeholder: 'joao@exemplo.com' }));
-        form.appendChild(createSelect({ 
-          label: 'Órgão Responsável', 
+        form.appendChild(createSelect({
+          label: 'Órgão Responsável',
           options: [
             { label: 'Secretaria de Saúde', value: 'saude' },
             { label: 'Secretaria de Educação', value: 'educacao' },
@@ -125,10 +139,12 @@ export const ModalCadastro = {
           size: 'md',
           footerActions: [
             createButton({ label: 'Cancelar', variant: 'secondary', onClick: () => modal.close() }),
-            createButton({ label: 'Salvar Cadastro', variant: 'primary', onClick: () => {
-              modal.close();
-              showAlert({ title: 'Sucesso!', message: 'O cadastro foi realizado com êxito.', type: 'success' });
-            }})
+            createButton({
+              label: 'Salvar Cadastro', variant: 'primary', onClick: () => {
+                modal.close();
+                showAlert({ title: 'Sucesso!', message: 'O cadastro foi realizado com êxito.', type: 'success' });
+              }
+            })
           ]
         });
         modal.open();

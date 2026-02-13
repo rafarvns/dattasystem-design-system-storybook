@@ -1,0 +1,50 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as LoadingStories from './Loading.stories';
+
+<Meta of={LoadingStories} />
+
+# Estados de Carregamento
+
+Os **Estados de Carregamento** fornecem feedback visual imediato às ações do usuário, reduzindo a percepção de espera e prevenindo cliques múltiplos em operações pendentes.
+
+## Diretrizes de Uso
+
+- **Ações Rápidas (`<300ms`):** Não use indicadores.
+- **Carregamento Inicial:** Use **Skeleton Screens** para dar a sensação de que a estrutura da página já está lá.
+- **Ações Contextuais:** Use **Spinners** para pequenas áreas ou dentro de botões.
+- **Processos Longos:** Use **Overlay** para bloquear a interface durante salvamentos ou **Progress Bar** para uploads.
+
+## Componentes Disponíveis
+
+### Skeleton Screens
+Placeholders que imitam a geometria do conteúdo final (Cards, Tabelas, Textos).
+
+<Canvas of={LoadingStories.Skeletons} />
+
+### Spinners
+Indicadores circulares de movimento, disponíveis em tamanhos `sm`, `md` e `lg`.
+
+<Canvas of={LoadingStories.Spinners} />
+
+### Barra de Progresso
+Utilizada para indicar o avanço percentual de uma tarefa.
+
+<Canvas of={LoadingStories.Progresso} />
+
+### Overlay de Carregamento
+Bloqueia toda a viewport durante operações críticas.
+
+<Canvas of={LoadingStories.Overlay} />
+
+## Acessibilidade
+
+- **Aria Hidden:** Skeletons são ocultados para leitores de tela via `aria-hidden="true"`, pois não possuem valor semântico.
+- **Status:** Spinners e Overlays usos `role="status"` e `aria-live="polite"` com mensagens amigáveis ("Carregando...").
+- **ProgressBar:** Implementada com `role="progressbar"` e atributos `aria-valuenow/min/max`.
+
+## Tokens Utilizados
+
+- **Cores do Skeleton:** `--ds-color-neutral-100` e `--ds-color-neutral-200`.
+- **Animação Shimmer:** Linear infinite de 1.5s.
+- **Cor do Spinner:** `--ds-color-primary-500` (Azul).
+- **Z-index Overlay:** `1000`.

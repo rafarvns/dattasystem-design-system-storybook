@@ -1,7 +1,4 @@
 .ds-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: var(--header-height, 56px);
   background-color: var(--color-blue-900);
@@ -121,7 +118,8 @@
   padding: var(--spacing-2) 0;
   margin: 0;
   display: none;
-  z-index: 10000; /* Aumentado significativamente */
+  z-index: 10000;
+  /* Aumentado significativamente */
   animation: ds-navbar-fade-in var(--transition-fast);
 }
 
@@ -130,8 +128,15 @@
 }
 
 @keyframes ds-navbar-fade-in {
-  from { opacity: 0; transform: translateY(-4px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .ds-navbar__submenu-link {
@@ -177,7 +182,8 @@
 }
 
 .ds-navbar__search .input-field {
-  margin-bottom: 0; /* Remove margem que pode vir do componente input */
+  margin-bottom: 0;
+  /* Remove margem que pode vir do componente input */
 }
 
 .ds-navbar__search .input-field__input {
@@ -299,7 +305,8 @@
   padding: var(--spacing-2) 0;
   margin: 0;
   display: none;
-  z-index: 10000; /* Aumentado significativamente */
+  z-index: 10000;
+  /* Aumentado significativamente */
   animation: ds-navbar-fade-in var(--transition-fast);
 }
 

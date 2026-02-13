@@ -1,0 +1,52 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks';
+import * as ErrorPageStories from './ErrorPage.stories';
+
+<Meta of={ErrorPageStories} />
+
+# Páginas de Erro
+
+As **Páginas de Erro** são estados globais da aplicação que comunicam falhas críticas, como páginas inexistentes (404), falta de permissão (403) ou erros de servidor (500).
+
+## Diretrizes de Design
+
+- **Responsabilidade:** Para erros de servidor (500), o sistema deve assumir a responsabilidade ("Tivemos um problema").
+- **Solução de Problemas:** Sempre ofereça uma rota de fuga, como "Voltar ao Início" ou "Falar com Suporte".
+- **Código Visual:** Use códigos de erro grandes e sutis como âncora visual para usuários técnicos, sem assustar o usuário comum.
+
+## Estrutura do Padrão
+
+1.  **Código do Erro:** Exibido em destaque (ex: 404).
+2.  **Mensagem de Título:** Nome amigável do erro.
+3.  **Explicação:** O que aconteceu e qual a sugestão de solução.
+4.  **Ações de Recuperação:** Botões para voltar ou tentar novamente.
+5.  **Rodapé de Suporte:** Canal de contato direto para casos persistentes.
+
+## Exemplos
+
+### Página Não Encontrada (404)
+O tipo de erro mais comum, geralmente causado por links quebrados ou digitação incorreta.
+
+<Canvas of={ErrorPageStories.Erro404} />
+
+### Acesso Negado (403)
+Quando o usuário está autenticado mas tenta acessar uma URL restrita.
+
+<Canvas of={ErrorPageStories.Erro403} />
+
+### Erro de Servidor (500)
+Falha inesperada no processamento de dados pelo backend.
+
+<Canvas of={ErrorPageStories.Erro500} />
+
+## Acessibilidade
+
+- **Skip Links:** Mantém o suporte a pular para o conteúdo principal.
+- **Landmarks:** Uso correto de `<main>` e `<h1>` para navegação por marcos e títulos.
+- **Contraste:** Garantia de contraste de no mínimo 4.5:1 em todos os textos de ajuda.
+
+## Tokens Utilizados
+
+- **Tamanho do Código:** `--ds-font-size-display` (72px).
+- **Cor do Código:** `--ds-color-primary-200` (Azul suave).
+- **Largura do Container:** `560px`.
+- **Fundo da Página:** `--ds-color-neutral-50`.

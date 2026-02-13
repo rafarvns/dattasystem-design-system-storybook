@@ -1,0 +1,52 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as LayoutShellStories from './LayoutShell.stories';
+
+<Meta of={LayoutShellStories} />
+
+# Padrão Layout Shell
+
+O **Layout Shell** (ou App Shell) é a estrutura mestre da aplicação. Ele define a anatomia global da página, integrando a barra de navegação superior, o menu lateral, o breadcrumb e a área de conteúdo principal com scroll independente.
+
+## Diretrizes de Design
+
+-   **Consistência Global:** O Shell deve ser idêntico em todas as páginas da aplicação para fornecer um senso de orientação constante.
+-   **Scroll Independente:** A área de conteúdo (`main`) possui scroll próprio, mantendo o Header e a Sidebar sempre visíveis (fixos).
+-   **Responsividade:** Projetado prioritariamente para resoluções de **1366×768**, garantindo que o conteúdo seja lido confortavelmente sem scroll horizontal.
+-   **Flexibilidade:** Suporta variantes sem sidebar ou em modo tela cheia para casos específicos como dashboards complexos ou editores.
+
+## Estrutura do Padrão
+
+1.  **Header (Navbar):** Barra superior com nome do sistema, busca global e perfil do usuário.
+2.  **Sidebar:** Menu lateral retrátil que organiza a navegação principal por módulos.
+3.  **Área de Título (Page Header):** Contém Breadcrumb, Título da Página, Descrição e Ações Primárias.
+4.  **Content Area:** Local onde o conteúdo específico da funcionalidade é renderizado.
+5.  **Footer:** Barra inferior persistente com informações de direitos autorais e versão.
+
+## Exemplos
+
+### Layout Padrão
+A estrutura completa utilizada na maioria das telas de cadastro e gerenciamento.
+
+<Canvas of={LayoutShellStories.Completo} />
+
+### Dashboard
+Variante focada em indicadores, geralmente com ações rápidas no cabeçalho.
+
+<Canvas of={LayoutShellStories.Dashboard} />
+
+### Detalhes de Registro
+Contexto de visualização ou edição de um item específico, com hierarquia de breadcrumb estendida.
+
+<Canvas of={LayoutShellStories.Detalhe} />
+
+## Acessibilidade
+
+-   **Skip Links:** Implementado link oculto "Pular para o conteúdo principal" para usuários de teclado.
+-   **Landmarks:** Uso de tags semânticas `<header>`, `<aside>`, `<main>` e `<footer>` para facilitar a navegação por marcos.
+-   **Nesting:** Hierarquia de títulos (`h1`, `h2`) gerenciada para garantir uma árvore de documentos lógica.
+
+## Variantes Disponíveis
+
+-   **Default:** Sidebar fixa à esquerda (padrão).
+-   **No Sidebar:** Maximiza o espaço central (ideal para grandes tabelas ou formulários imensos).
+-   **Fullscreen:** Remove menus globais (ideal para telas de erro, login ou apresentações).

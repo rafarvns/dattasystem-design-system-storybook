@@ -1,0 +1,43 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as CompositionsStories from './Compositions.stories';
+
+<Meta of={CompositionsStories} />
+
+# Padrões de Composições
+
+As **Composições** são arranjos comuns entre múltiplos componentes do sistema para resolver fluxos de usuário recorrentes. Elas demonstram como componentes atômicos e moléculas devem interagir entre si.
+
+## Diretrizes de Design
+
+-   **Modularidade:** Composições devem ser construídas de forma que as partes individuais (botões, cards, tabelas) mantenham sua independência funcional.
+-   **Contextualização:** Cada composição resolve um problema específico (ex: "Como faço um cadastro rápido sem sair da página atual?").
+-   **Feedback Imediato:** Ações dentro de composições (como salvar em um modal) devem gerar feedback imediato via Alertas ou Toasts.
+
+## Estruturas Comuns
+
+1.  **CRUD em Modal:** Combinação de Botão → Modal → Formulário → Alerta.
+2.  **Visualização de Dados:** Combinação de Filtros → Card → Tabela → Paginação.
+3.  **Fluxo de Decisão:** Combinação de Alerta de aviso → Botões de Ação → Modal de Confirmação.
+
+## Exemplos
+
+### Fluxo de Cadastro em Modal
+Demonstra como utilizar um Modal para coletar dados rápidos, seguido por um feedback de sucesso.
+
+<Canvas of={CompositionsStories.ModalCadastro} />
+
+### Feedback de Ações
+Exemplos de como o sistema deve reagir a interações do usuário, diferenciando canais de sucesso e erro.
+
+<Canvas of={CompositionsStories.FeedbackAcao} />
+
+### Composição de Listagem
+Exemplo de página estruturada combinando múltiplos padrões para gestão de dados.
+
+<Canvas of={CompositionsStories.LayoutListagem} />
+
+## Melhores Práticas
+
+-   **Evite Nesting Excessivo:** Não coloque modais dentro de modais.
+-   **Persistência:** Se uma composição envolve múltiplos passos (Wizard), garanta que o estado seja preservado se o usuário fechar acidentalmente.
+-   **Clareza de Ação:** O botão de maior importância deve ser sempre o mais destacado visualmente na composição.

@@ -1,0 +1,71 @@
+.ds-error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 56px);
+    /* Full height minus typical navbar */
+    background-color: var(--ds-color-neutral-50, #FAFAFA);
+    padding: var(--ds-spacing-64, 64px) var(--ds-spacing-24, 24px);
+    text-align: center;
+}
+
+.ds-error-page__container {
+    max-width: 560px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--ds-spacing-24, 24px);
+}
+
+.ds-error-page__illustration {
+    margin-bottom: var(--ds-spacing-8, 8px);
+}
+
+.ds-error-page__code {
+    font-size: var(--ds-font-size-display, 72px);
+    font-weight: var(--ds-font-weight-bold, 700);
+    color: var(--ds-color-primary-200, #BBDEFB);
+    line-height: 1;
+    display: block;
+}
+
+.ds-error-page__title {
+    font-size: var(--ds-font-size-2xl, 30px);
+    font-weight: var(--ds-font-weight-semibold, 600);
+    color: var(--ds-color-neutral-800, #424242);
+    margin: 0;
+}
+
+.ds-error-page__description {
+    font-size: var(--ds-font-size-base, 16px);
+    color: var(--ds-color-neutral-600, #616161);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.ds-error-page__actions {
+    display: flex;
+    gap: var(--ds-spacing-16, 16px);
+    justify-content: center;
+    margin-top: var(--ds-spacing-8, 8px);
+}
+
+.ds-error-page__help {
+    margin-top: var(--ds-spacing-32, 32px);
+    font-size: var(--ds-font-size-sm, 14px);
+    color: var(--ds-color-neutral-400, #BDBDBD);
+    border-top: 1px solid var(--ds-color-neutral-200, #E0E0E0);
+    padding-top: var(--ds-spacing-24, 24px);
+    width: 100%;
+}
+
+.ds-error-page__help p {
+    margin: 0;
+}
+
+.ds-error-page__help .ds-link {
+    color: var(--ds-color-primary-500, #2196F3);
+    text-decoration: underline;
+}

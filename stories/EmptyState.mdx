@@ -1,0 +1,52 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks';
+import * as EmptyStateStories from './EmptyState.stories';
+
+<Meta of={EmptyStateStories} />
+
+# Estados Vazios (Empty States)
+
+Os **Estados Vazios** são utilizados quando a interface não possui conteúdo para exibir. Eles servem para orientar o usuário sobre o que aconteceu e como ele pode prosseguir, transformando um vácuo de informação em uma oportunidade de engajamento.
+
+## Diretrizes de Design
+
+- **Acolhimento:** Use um tom de voz acolhedor e nunca culpe o usuário pela falta de dados.
+- **Clareza:** O título deve resumir a situação e a descrição deve oferecer a solução ou o próximo passo.
+- **Ação Próxima:** Sempre que possível, inclua um botão de chamada para ação (CTA) para ajudar o usuário a sair do estado vazio.
+- **Auxílio Visual:** Ícones ou ilustrações ajudam a comunicar o estado de forma rápida e menos frustrante.
+
+## Estrutura do Padrão
+
+1.  **Ilustração/Ícone:** Centralizado e em cores neutras.
+2.  **Título:** Mensagem principal curta e direta.
+3.  **Descrição:** Texto explicativo com orientações.
+4.  **Botões de Ação:** Opcionais, mas recomendados para guiar o fluxo.
+
+## Exemplos
+
+### Nenhum Cadastro
+Utilizado no primeiro acesso de um usuário a um módulo, incentivando a criação do primeiro registro.
+
+<Canvas of={EmptyStateStories.SemDados} />
+
+### Filtros Sem Resultados
+Ocorre quando uma busca ou aplicação de filtros na listagem não retorna correspondências.
+
+<Canvas of={EmptyStateStories.BuscaSemResultados} />
+
+### Sem Permissão
+Exibido quando o usuário tenta acessar uma área para a qual não tem o perfil adequado.
+
+<Canvas of={EmptyStateStories.SemPermissao} />
+
+## Acessibilidade
+
+- **Anúncio Dinâmico:** Implementado com `role="status"` e `aria-live="polite"` para que leitores de tela anunciem a mudança de estado.
+- **Hierarquia:** O título utiliza `<h2>` para manter a estrutura semântica da página.
+- **Foco:** Botões de ação são navegáveis via `Tab`.
+
+## Tokens Utilizados
+
+- **Tamanho do Ícone:** `120px` x `120px`.
+- **Cor do Ícone:** `--ds-color-neutral-300`.
+- **Gap entre Elementos:** `--ds-spacing-16`.
+- **Padding Vertical:** `--ds-spacing-48`.
