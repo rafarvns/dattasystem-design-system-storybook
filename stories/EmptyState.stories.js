@@ -1,15 +1,42 @@
 import { createEmptyState } from '../components/EmptyState/EmptyState';
+import { createLayoutShell } from '../components/Padroes/LayoutShell/LayoutShell';
 
 export default {
-    title: 'Padrões / Estados Vazios',
+    title: '📐 Padrões de Página (Sprint 4) / Estados de Página / Empty States',
+    parameters: {
+        layout: 'fullscreen',
+    },
 };
 
 const Template = (args) => {
-    const container = document.createElement('div');
-    container.style.maxWidth = '1200px';
-    container.style.margin = '0 auto';
-    container.appendChild(createEmptyState(args));
-    return container;
+    const emptyState = createEmptyState(args);
+
+    const shell = createLayoutShell({
+        title: args.pageTitle || 'Gestão de Processos',
+        description: args.pageDescription || 'Visualize e gerencie os processos administrativos.',
+        content: emptyState,
+        breadcrumbProps: {
+            items: [
+                { label: 'Início', href: '#' },
+                { label: 'Processos' }
+            ]
+        }
+    });
+
+    // Constraint wrapper for Storybook preview
+    const wrapper = document.createElement('div');
+    wrapper.style.height = '600px';
+    wrapper.style.width = '100%';
+    wrapper.style.position = 'relative';
+    wrapper.style.overflow = 'hidden';
+    wrapper.style.border = '1px solid var(--ds-color-neutral-200)';
+
+    shell.style.position = 'absolute';
+    shell.style.height = '100%';
+    shell.style.width = '100%';
+
+    wrapper.appendChild(shell);
+    return wrapper;
 };
 
 export const SemDados = Template.bind({});

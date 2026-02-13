@@ -1,0 +1,35 @@
+/* themes/_default.css */
+:root,
+[data-theme="default"] {
+    /* === Cores do Tema === */
+    --ds-theme-primary-50: #EBF5FF;
+    --ds-theme-primary-100: #CCE5FF;
+    --ds-theme-primary-200: #99CBFF;
+    --ds-theme-primary-300: #66B0FF;
+    --ds-theme-primary-400: #3396FF;
+    --ds-theme-primary-500: #005EB8;
+    /* Azul Datta original */
+    --ds-theme-primary-600: #0052A3;
+    --ds-theme-primary-700: #004587;
+    --ds-theme-primary-800: #002B5C;
+    --ds-theme-primary-900: #001A38;
+
+    /* === Cor de Acento === */
+    --ds-theme-accent-50: #FFF0F0;
+    --ds-theme-accent-500: #D32F2F;
+    /* Vermelho Datta */
+    --ds-theme-accent-700: #B00020;
+
+    /* === Identidade === */
+    --ds-theme-logo-url: url('https://placehold.co/180x40/005EB8/white?text=Datta+System');
+    /* Fallback para assets reais */
+    --ds-theme-name: 'Datta System';
+
+    /* Derivados Semânticos de Tema */
+    --ds-theme-navbar-bg: var(--ds-theme-primary-700);
+    --ds-theme-sidebar-active-bg: var(--ds-theme-primary-50);
+    --ds-theme-sidebar-active-text: var(--ds-theme-primary-700);
+    --ds-theme-link-color: var(--ds-theme-primary-500);
+    --ds-theme-link-hover: var(--ds-theme-primary-700);
+    --ds-theme-focus-ring: var(--ds-theme-primary-500);
+}

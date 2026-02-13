@@ -2,7 +2,7 @@ import { createAlert, showAlert } from '../components/Alert/Alert';
 import { createButton } from '../components/Button/Button';
 
 export default {
-  title: 'componentes compostos/Alert',
+  title: '🏛️ Componentes Compostos (Sprint 3) / Alert',
   render: (args) => {
     if (args.isStacked) {
       const container = document.createElement('div');

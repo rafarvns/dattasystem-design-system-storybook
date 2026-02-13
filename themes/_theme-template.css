@@ -1,0 +1,26 @@
+/* themes/_theme-template.css */
+/* 
+ * Datta System — Template de Tema
+ * Copie este arquivo e preencha os valores para criar um novo tema.
+ */
+
+[data-theme="NOME_DO_TEMA"] {
+    /* === Cores Primárias (OBRIGATÓRIO) === */
+    --ds-theme-primary-50: ;
+    /* Tom mais claro */
+    --ds-theme-primary-100: ;
+    --ds-theme-primary-200: ;
+    --ds-theme-primary-300: ;
+    --ds-theme-primary-400: ;
+    --ds-theme-primary-500: ;
+    /* Cor principal — Contraste >= 4.5:1 com branco */
+    --ds-theme-primary-600: ;
+    --ds-theme-primary-700: ;
+    /* Navbar — Contraste >= 4.5:1 com branco */
+    --ds-theme-primary-800: ;
+    --ds-theme-primary-900: ;
+
+    /* === Identidade (OBRIGATÓRIO) === */
+    --ds-theme-logo-url: url('');
+    --ds-theme-name: '';
+}

@@ -4,57 +4,88 @@
 
 :root {
   /* 1. Paleta Primária - Azul (Confiança e Institucionalidade) */
-  --color-blue-900: #002B5C; /* Textos de destaque em headers */
-  --color-blue-700: #004587; /* Navegação principal, cabeçalhos */
-  --color-blue-600: #0052A3; /* Hover do botão primário */
-  --color-blue-500: #005EB8; /* Azul médio (primário) - Botões, links, ícones ativos */
-  --color-blue-300: #4D8ED4; /* Estados de hover, badges */
-  --color-blue-100: #B3CEEA; /* Fundos de alertas informativos */
-  --color-blue-50: #E6EFF8;  /* Azul quase branco - Fundos sutis */
+  --color-blue-900: #002B5C;
+  /* Textos de destaque em headers */
+  --color-blue-700: #004587;
+  /* Navegação principal, cabeçalhos */
+  --color-blue-600: #0052A3;
+  /* Hover do botão primário */
+  --color-blue-500: #005EB8;
+  /* Azul médio (primário) - Botões, links, ícones ativos */
+  --color-blue-300: #4D8ED4;
+  /* Estados de hover, badges */
+  --color-blue-100: #B3CEEA;
+  /* Fundos de alertas informativos */
+  --color-blue-50: #E6EFF8;
+  /* Azul quase branco - Fundos sutis */
 
   /* 2. Paleta de Ação - Vermelho (Ação e Atenção) */
-  --color-red-700: #B00020; /* Hover em botões destrutivos */
-  --color-red-600: #C62828; /* Hover do botão destrutivo */
-  --color-red-500: #D32F2F; /* Vermelho vivo - Botões de ação destrutiva, alertas de erro */
-  --color-red-300: #E57373; /* Vermelho suave - Fundos de mensagens de erro */
-  --color-red-100: #FFCDD2; /* Vermelho muito claro - Fundos sutis de validação */
-  --color-red-50: #FFEBEE;  /* Vermelho quase branco - Fundo de campos com erro */
+  --color-red-700: #B00020;
+  /* Hover em botões destrutivos */
+  --color-red-600: #C62828;
+  /* Hover do botão destrutivo */
+  --color-red-500: #D32F2F;
+  /* Vermelho vivo - Botões de ação destrutiva, alertas de erro */
+  --color-red-300: #E57373;
+  /* Vermelho suave - Fundos de mensagens de erro */
+  --color-red-100: #FFCDD2;
+  /* Vermelho muito claro - Fundos sutis de validação */
+  --color-red-50: #FFEBEE;
+  /* Vermelho quase branco - Fundo de campos com erro */
 
   /* 3. Paleta Neutra - Branco e Cinzas (Respiro e Legibilidade) */
-  --color-white: #FFFFFF;    /* Branco puro */
-  --color-gray-50: #FAFAFA;  /* Fundo de página */
-  --color-gray-100: #F5F5F5; /* Fundos de cards, áreas secundárias */
-  --color-gray-200: #EEEEEE; /* Separadores, bordas leves */
-  --color-gray-400: #BDBDBD; /* Placeholders, textos desabilitados */
-  --color-gray-600: #757575; /* Textos secundários, ícones */
-  --color-gray-800: #424242; /* Texto principal do corpo */
-  --color-gray-900: #212121; /* Títulos, textos de máximo destaque */
+  --color-white: #FFFFFF;
+  /* Branco puro */
+  --color-gray-50: #FAFAFA;
+  /* Fundo de página */
+  --color-gray-100: #F5F5F5;
+  /* Fundos de cards, áreas secundárias */
+  --color-gray-200: #EEEEEE;
+  /* Separadores, bordas leves */
+  --color-gray-400: #BDBDBD;
+  /* Placeholders, textos desabilitados */
+  --color-gray-600: #757575;
+  /* Textos secundários, ícones */
+  --color-gray-800: #424242;
+  /* Texto principal do corpo */
+  --color-gray-900: #212121;
+  /* Títulos, textos de máximo destaque */
 
   /* 4. Cores Semânticas Adicionais (Sucesso e Alerta) */
   --color-green-700: #1B5E20;
-  --color-green-500: #2E7D32; /* Sucesso */
-  --color-green-100: #C8E6C9; /* Sucesso claro */
-  
+  --color-green-500: #2E7D32;
+  /* Sucesso */
+  --color-green-100: #C8E6C9;
+  /* Sucesso claro */
+
   --color-orange-700: #E65100;
-  --color-orange-500: #EF6C00; /* Alerta / Aviso */
-  --color-orange-100: #FFE0B2; /* Alerta claro */
+  --color-orange-500: #EF6C00;
+  /* Alerta / Aviso */
+  --color-orange-100: #FFE0B2;
+  /* Alerta claro */
 
-  /* 5. Aliases Semânticos */
-  /* Ação Primária */
-  --color-primary: var(--color-blue-500);
-  --color-primary-hover: var(--color-blue-700);
-  --color-primary-light: var(--color-blue-100);
+  /* 5. Camada de Mapeamento de Tema (Injetada pela Task 5) */
+  --color-primary: var(--ds-theme-primary-500);
+  --color-primary-hover: var(--ds-theme-primary-600);
+  --color-primary-dark: var(--ds-theme-primary-700);
+  --color-primary-light: var(--ds-theme-primary-100);
+  --color-primary-50: var(--ds-theme-primary-50);
 
-  /* Perigo / Erro */
+  /* Identidade do Órgão */
+  --ds-logo-url: var(--ds-theme-logo-url);
+  --ds-app-name: var(--ds-theme-name);
+
+  /* 6. Aliases Semânticos (Consumidores das variáveis acima) */
+  /* Perigo / Erro (Fixos por diretriz de acessibilidade) */
   --color-danger: var(--color-red-500);
   --color-danger-hover: var(--color-red-700);
   --color-danger-light: var(--color-red-100);
 
-  /* Sucesso */
+  /* Sucesso (Fixo) */
   --color-success: var(--color-green-500);
   --color-success-light: var(--color-green-100);
 
-  /* Alerta / Aviso */
+  /* Alerta / Aviso (Fixo) */
   --color-warning: var(--color-orange-500);
   --color-warning-light: var(--color-orange-100);
 
@@ -71,6 +102,9 @@
 
   /* Bordas */
   --color-border-default: var(--color-gray-200);
-  --color-border-focus: var(--color-blue-500);
+  --color-border-focus: var(--color-primary);
   --color-border-error: var(--color-red-500);
+
+  /* Sombras e Foco */
+  --shadow-focus: 0 0 0 3px var(--ds-theme-focus-ring, rgba(0, 94, 184, 0.4));
 }

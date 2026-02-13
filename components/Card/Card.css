@@ -32,7 +32,7 @@
 }
 
 .card--clickable:focus-visible {
-  box-shadow: 0 0 0 2px var(--color-white), 0 0 0 4px var(--color-blue-300);
+  box-shadow: 0 0 0 2px var(--color-white), 0 0 0 4px var(--color-primary-light);
 }
 
 .card--clickable:active {
@@ -42,11 +42,11 @@
 
 /* Variante Destaque (Borda Lateral) */
 .card--featured-info {
-  border-left: 4px solid var(--color-blue-500);
+  border-left: 4px solid var(--color-primary);
 }
 
 .card--featured-danger {
-  border-left: 4px solid var(--color-red-500);
+  border-left: 4px solid var(--color-danger);
 }
 
 /* Header */
@@ -75,7 +75,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-blue-500);
+  color: var(--color-primary);
   flex-shrink: 0;
   width: 20px;
   height: 20px;

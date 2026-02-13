@@ -1,7 +1,7 @@
 import { createTable } from '../components/Table/Table';
 
 export default {
-  title: 'componentes compostos/Table',
+  title: '🏛️ Componentes Compostos (Sprint 3) / Table',
   render: (args) => {
     return createTable(args);
   },
@@ -119,10 +119,10 @@ export const HorizontalScroll = {
       { label: 'Observações do Técnico', key: 'obs' },
     ],
     data: [
-      { 
-        id: '2026.0001.0042', 
-        requerente: 'Maria Silva Santos de Oliveira Ferreira', 
-        data: '13/02/2026', 
+      {
+        id: '2026.0001.0042',
+        requerente: 'Maria Silva Santos de Oliveira Ferreira',
+        data: '13/02/2026',
         status: 'Aprovado',
         depto: 'Secretaria de Fazenda e Planejamento',
         updated: '13/02/2026 14:30',

@@ -7,22 +7,22 @@ import {
     createLoadingOverlay,
     createProgressBar
 } from '../components/Loading/Loading';
+import { createLayoutShell } from '../components/Padroes/LayoutShell/LayoutShell';
 
 export default {
-    title: 'Padrões / Carregamento',
+    title: '📐 Padrões de Página (Sprint 4) / Estados de Página / Loading e Skeletons',
+    parameters: {
+        layout: 'fullscreen',
+    },
 };
 
 export const Skeletons = {
     render: () => {
-        const container = document.createElement('div');
-        container.style.maxWidth = '1200px';
-        container.style.margin = '0 auto';
-        container.style.padding = '24px';
-
         const grid = document.createElement('div');
         grid.style.display = 'grid';
         grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
         grid.style.gap = '24px';
+        grid.style.padding = '24px';
 
         const cardCol = document.createElement('div');
         cardCol.innerHTML = '<h3 style="margin-bottom: 16px;">Card & Text</h3>';
@@ -45,8 +45,33 @@ export const Skeletons = {
         formCol.appendChild(createFormSkeleton());
         grid.appendChild(formCol);
 
-        container.appendChild(grid);
-        return container;
+        const shell = createLayoutShell({
+            title: 'Carregando dados...',
+            description: 'Aguarde enquanto as informações são recuperadas do servidor.',
+            content: grid,
+            breadcrumbProps: {
+                items: [
+                    { label: 'Início', href: '#' },
+                    { label: 'Processos', href: '#' },
+                    { label: 'Listagem' }
+                ]
+            }
+        });
+
+        // Constraint wrapper for Storybook preview
+        const wrapper = document.createElement('div');
+        wrapper.style.height = '600px';
+        wrapper.style.width = '100%';
+        wrapper.style.position = 'relative';
+        wrapper.style.overflow = 'hidden';
+        wrapper.style.border = '1px solid var(--ds-color-neutral-200)';
+
+        shell.style.position = 'absolute';
+        shell.style.height = '100%';
+        shell.style.width = '100%';
+
+        wrapper.appendChild(shell);
+        return wrapper;
     }
 };
 

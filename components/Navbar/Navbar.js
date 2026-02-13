@@ -13,6 +13,10 @@ export const createNavbar = ({
   user = { name: 'João Silva', avatarText: 'JS' },
   variant = 'default', // default, simple, institutional
 }) => {
+  // Task 5 - System Theming: Get name from CSS Variable if available
+  const themeName = getComputedStyle(document.documentElement).getPropertyValue('--ds-theme-name').trim().replace(/['"]/g, '');
+  const finalSystemName = themeName || systemName;
+
   const nav = document.createElement('nav');
   nav.className = 'ds-navbar';
   nav.setAttribute('role', 'navigation');
@@ -40,14 +44,14 @@ export const createNavbar = ({
   if (logoUrl) {
     const img = document.createElement('img');
     img.src = logoUrl;
-    img.alt = systemName;
+    img.alt = finalSystemName;
     img.className = 'ds-navbar__logo-img';
     logoLink.appendChild(img);
   }
 
   const text = document.createElement('span');
   text.className = 'ds-navbar__logo-text';
-  text.innerText = systemName;
+  text.innerText = finalSystemName;
   logoLink.appendChild(text);
 
   brand.appendChild(logoLink);
@@ -99,7 +103,7 @@ export const createNavbar = ({
         btn.addEventListener('click', (e) => {
           e.stopPropagation();
           const isOpen = li.classList.contains('ds-navbar__item--open');
-          
+
           // Close all other submenus
           document.querySelectorAll('.ds-navbar__item--open').forEach(el => {
             if (el !== li) {
@@ -153,7 +157,7 @@ export const createNavbar = ({
       size: 'sm',
     });
     searchInput.classList.add('ds-navbar__search-input');
-    
+
     searchContainer.appendChild(searchInput);
     actions.appendChild(searchContainer);
   }
@@ -219,7 +223,7 @@ export const createNavbar = ({
     userBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       const isOpen = userWrapper.classList.contains('ds-navbar__user--open');
-      
+
       // Close all other menus
       document.querySelectorAll('.ds-navbar__item--open, .ds-navbar__user--open').forEach(el => {
         if (el !== userWrapper) {

@@ -1,0 +1,19 @@
+/* themes/tribunal-justica.css */
+[data-theme="tribunal-justica"] {
+    /* === Cores do Tema — Púrpura Jurídico === */
+    --ds-theme-primary-50: #F3E5F5;
+    --ds-theme-primary-100: #E1BEE7;
+    --ds-theme-primary-200: #CE93D8;
+    --ds-theme-primary-300: #BA68C8;
+    --ds-theme-primary-400: #AB47BC;
+    --ds-theme-primary-500: #6A1B9A;
+    /* Púrpura — cor principal */
+    --ds-theme-primary-600: #551580;
+    --ds-theme-primary-700: #4A148C;
+    --ds-theme-primary-800: #310D5E;
+    --ds-theme-primary-900: #1A0733;
+
+    /* === Identidade === */
+    --ds-theme-logo-url: url('https://placehold.co/180x40/6A1B9A/white?text=Tribunal+Justica');
+    --ds-theme-name: 'Tribunal de Justiça';
+}

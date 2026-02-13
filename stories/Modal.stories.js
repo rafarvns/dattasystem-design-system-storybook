@@ -3,7 +3,7 @@ import { createButton } from '../components/Button/Button';
 import { createInput } from '../components/Input/Input';
 
 export default {
-  title: 'componentes compostos/Modal',
+  title: '🏛️ Componentes Compostos (Sprint 3) / Modal',
   render: (args) => {
     // Para o Storybook, criamos um botão que dispara o modal
     const container = document.createElement('div');
@@ -64,8 +64,8 @@ export default {
     size: 'md',
     closeOnOverlayClick: true,
     footerActionsData: [
-      { label: 'Cancelar', variant: 'secondary', onClick: () => {} },
-      { label: 'Confirmar', variant: 'primary', onClick: () => {} }
+      { label: 'Cancelar', variant: 'secondary', onClick: () => { } },
+      { label: 'Confirmar', variant: 'primary', onClick: () => { } }
     ]
   },
 };

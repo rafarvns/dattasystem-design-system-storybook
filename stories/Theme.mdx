@@ -1,0 +1,50 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as ThemeStories from './Theme.stories';
+
+<Meta of={ThemeStories} />
+
+# Sistema de Tematização
+
+O Datta System utiliza uma arquitetura de variáveis CSS em camadas para permitir a customização da identidade visual de diferentes órgãos governamentais sem a necessidade de alterar o código dos componentes.
+
+## Como Funciona
+
+A tematização é baseada no atributo `data-theme` aplicado à tag `<html>`. Quando um tema é selecionado, as variáveis de tema sobrescrevem os aliases semânticos globais.
+
+### Camadas de Variáveis
+
+1.  **Tokens Primitivos:** Valores brutos (ex: `--ds-blue-500`).
+2.  **Variáveis Semânticas:** Funções no sistema (ex: `--color-primary`).
+3.  **Variáveis de Tema:** Identidade visual específica (ex: `--ds-theme-primary-500`).
+
+## Temas de Exemplo
+
+### Datta System (Padrão)
+Utiliza a paleta azul institucional.
+
+### Secretaria de Saúde
+Customizado com a paleta verde e logo da saúde.
+
+### Tribunal de Justiça
+Customizado com a paleta púrpura jurídica.
+
+<Canvas of={ThemeStories.SeletorDeTemas} />
+
+## O que muda vs. O que é fixo
+
+| Elemento | Status | Justificativa |
+| :--- | :--- | :--- |
+| **Cor Primária** | ✅ Tematizável | Identidade visual do órgão. |
+| **Logo e Nome** | ✅ Tematizável | Reconhecimento da instituição. |
+| **Navbar Background** | ✅ Tematizável | Extensão da cor primária. |
+| **Cores de Feedback** | ❌ Fixo | Acessibilidade e semântica universal. |
+| **Espaçamentos** | ❌ Fixo | Consistência de layout e ergonomia. |
+| **Tipografia** | ❌ Fixo | Qualidade de leitura e unitariedade. |
+
+## Como Criar um Novo Tema
+
+1. Copie o arquivo `themes/_theme-template.css`.
+2. Defina uma escala de 50 a 900 para a sua cor primária.
+3. Garanta que o contraste da cor 500 sobre branco seja no mínimo **4.5:1**.
+4. Defina a URL da logo e o nome do órgão.
+5. Adicione o novo arquivo ao `index.css`.

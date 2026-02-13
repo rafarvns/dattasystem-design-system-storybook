@@ -3,7 +3,7 @@ import { createButton } from '../components/Button/Button';
 import { createCard } from '../components/Card/Card';
 
 export default {
-    title: 'Padrões / Layout Shell',
+    title: '📐 Padrões de Página (Sprint 4) / Layout Shell',
     parameters: {
         layout: 'fullscreen',
     },

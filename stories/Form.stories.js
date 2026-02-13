@@ -7,7 +7,7 @@ import { createRadioGroup } from '../components/Radio/Radio';
 import { createLayoutShell } from '../components/Padroes/LayoutShell/LayoutShell';
 
 export default {
-    title: 'Padrões / Formulário',
+    title: '📐 Padrões de Página (Sprint 4) / Formulário Completo',
     parameters: {
         layout: 'fullscreen',
     },

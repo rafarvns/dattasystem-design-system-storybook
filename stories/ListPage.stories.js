@@ -7,7 +7,7 @@ import { createInput } from '../components/Input/Input';
 import { createSelect } from '../components/Select/Select';
 
 export default {
-  title: 'Padrões / Listagem',
+  title: '📐 Padrões de Página (Sprint 4) / Página de Listagem',
 };
 
 const createListContainer = () => {
@@ -54,8 +54,8 @@ const createFilterCard = () => {
   grid.style.alignItems = 'end';
 
   grid.appendChild(createInput({ label: 'Nº do Processo', placeholder: '0000.0000' }));
-  grid.appendChild(createSelect({ 
-    label: 'Status', 
+  grid.appendChild(createSelect({
+    label: 'Status',
     options: [
       { label: 'Todos', value: 'all' },
       { label: 'Aprovado', value: 'aprovado' },
@@ -66,10 +66,10 @@ const createFilterCard = () => {
   const actions = document.createElement('div');
   actions.style.display = 'flex';
   actions.style.gap = 'var(--spacing-2)';
-  
+
   actions.appendChild(createButton({ label: 'Filtrar', variant: 'primary' }));
   actions.appendChild(createButton({ label: 'Limpar', variant: 'secondary' }));
-  
+
   grid.appendChild(actions);
   card.appendChild(grid);
   return card;

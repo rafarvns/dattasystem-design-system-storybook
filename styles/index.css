@@ -1,4 +1,7 @@
-/* Arquivo principal de estilos do Datta System */
+/* 0. Temas */
+@import '../themes/_default.css';
+@import '../themes/secretaria-saude.css';
+@import '../themes/tribunal-justica.css';
 
 /* 1. Design Tokens */
 @import '../tokens/colors.css';

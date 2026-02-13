@@ -7,7 +7,8 @@
 }
 
 .input-field__label {
-  display: flex; /* Adicionado para permitir esconder visualmente mas manter no DOM */
+  display: flex;
+  /* Adicionado para permitir esconder visualmente mas manter no DOM */
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-gray-700);
@@ -26,7 +27,7 @@
 }
 
 .input-field__required {
-  color: var(--color-red-500);
+  color: var(--color-danger);
   margin-left: var(--spacing-1);
 }
 
@@ -38,14 +39,16 @@
 
 .input-field__input {
   width: 100%;
-  border: 1px solid var(--color-gray-400); /* Aumentada a visibilidade da borda padrão */
+  border: 1px solid var(--color-gray-400);
+  /* Aumentada a visibilidade da borda padrão */
   border-radius: var(--radius-md);
   background-color: var(--color-white);
   color: var(--color-gray-800);
   font-family: inherit;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), border-width var(--transition-fast);
   outline: none;
-  box-sizing: border-box; /* Garante que a borda de 2px não mude o tamanho externo */
+  box-sizing: border-box;
+  /* Garante que a borda de 2px não mude o tamanho externo */
 }
 
 .input-field__input::placeholder {
@@ -73,22 +76,25 @@
 
 /* Estados */
 .input-field__input:hover:not(:disabled):not([readonly]) {
-  border-color: var(--color-gray-600); /* Maior contraste no hover */
+  border-color: var(--color-gray-600);
+  /* Maior contraste no hover */
 }
 
 .input-field__input:focus:not(:disabled):not([readonly]) {
-  border-color: var(--color-blue-500);
-  border-width: 1px; /* Mantido 1px para evitar saltos de layout */
-  box-shadow: 0 0 0 1px var(--color-blue-500); /* Ring sutil e estável */
+  border-color: var(--color-primary);
+  border-width: 1px;
+  /* Mantido 1px para evitar saltos de layout */
+  box-shadow: 0 0 0 1px var(--color-primary);
+  /* Ring sutil e estável */
 }
 
 /* Estado de Erro */
 .input-field--error .input-field__input {
-  border-color: var(--color-red-500);
+  border-color: var(--color-danger);
 }
 
 .input-field--error .input-field__input:focus {
-  box-shadow: 0 0 0 1px var(--color-red-500);
+  box-shadow: 0 0 0 1px var(--color-danger);
 }
 
 /* Disabled */
@@ -178,6 +184,6 @@
 }
 
 .input-field__error {
-  color: var(--color-red-500);
+  color: var(--color-danger);
   font-weight: var(--font-weight-medium);
 }

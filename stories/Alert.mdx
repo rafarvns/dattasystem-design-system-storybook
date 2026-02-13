@@ -70,6 +70,20 @@ Utilize a função `showAlert()` para disparar notificações que se empilham no
 ## Propriedades (Controls)
 <Controls />
 
+## Boas Práticas (Do / Don't)
+
+### ✅ Fazer
+- Use Alertas de Erro para problemas que o usuário pode resolver imediatamente.
+- Mantenha a mensagem curta e objetiva.
+- Coloque Banners no topo da página para mensagens de manutenção global.
+- Use variantes semânticas (cores) de acordo com o significado da mensagem.
+
+### ❌ Não Fazer
+- Não use Alertas para mensagens puramente decorativas ou triviais.
+- Não acumule muitos alertas na tela ao mesmo tempo; prefira o empilhamento inteligente.
+- Não use Alertas de Erro como única forma de validação; combine com erro inline nos inputs.
+- Não oculte o botão de fechar (X) se a mensagem não for crítica para o sistema.
+
 ## Tokens Utilizados
 - **Cores:** `--color-blue-50/600`, `--color-green-50/600`, `--color-orange-50/700`, `--color-red-50/600`.
 - **Tipografia:** `--font-family-primary`, `--font-size-sm`, `--font-weight-semibold` (título).

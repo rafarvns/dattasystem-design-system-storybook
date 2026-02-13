@@ -1,7 +1,7 @@
 .ds-navbar {
   width: 100%;
   height: var(--header-height, 56px);
-  background-color: var(--color-blue-900);
+  background-color: var(--ds-theme-navbar-bg, var(--color-blue-900));
   color: var(--color-white);
   box-shadow: var(--shadow-md);
   z-index: 1000;

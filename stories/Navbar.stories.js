@@ -1,7 +1,7 @@
 import { createNavbar } from '../components/Navbar/Navbar';
 
 export default {
-  title: 'componentes compostos/Navbar',
+  title: '🏛️ Componentes Compostos (Sprint 3) / Navbar',
   render: (args) => {
     // Add margin to see the fixed navbar in the preview
     const wrapper = document.createElement('div');

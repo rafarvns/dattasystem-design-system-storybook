@@ -1,0 +1,44 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Guias/Acessibilidade" />
+
+# Guia de Acessibilidade
+
+O Datta System foi projetado com a acessibilidade no seu core. Seguimos as diretrizes da **WCAG 2.1 (Web Content Accessibility Guidelines)** no nível **AA**, garantindo que nossas ferramentas sejam utilizáveis pelo maior número possível de pessoas, incluindo aquelas com deficiências permanentes ou temporárias.
+
+## Nossos Padrões
+
+### 1. Contraste de Cores
+Todas as combinações de cores de texto e fundo no Datta System passam no teste de contraste:
+-   **Texto normal:** Mínimo de 4.5:1.
+-   **Texto grande e componentes gráficos:** Mínimo de 3:1.
+-   *Dica:* Ao criar novos temas, utilize nosso [Checklist de Tematização](./?path=/docs/padrões-tematização--docs).
+
+### 2. Navegação por Teclado
+Todos os componentes interativos são acessíveis via teclado:
+-   **Tab:** Navega sequencialmente entre elementos focáveis.
+-   **Enter/Espaço:** Ativa botões e links.
+-   **Setas (Keyboard Nav):** Utilizadas em Tabs, Radios e Selects para navegação interna de grupos.
+-   **Focus Ring:** Sempre visível e com alto contraste para indicar a posição atual.
+
+### 3. Semântica e ARIA
+-   Usamos elementos HTML semânticos sempre que possível (`<button>`, `<main>`, `<nav>`).
+-   Quando componentes nativos não são suficientes (ex: Modais, Tooltips), utilizamos atributos ARIA (`aria-expanded`, `aria-modal`, `role="dialog"`) para comunicar estados a tecnologias assistivas.
+
+### 4. Suporte a Leitores de Tela
+-   Imagens decorativas possuem `alt=""` vazio para serem ignoradas.
+-   Mensagens de feedback (Alertas) usam `role="status"` ou `role="alert"` conforme a urgência.
+-   Páginas possuem um **Skip Link** invisível que surge ao teclar Tab, permitindo pular direto para o conteúdo.
+
+## Responsabilidades do Desenvolvedor
+
+A adoção do Design System resolve boa parte do trabalho, mas a acessibilidade da página final depende de como você estrutura seu código:
+
+1.  **Ordem de Cabeçalhos:** Use `<h1>` a `<h6>` em ordem hierárquica correta. Não pule níveis.
+2.  **Labels:** Nunca deixe um `input` sem uma `label` associada.
+3.  **Linguagem:** O atributo `lang="pt-BR"` deve estar presente na tag `<html>`.
+4.  **Não dependa apenas de cor:** Se um campo está com erro, use cor + ícone + texto de erro.
+
+---
+
+*"A acessibilidade não é um recurso extra; é um direito fundamental do usuário digital."*
