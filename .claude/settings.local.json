@@ -14,7 +14,9 @@
       "Bash(wmic process *)",
       "Bash(awk '{print $2}')",
       "Bash(xargs kill *)",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }
