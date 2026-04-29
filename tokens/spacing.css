@@ -14,6 +14,19 @@
   --spacing-12: 3rem;    /* 48px */
   --spacing-16: 4rem;    /* 64px */
 
+  /* Aliases curtos (novo naming) */
+  --sp-0: var(--spacing-0);
+  --sp-1: var(--spacing-1);
+  --sp-2: var(--spacing-2);
+  --sp-3: var(--spacing-3);
+  --sp-4: var(--spacing-4);
+  --sp-5: var(--spacing-5);
+  --sp-6: var(--spacing-6);
+  --sp-8: var(--spacing-8);
+  --sp-10: var(--spacing-10);
+  --sp-12: var(--spacing-12);
+  --sp-16: var(--spacing-16);
+
   /* ==========================================================================
      DESIGN TOKENS: GRID SYSTEM (Referência: 1366px)
      ========================================================================== */
@@ -36,6 +49,6 @@
      ========================================================================== */
   --sidebar-width: 256px;
   --header-height: 56px;
-  --content-max-width: 81.375rem; /* 1302px */
-  --form-max-width: 40rem;       /* 640px */
+  --content-max-width: 1302px;   /* Mantém em px para clareza */
+  --form-max-width: 640px;
 }

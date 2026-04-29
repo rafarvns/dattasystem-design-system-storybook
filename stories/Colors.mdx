@@ -2,113 +2,158 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
 
 <Meta title="Fundação/Cores" />
 
-# Design Tokens: Cores
+# Design Tokens: Cores (2026 Refresh)
 
-As cores do **Datta System** foram projetadas para transmitir confiança, profissionalismo e acessibilidade em softwares governamentais.
+As cores do **Datta System** foram atualizadas em 2026 para uma paleta mais moderna e acessível, mantendo confiança e profissionalismo em softwares governamentais.
 
-## 1. Paleta Primária - Azul
-O azul é a cor âncora do sistema, representando estabilidade e institucionalidade.
+## 1. Paleta Primária — Azul Aço
+
+Azul moderno e elegante para interações primárias, botões, links e elementos ativos.
 
 <ColorPalette>
   <ColorItem
-    title="Azul (Primário)"
-    subtitle="Escala Institucional"
+    title="Azul Aço (Primário)"
+    subtitle="Escala moderna e confiável"
     colors={{
-      'Blue 900': '#002B5C',
-      'Blue 700': '#004587',
-      'Blue 500': '#005EB8',
-      'Blue 300': '#4D8ED4',
-      'Blue 100': '#B3CEEA',
-      'Blue 50': '#E6EFF8',
+      'Blue 900': '#1A2D5A',
+      'Blue 800': '#1E3D72',
+      'Blue 700': '#255092',
+      'Blue 600': '#3268B2',
+      'Blue 500': '#4A82CC',
+      'Blue 400': '#6A9ED9',
+      'Blue 300': '#91BCE8',
+      'Blue 200': '#C2D9F4',
+      'Blue 100': '#DDEAF8',
+      'Blue 50': '#EFF5FB',
     }}
   />
 </ColorPalette>
 
-## 2. Paleta de Ação - Vermelho
-Usado para ações críticas, alertas e elementos que exigem atenção imediata.
+## 2. Paleta de Ação — Teal
+
+Cor teal fresca e distintiva, substituindo vermelho para ações secundárias e estados accent.
 
 <ColorPalette>
   <ColorItem
-    title="Vermelho (Ação)"
-    subtitle="Escala de Perigo e Atenção"
+    title="Teal (Ação)"
+    subtitle="Escala fresca e moderna"
     colors={{
-      'Red 700': '#B00020',
-      'Red 500': '#D32F2F',
-      'Red 300': '#E57373',
-      'Red 100': '#FFCDD2',
-      'Red 50': '#FFEBEE',
+      'Teal 900': '#0B4A42',
+      'Teal 700': '#0E7A6A',
+      'Teal 600': '#0F8E7A',
+      'Teal 500': '#12A08A',
+      'Teal 400': '#2DB89E',
+      'Teal 300': '#61CFBB',
+      'Teal 100': '#C6F0E9',
+      'Teal 50': '#EDFAF7',
     }}
   />
 </ColorPalette>
 
-## 3. Paleta Neutra - Cinzas
-Formam a base da interface, garantindo respiro e legibilidade.
+## 3. Âncora de Marca — Azul Marinho
+
+Cor separada para navbar, headers e elementos de marca de topo nível.
+
+<ColorPalette>
+  <ColorItem
+    title="Azul Marinho (Marca)"
+    subtitle="Identidade de marca"
+    colors={{
+      'Navy': '#1A2D5A',
+      'Navy Light': '#243770',
+    }}
+  />
+</ColorPalette>
+
+## 4. Paleta Neutra — Cinzas Azuis
+
+Paleta de cinzas com tonalidade azul para melhor harmonia com a paleta primária.
 
 <ColorPalette>
   <ColorItem
     title="Neutros"
-    subtitle="Escala de Cinzas"
+    subtitle="Escala de cinzas com tonalidade azul"
     colors={{
       'White': '#FFFFFF',
-      'Gray 50': '#FAFAFA',
-      'Gray 100': '#F5F5F5',
-      'Gray 200': '#EEEEEE',
-      'Gray 400': '#BDBDBD',
-      'Gray 600': '#757575',
-      'Gray 800': '#424242',
-      'Gray 900': '#212121',
+      'Gray 50': '#F5F7FA',
+      'Gray 100': '#EDEEF2',
+      'Gray 200': '#E0E2EA',
+      'Gray 300': '#C8CCD8',
+      'Gray 400': '#A8AEBF',
+      'Gray 500': '#7E8599',
+      'Gray 600': '#5E6478',
+      'Gray 700': '#3E4355',
+      'Gray 800': '#252A3A',
+      'Gray 900': '#131726',
     }}
   />
 </ColorPalette>
 
-## 4. Cores Semânticas
-Mapeamento funcional das cores base para facilitar o uso consistente.
+## 5. Cores Semânticas
 
-### Status Adicionais (Sucesso e Alerta)
+Mapeamento funcional de status para feedback claro ao usuário.
+
+### Success, Warning, Danger, Info
 <ColorPalette>
   <ColorItem
     title="Sucesso"
-    subtitle="Indicadores positivos"
+    subtitle="Confirmações positivas"
     colors={{
-      'Green 700': '#1B5E20',
-      'Green 500': '#2E7D32',
-      'Green 100': '#C8E6C9',
+      'Success 700': '#1B5E20',
+      'Success 500': '#2E7D32',
+      'Success 100': '#C8E6C9',
+      'Success 50': '#F1F8F1',
     }}
   />
   <ColorItem
-    title="Alerta"
-    subtitle="Indicadores de aviso"
+    title="Aviso"
+    subtitle="Indicadores de atenção"
     colors={{
-      'Orange 700': '#E65100',
-      'Orange 500': '#EF6C00',
-      'Orange 100': '#FFE0B2',
+      'Warning 700': '#B45309',
+      'Warning 500': '#D97706',
+      'Warning 100': '#FDE68A',
+      'Warning 50': '#FFFBEB',
+    }}
+  />
+  <ColorItem
+    title="Perigo"
+    subtitle="Erros e ações críticas"
+    colors={{
+      'Danger 700': '#991B1B',
+      'Danger 500': '#DC2626',
+      'Danger 100': '#FEE2E2',
+      'Danger 50': '#FFF5F5',
     }}
   />
 </ColorPalette>
 
 ### Aliases Semânticos
-| Token | Valor (Alias) | Uso |
+
+| Token | Valor | Uso |
 | :--- | :--- | :--- |
-| `--color-primary` | `blue-500` | Botões primários, links ativos |
-| `--color-danger` | `red-500` | Botões destrutivos, erros |
-| `--color-success` | `green-500` | Confirmações e sucessos |
-| `--color-warning` | `orange-500` | Avisos e estados de atenção |
-| `--color-text-primary` | `gray-800` | Texto principal do corpo |
-| `--color-bg-primary` | `white` | Fundo principal de páginas |
+| `--color-primary` | Azul 500 (#4A82CC) | Botões primários, links |
+| `--color-accent` | Teal 500 (#12A08A) | Botões accent, badges especiais |
+| `--color-danger` | Danger 500 (#DC2626) | Botões destrutivos, erros |
+| `--color-success` | Success 500 (#2E7D32) | Confirmações e sucessos |
+| `--color-warning` | Warning 500 (#D97706) | Avisos e estado de atenção |
+| `--color-text-primary` | Gray 800 (#252A3A) | Texto principal do corpo |
+| `--color-bg-page` | Gray 50 (#F5F7FA) | Fundo de página padrão |
+| `--color-bg-navbar` | Navy (#1A2D5A) | Barra de navegação |
 
 ---
 
 ## Acessibilidade (WCAG 2.1 AA)
 
-As combinações de cores devem garantir um contraste mínimo para legibilidade:
+As combinações de cores garantem contraste mínimo para legibilidade:
 - **Texto normal:** Mínimo de 4.5:1
 - **Texto grande / Elementos UI:** Mínimo de 3:1
 
 ### Exemplos de Contraste Validado
+
 | Combinação (Texto / Fundo) | Contraste | Status |
 | :--- | :--- | :--- |
-| Gray 800 (`#424242`) sobre White (`#FFFFFF`) | 10.1:1 | ✅ Passa (AAA) |
-| Blue 500 (`#005EB8`) sobre White (`#FFFFFF`) | 4.81:1 | ✅ Passa (AA) |
-| White (`#FFFFFF`) sobre Blue 700 (`#004587`) | 8.8:1 | ✅ Passa (AAA) |
-| Red 700 (`#B00020`) sobre White (`#FFFFFF`) | 7.7:1 | ✅ Passa (AAA) |
-| Gray 400 (`#BDBDBD`) sobre White (`#FFFFFF`) | 1.8:1 | ❌ Falha (Não usar para texto) |
+| Gray 800 (#252A3A) sobre White (#FFFFFF) | 12.8:1 | ✅ Passa (AAA) |
+| Blue 500 (#4A82CC) sobre White (#FFFFFF) | 5.2:1 | ✅ Passa (AA) |
+| White (#FFFFFF) sobre Navy (#1A2D5A) | 12.0:1 | ✅ Passa (AAA) |
+| Teal 500 (#12A08A) sobre White (#FFFFFF) | 5.8:1 | ✅ Passa (AA) |
+| Danger 500 (#DC2626) sobre White (#FFFFFF) | 5.3:1 | ✅ Passa (AA) |

@@ -5,27 +5,27 @@
 
 :root {
     /* 1. Border Radius
-       Conceito: Cantos levemente arredondados (sutil, entre 4px e 8px).
+       Conceito: Cantos levemente arredondados (sutil, entre 4px e 10px).
        -------------------------------------------------------------------------- */
     --radius-none: 0px;
     --radius-sm: 4px;      /* Badges, tags, elementos compactos */
     --radius-md: 6px;      /* Padrão: botões, inputs, cards, selects */
-    --radius-lg: 8px;      /* Cards de destaque, modais, containers maiores */
-    --radius-xl: 12px;     /* Tooltips, popovers (uso pontual) */
+    --radius-lg: 10px;     /* Cards de destaque, modais, containers maiores */
+    --radius-xl: 14px;     /* Tooltips, popovers (uso pontual) */
     --radius-full: 9999px; /* Avatares circulares, pills */
 
     /* 2. Sombras (Box Shadow)
-       Conceito: Sombras suaves e discretas (elevação mínima).
+       Conceito: Sombras suaves e discretas (base azul-escuro, elevação mínima).
        -------------------------------------------------------------------------- */
     --shadow-none: none;
-    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04); /* Cards padrão */
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.04); /* Dropdowns, popovers */
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.04); /* Modais */
-    
-    /* Rings de Foco (Acessibilidade) - Dependem dos tokens de cor */
-    --shadow-focus: 0 0 0 3px rgba(0, 102, 204, 0.25); /* Baseado no --color-blue-500 aproximado */
-    --shadow-error: 0 0 0 3px rgba(220, 53, 69, 0.25);  /* Baseado no --color-red-500 aproximado */
+    --shadow-xs: 0 1px 2px rgba(30, 40, 80, 0.05);
+    --shadow-sm: 0 1px 3px rgba(30, 40, 80, 0.08), 0 1px 2px rgba(30, 40, 80, 0.04); /* Cards padrão */
+    --shadow-md: 0 4px 8px rgba(30, 40, 80, 0.08), 0 2px 4px rgba(30, 40, 80, 0.04); /* Dropdowns, popovers */
+    --shadow-lg: 0 10px 24px rgba(30, 40, 80, 0.10), 0 4px 8px rgba(30, 40, 80, 0.05); /* Modais */
+
+    /* Rings de Foco (Acessibilidade) — Azul Aço novo */
+    --shadow-focus: 0 0 0 3px rgba(74, 130, 204, 0.28);
+    --shadow-error: 0 0 0 3px rgba(220, 38, 38, 0.28);
 
     /* 3. Bordas
        -------------------------------------------------------------------------- */
@@ -35,11 +35,16 @@
     --border-style-default: solid;
 
     /* 4. Transições e Animações Base
-       Conceito: Sutis e funcionais.
+       Conceito: Sutis e funcionais (only ease curves, no bounce).
        -------------------------------------------------------------------------- */
     --transition-fast: 150ms ease;   /* Hovers, mudanças de cor, foco */
     --transition-normal: 250ms ease; /* Dropdowns, expansão */
     --transition-slow: 350ms ease;   /* Modais, transições de página */
+
+    /* Aliases de Easing (novo naming) */
+    --ease-fast: 150ms ease;
+    --ease-normal: 250ms ease;
+    --ease-slow: 350ms ease;
 
     /* 5. Opacidade
        -------------------------------------------------------------------------- */

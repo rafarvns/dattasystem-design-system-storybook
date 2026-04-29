@@ -47,18 +47,18 @@
 
 /* Hover */
 .checkbox__label:hover .checkbox__box {
-  border-color: var(--color-blue-400);
+  border-color: var(--color-primary);
 }
 
 /* Focus */
 .checkbox__input:focus-visible + .checkbox__label .checkbox__box {
-  box-shadow: 0 0 0 2px var(--color-white), 0 0 0 4px var(--color-blue-300);
+  box-shadow: var(--shadow-focus);
 }
 
 /* Checked State */
 .checkbox__input:checked + .checkbox__label .checkbox__box {
-  background-color: var(--color-blue-500);
-  border-color: var(--color-blue-500);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .checkbox__input:checked + .checkbox__label .checkbox__box::after {
@@ -74,8 +74,8 @@
 
 /* Indeterminate State (usando classe pois o atributo nativo não reflete no CSS automaticamente) */
 .checkbox--indeterminate .checkbox__box {
-  background-color: var(--color-blue-500);
-  border-color: var(--color-blue-500);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .checkbox--indeterminate .checkbox__box::after {

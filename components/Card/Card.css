@@ -1,7 +1,7 @@
 .card {
   background-color: var(--color-white);
   border: 1px solid var(--color-gray-200);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   padding: var(--spacing-4);
   display: flex;
@@ -11,6 +11,18 @@
   box-sizing: border-box;
   overflow: hidden;
   word-break: break-word;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
 }
 
 /* Variante Compacto */

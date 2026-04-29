@@ -2,10 +2,10 @@ import './Button.css';
 
 /**
  * Funçăo para criar o componente Button do Datta System.
- * 
+ *
  * @param {Object} props - Propriedades do botăo.
  * @param {string} props.label - Texto do botăo.
- * @param {string} props.variant - Variante: 'primary', 'secondary', 'destructive', 'ghost'.
+ * @param {string} props.variant - Variante: 'primary', 'secondary', 'destructive', 'danger', 'accent', 'neutral', 'ghost'.
  * @param {string} props.size - Tamanho: 'sm', 'md', 'lg'.
  * @param {boolean} props.disabled - Estado desabilitado.
  * @param {boolean} props.loading - Estado de carregamento.
@@ -15,6 +15,7 @@ import './Button.css';
  * @param {string} props.ariaLabel - Label acessível para botőes icon-only ou loading.
  * @param {Function} props.onClick - Funçăo de clique.
  * @param {boolean} props.block - Se o botăo deve ocupar 100% da largura.
+ * @param {boolean} props.pill - Se o botăo deve ser pill-shaped.
  * @returns {HTMLButtonElement}
  */
 export const createButton = ({
@@ -29,6 +30,7 @@ export const createButton = ({
   ariaLabel,
   onClick,
   block = false,
+  pill = false,
   type = 'button',
 }) => {
   const btn = document.createElement('button');
@@ -39,6 +41,7 @@ export const createButton = ({
   if (loading) classes.push('btn--loading');
   if (iconOnly) classes.push('btn--icon-only');
   if (block) classes.push('btn--block');
+  if (pill) classes.push('btn--pill');
 
   btn.className = classes.join(' ');
 

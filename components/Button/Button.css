@@ -64,18 +64,33 @@
   transform: scale(0.98);
 }
 
-/* Destructive Variant */
+/* Destructive Variant (deprecated: use danger instead) */
 .btn--destructive {
-  background-color: var(--color-red-500);
+  background-color: var(--color-danger);
   color: var(--color-white);
 }
 
 .btn--destructive:hover {
-  background-color: var(--color-red-600);
+  background-color: var(--color-danger-hover);
 }
 
 .btn--destructive:active {
-  background-color: var(--color-red-700);
+  background-color: var(--color-danger-hover);
+  transform: scale(0.98);
+}
+
+/* Danger Variant (alias for destructive) */
+.btn--danger {
+  background-color: var(--color-danger);
+  color: var(--color-white);
+}
+
+.btn--danger:hover {
+  background-color: var(--color-danger-hover);
+}
+
+.btn--danger:active {
+  background-color: var(--color-danger-hover);
   transform: scale(0.98);
 }
 
@@ -92,6 +107,42 @@
 .btn--ghost:active {
   background-color: var(--color-primary-light);
   transform: scale(0.98);
+}
+
+/* Accent Variant (Teal) */
+.btn--accent {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn--accent:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.btn--accent:active {
+  background-color: var(--color-accent-hover);
+  transform: scale(0.98);
+}
+
+/* Neutral Variant (Gray) */
+.btn--neutral {
+  background-color: var(--color-gray-100);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.btn--neutral:hover {
+  background-color: var(--color-gray-200);
+}
+
+.btn--neutral:active {
+  background-color: var(--color-gray-200);
+  transform: scale(0.98);
+}
+
+/* Pill Modifier */
+.btn--pill {
+  border-radius: var(--radius-full);
 }
 
 /* Focus State */

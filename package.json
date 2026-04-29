@@ -7,7 +7,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "build-css": "vite build --config vite.lib.config.js",
+    "bundle-zip": "node scripts/create-zip.mjs",
+    "build-release": "npm run build-css && npm run bundle-zip",
+    "postbuild-storybook": "npm run build-release && node scripts/copy-to-static.mjs"
   },
   "private": true,
   "devDependencies": {
@@ -21,6 +25,7 @@
     "@storybook/html": "^8.6.14",
     "@storybook/html-vite": "^8.6.14",
     "@storybook/test": "^8.6.14",
+    "archiver": "^7.0.1",
     "sass": "^1.97.3",
     "storybook": "^8.6.14",
     "vite": "^6.0.0"

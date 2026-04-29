@@ -1,35 +1,41 @@
-/* themes/_default.css */
+/* themes/_default.css — Default Theme (2026 Refresh: Steel Blue) */
 :root,
 [data-theme="default"] {
-    /* === Cores do Tema === */
-    --ds-theme-primary-50: #EBF5FF;
-    --ds-theme-primary-100: #CCE5FF;
-    --ds-theme-primary-200: #99CBFF;
-    --ds-theme-primary-300: #66B0FF;
-    --ds-theme-primary-400: #3396FF;
-    --ds-theme-primary-500: #005EB8;
-    /* Azul Datta original */
-    --ds-theme-primary-600: #0052A3;
-    --ds-theme-primary-700: #004587;
-    --ds-theme-primary-800: #002B5C;
-    --ds-theme-primary-900: #001A38;
+    /* === Paleta Primária — Azul Aço (nova) === */
+    --ds-theme-primary-50: #EFF5FB;
+    --ds-theme-primary-100: #DDEAF8;
+    --ds-theme-primary-200: #C2D9F4;
+    --ds-theme-primary-300: #91BCE8;
+    --ds-theme-primary-400: #6A9ED9;
+    --ds-theme-primary-500: #4A82CC;   /* Azul Aço Primário */
+    --ds-theme-primary-600: #3268B2;
+    --ds-theme-primary-700: #255092;
+    --ds-theme-primary-800: #1E3D72;
+    --ds-theme-primary-900: #1A2D5A;
 
-    /* === Cor de Acento === */
-    --ds-theme-accent-50: #FFF0F0;
-    --ds-theme-accent-500: #D32F2F;
-    /* Vermelho Datta */
-    --ds-theme-accent-700: #B00020;
+    /* === Paleta de Ação — Teal (nova, substitui vermelho) === */
+    --ds-theme-accent-50: #EDFAF7;
+    --ds-theme-accent-100: #C6F0E9;
+    --ds-theme-accent-300: #61CFBB;
+    --ds-theme-accent-400: #2DB89E;
+    --ds-theme-accent-500: #12A08A;   /* Teal Interativo */
+    --ds-theme-accent-600: #0F8E7A;
+    --ds-theme-accent-700: #0E7A6A;
+    --ds-theme-accent-900: #0B4A42;
+
+    /* === Âncora de Marca — Azul Marinho === */
+    --ds-theme-brand-navy: #1A2D5A;
+    --ds-theme-brand-navy-light: #243770;
 
     /* === Identidade === */
-    --ds-theme-logo-url: url('https://placehold.co/180x40/005EB8/white?text=Datta+System');
-    /* Fallback para assets reais */
+    --ds-theme-logo-url: url('https://placehold.co/180x40/4A82CC/white?text=Datta+System');
     --ds-theme-name: 'Datta System';
 
-    /* Derivados Semânticos de Tema */
-    --ds-theme-navbar-bg: var(--ds-theme-primary-700);
+    /* === Derivados Semânticos de Tema === */
+    --ds-theme-navbar-bg: var(--ds-theme-brand-navy);
     --ds-theme-sidebar-active-bg: var(--ds-theme-primary-50);
-    --ds-theme-sidebar-active-text: var(--ds-theme-primary-700);
+    --ds-theme-sidebar-active-text: var(--ds-theme-primary-600);
     --ds-theme-link-color: var(--ds-theme-primary-500);
-    --ds-theme-link-hover: var(--ds-theme-primary-700);
-    --ds-theme-focus-ring: var(--ds-theme-primary-500);
+    --ds-theme-link-hover: var(--ds-theme-primary-600);
+    --ds-theme-focus-ring: rgba(74, 130, 204, 0.28);
 }

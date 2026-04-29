@@ -9,6 +9,11 @@
   --font-family-secondary: 'Manrope', 'IBM Plex Sans', sans-serif;
   --font-family-mono: 'IBM Plex Mono', 'Courier New', monospace;
 
+  /* Aliases curtos */
+  --font-primary: var(--font-family-primary);
+  --font-secondary: var(--font-family-secondary);
+  --font-mono: var(--font-family-mono);
+
   /* 2. Escala de Tamanhos (Base 1rem = 16px) */
   --font-size-xs: 0.75rem;     /* 12px */
   --font-size-sm: 0.875rem;    /* 14px */

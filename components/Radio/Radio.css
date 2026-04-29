@@ -41,7 +41,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--color-blue-500);
+  background-color: var(--color-primary);
   transition: transform var(--transition-fast);
 }
 
@@ -63,11 +63,11 @@
 
 /* Estados */
 .radio:hover .radio__circle {
-  border-color: var(--color-blue-400);
+  border-color: var(--color-primary);
 }
 
 .radio__input:checked + .radio__label .radio__circle {
-  border-color: var(--color-blue-500);
+  border-color: var(--color-primary);
 }
 
 .radio__input:checked + .radio__label .radio__circle::after {
@@ -76,7 +76,7 @@
 
 /* Focus */
 .radio__input:focus-visible + .radio__label .radio__circle {
-  box-shadow: 0 0 0 2px var(--color-white), 0 0 0 4px var(--color-blue-300);
+  box-shadow: var(--shadow-focus);
 }
 
 /* Disabled */

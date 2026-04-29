@@ -1,110 +1,117 @@
 /* ==========================================================================
-   Datta System - Design Tokens: Cores
+   Datta System - Design Tokens: Cores (2026 Refresh)
    ========================================================================== */
 
 :root {
-  /* 1. Paleta Primária - Azul (Confiança e Institucionalidade) */
-  --color-blue-900: #002B5C;
-  /* Textos de destaque em headers */
-  --color-blue-700: #004587;
-  /* Navegação principal, cabeçalhos */
-  --color-blue-600: #0052A3;
-  /* Hover do botão primário */
-  --color-blue-500: #005EB8;
-  /* Azul médio (primário) - Botões, links, ícones ativos */
-  --color-blue-300: #4D8ED4;
-  /* Estados de hover, badges */
-  --color-blue-100: #B3CEEA;
-  /* Fundos de alertas informativos */
-  --color-blue-50: #E6EFF8;
-  /* Azul quase branco - Fundos sutis */
+  /* 1. Âncoras de Marca — Azul Marinho (logo, barra de navegação) */
+  --brand-navy: #1A2D5A;
+  --brand-navy-light: #243770;
 
-  /* 2. Paleta de Ação - Vermelho (Ação e Atenção) */
-  --color-red-700: #B00020;
-  /* Hover em botões destrutivos */
-  --color-red-600: #C62828;
-  /* Hover do botão destrutivo */
-  --color-red-500: #D32F2F;
-  /* Vermelho vivo - Botões de ação destrutiva, alertas de erro */
-  --color-red-300: #E57373;
-  /* Vermelho suave - Fundos de mensagens de erro */
-  --color-red-100: #FFCDD2;
-  /* Vermelho muito claro - Fundos sutis de validação */
-  --color-red-50: #FFEBEE;
-  /* Vermelho quase branco - Fundo de campos com erro */
+  /* 2. Paleta Primária — Azul Aço (interativo, confiança, moderno) */
+  --color-blue-900: #1A2D5A;
+  --color-blue-800: #1E3D72;
+  --color-blue-700: #255092;
+  --color-blue-600: #3268B2;
+  --color-blue-500: #4A82CC;    /* Azul primário interativo */
+  --color-blue-400: #6A9ED9;
+  --color-blue-300: #91BCE8;
+  --color-blue-200: #C2D9F4;
+  --color-blue-100: #DDEAF8;
+  --color-blue-50: #EFF5FB;
 
-  /* 3. Paleta Neutra - Branco e Cinzas (Respiro e Legibilidade) */
+  /* 3. Paleta de Ação — Teal (substitui vermelho/laranja; fresco e distintivo) */
+  --color-teal-900: #0B4A42;
+  --color-teal-700: #0E7A6A;
+  --color-teal-600: #0F8E7A;
+  --color-teal-500: #12A08A;    /* Teal interativo (accent) */
+  --color-teal-400: #2DB89E;
+  --color-teal-300: #61CFBB;
+  --color-teal-100: #C6F0E9;
+  --color-teal-50: #EDFAF7;
+
+  /* 4. Paleta Neutra — Cinzas com tonalidade azul (respiro e legibilidade) */
   --color-white: #FFFFFF;
-  /* Branco puro */
-  --color-gray-50: #FAFAFA;
-  /* Fundo de página */
-  --color-gray-100: #F5F5F5;
-  /* Fundos de cards, áreas secundárias */
-  --color-gray-200: #EEEEEE;
-  /* Separadores, bordas leves */
-  --color-gray-400: #BDBDBD;
-  /* Placeholders, textos desabilitados */
-  --color-gray-600: #757575;
-  /* Textos secundários, ícones */
-  --color-gray-800: #424242;
-  /* Texto principal do corpo */
-  --color-gray-900: #212121;
-  /* Títulos, textos de máximo destaque */
+  --color-gray-50: #F5F7FA;     /* Fundo de página */
+  --color-gray-100: #EDEEF2;    /* Fundos de cards, áreas secundárias */
+  --color-gray-200: #E0E2EA;    /* Separadores, bordas leves */
+  --color-gray-300: #C8CCD8;
+  --color-gray-400: #A8AEBF;    /* Placeholders, textos desabilitados */
+  --color-gray-500: #7E8599;    /* Textos secundários */
+  --color-gray-600: #5E6478;
+  --color-gray-700: #3E4355;
+  --color-gray-800: #252A3A;    /* Texto principal do corpo */
+  --color-gray-900: #131726;    /* Títulos, textos de máximo destaque */
 
-  /* 4. Cores Semânticas Adicionais (Sucesso e Alerta) */
-  --color-green-700: #1B5E20;
-  --color-green-500: #2E7D32;
-  /* Sucesso */
-  --color-green-100: #C8E6C9;
-  /* Sucesso claro */
+  /* 5. Cores Semânticas — Status (Sucesso, Alerta, Perigo, Info) */
+  --color-success-700: #1B5E20;
+  --color-success-500: #2E7D32;  /* Sucesso */
+  --color-success-100: #C8E6C9;
 
-  --color-orange-700: #E65100;
-  --color-orange-500: #EF6C00;
-  /* Alerta / Aviso */
-  --color-orange-100: #FFE0B2;
-  /* Alerta claro */
+  --color-warning-700: #B45309;
+  --color-warning-500: #D97706;  /* Alerta / Aviso (Amber) */
+  --color-warning-100: #FDE68A;
 
-  /* 5. Camada de Mapeamento de Tema (Injetada pela Task 5) */
-  --color-primary: var(--ds-theme-primary-500);
-  --color-primary-hover: var(--ds-theme-primary-600);
-  --color-primary-dark: var(--ds-theme-primary-700);
-  --color-primary-light: var(--ds-theme-primary-100);
-  --color-primary-50: var(--ds-theme-primary-50);
+  --color-danger-700: #991B1B;
+  --color-danger-500: #DC2626;   /* Perigo / Erro */
+  --color-danger-100: #FEE2E2;
+
+  /* 6. Aliases Semânticos — O que os componentes usam */
+  --color-primary: var(--color-blue-500);
+  --color-primary-hover: var(--color-blue-600);
+  --color-primary-dark: var(--color-blue-700);
+  --color-primary-light: var(--color-blue-200);
+  --color-primary-50: var(--color-blue-50);
+
+  --color-accent: var(--color-teal-500);
+  --color-accent-hover: var(--color-teal-600);
+  --color-accent-light: var(--color-teal-100);
+  --color-accent-50: var(--color-teal-50);
+
+  --color-success: var(--color-success-500);
+  --color-success-light: var(--color-success-100);
+
+  --color-warning: var(--color-warning-500);
+  --color-warning-light: var(--color-warning-100);
+
+  --color-danger: var(--color-danger-500);
+  --color-danger-hover: var(--color-danger-700);
+  --color-danger-light: var(--color-danger-100);
+
+  /* 7. Texto */
+  --color-text-primary: var(--color-gray-800);
+  --color-text-secondary: var(--color-gray-500);
+  --color-text-placeholder: var(--color-gray-400);
+  --color-text-inverse: var(--color-white);
+  --color-text-link: var(--color-primary);
+
+  /* 8. Fundos */
+  --color-bg-page: var(--color-gray-50);
+  --color-bg-surface: var(--color-white);
+  --color-bg-muted: var(--color-gray-100);
+  --color-bg-navbar: var(--brand-navy);
+  --color-bg-sidebar: var(--color-white);
+
+  /* 9. Bordas */
+  --color-border: var(--color-gray-200);
+  --color-border-muted: var(--color-gray-100);
+  --color-border-focus: var(--color-primary);
+  --color-border-error: var(--color-danger-500);
+
+  /* 10. Tema (Compatibilidade com injeção de tema via data-theme) */
+  --color-primary-compat: var(--ds-theme-primary-500, var(--color-blue-500));
+  --color-primary-hover-compat: var(--ds-theme-primary-600, var(--color-blue-600));
+  --color-primary-dark-compat: var(--ds-theme-primary-700, var(--color-blue-700));
+  --color-primary-light-compat: var(--ds-theme-primary-100, var(--color-blue-100));
+  --color-primary-50-compat: var(--ds-theme-primary-50, var(--color-blue-50));
 
   /* Identidade do Órgão */
   --ds-logo-url: var(--ds-theme-logo-url);
   --ds-app-name: var(--ds-theme-name);
 
-  /* 6. Aliases Semânticos (Consumidores das variáveis acima) */
-  /* Perigo / Erro (Fixos por diretriz de acessibilidade) */
-  --color-danger: var(--color-red-500);
-  --color-danger-hover: var(--color-red-700);
-  --color-danger-light: var(--color-red-100);
-
-  /* Sucesso (Fixo) */
-  --color-success: var(--color-green-500);
-  --color-success-light: var(--color-green-100);
-
-  /* Alerta / Aviso (Fixo) */
-  --color-warning: var(--color-orange-500);
-  --color-warning-light: var(--color-orange-100);
-
-  /* Texto */
-  --color-text-primary: var(--color-gray-800);
-  --color-text-secondary: var(--color-gray-600);
-  --color-text-placeholder: var(--color-gray-400);
-  --color-text-inverse: var(--color-white);
-
-  /* Fundos */
-  --color-bg-primary: var(--color-white);
-  --color-bg-secondary: var(--color-gray-50);
-  --color-bg-card: var(--color-white);
-
-  /* Bordas */
-  --color-border-default: var(--color-gray-200);
-  --color-border-focus: var(--color-primary);
-  --color-border-error: var(--color-red-500);
-
   /* Sombras e Foco */
-  --shadow-focus: 0 0 0 3px var(--ds-theme-focus-ring, rgba(0, 94, 184, 0.4));
+  --shadow-xs: 0 1px 2px rgba(30, 40, 80, 0.05);
+  --shadow-sm: 0 1px 3px rgba(30, 40, 80, 0.08), 0 1px 2px rgba(30, 40, 80, 0.04);
+  --shadow-md: 0 4px 8px rgba(30, 40, 80, 0.08), 0 2px 4px rgba(30, 40, 80, 0.04);
+  --shadow-lg: 0 10px 24px rgba(30, 40, 80, 0.10), 0 4px 8px rgba(30, 40, 80, 0.05);
+  --shadow-focus: 0 0 0 3px rgba(74, 130, 204, 0.28);
 }

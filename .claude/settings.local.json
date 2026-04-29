@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(sort -k5 -rn)",
+      "Bash(npm install *)",
+      "Bash(unzip -l dist/datta-system-bundle.zip)",
+      "Bash(pkill -f \"node.*storybook\\\\|node.*vite\\\\|node.*build\")",
+      "Bash(taskkill /F /IM node.exe)",
+      "Bash(rm -f package-lock.json .npmrc)",
+      "Bash(npm cache *)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill /PID 3328 /F)",
+      "Bash(wmic process *)",
+      "Bash(awk '{print $2}')",
+      "Bash(xargs kill *)",
+      "Bash(git rm *)"
+    ]
+  }
+}
